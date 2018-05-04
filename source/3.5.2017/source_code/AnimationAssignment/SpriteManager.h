@@ -1,0 +1,31 @@
+#pragma once
+#include"Sprite.h"
+enum SPRITE_INFO
+{
+	SI_GROUND=-1,
+	SI_ZOMBIE,
+	SI_PANTHER,
+	SI_SIMON,
+	SI_BAT,
+	SI_CANDLE,
+	SI_BONE_DRAGON,
+	SI_FRANKENSTEIN,
+	SI_EXPLOSION_EFFECT,
+	SI_SMALL_HEART,
+	SI_EAGLE,
+	SI_MERMAN,
+	SI_BRIDGE,
+	SI_COUNT
+};
+class SpriteManager
+{
+	Sprite** sprites;
+	int nSprite;
+	static SpriteManager* instance;
+public:
+	static SpriteManager* getInstance();
+	Sprite** getSprites();
+	SpriteManager();
+	~SpriteManager();
+};
+
