@@ -3,8 +3,6 @@
 #include"ObjectContainer.h"
 class FpsManager
 {
-   double _Fps;
-
    double PCFreq_r;
    __int64 CounterStart_r;
 
@@ -12,6 +10,7 @@ public:
    GENERATE_GETTER_SETTER(double, TimePerFrame);
    GENERATE_GETTER_SETTER(double, TimeGame);
    GENERATE_GETTER_SETTER(double, RealFrameCounter);
+   GENERATE_GETTER_SETTER(double, Fps);
    FpsManager();
    ~FpsManager();
    bool CanCreateFrame();

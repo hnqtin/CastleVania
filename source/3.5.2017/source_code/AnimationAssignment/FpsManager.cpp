@@ -9,7 +9,7 @@ FpsManager* _FpsManager = autoFreeFpsManager;
 double PCFreq = 0.0;
 __int64 CounterStart = 0;
 
-int FPS = 61;
+int FPS = 60;
 
 
 FpsManager::FpsManager()
@@ -20,7 +20,6 @@ FpsManager::FpsManager()
 	PCFreq_r = 0;
 	_TimeGame = 0;
 	CounterStart_r = 0;
-	StartCounter_r();
 }
 
 
@@ -30,14 +29,14 @@ FpsManager::~FpsManager()
 
 bool FpsManager::CanCreateFrame()
 {
-	_TimeGame = GetCounter();
+	_TimeGame = GetCounter_r();
 	if (_TimeGame >= getTimePerFrame())
 	{
 		if (_TimeGame > 2 * _TimePerFrame)
 		{
-			_TimeGame = _TimePerFrame;
+			_TimeGame = 0;
 		}
-		StartCounter();
+		StartCounter_r();
 		_RealFrameCounter++;
 		return true;
 	}

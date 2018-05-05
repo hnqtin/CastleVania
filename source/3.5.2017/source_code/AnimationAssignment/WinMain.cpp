@@ -28,7 +28,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	Game::getInstance()->init();
 	GameTest::getInstance()->init();
 
-
+	_FpsManager->StartCounter_r();
 	while (msg.message != WM_QUIT)
 	{
 		if (_FpsManager->CanCreateFrame())
@@ -48,12 +48,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			//Game::getInstance()->render();
 			DirectXTool::getInstance()->EndGraphics();// ket thuc ve len backbuffer
 			DirectXTool::getInstance()->PresentBackBuffer();// ve backbuffer len man hinh
-			//_FpsManager->CalculateRealFrameCounter();
-			//auto timeSleep = (_FpsManager->getTimePerFrame() - _FpsManager->GetCounter());
-			//if (timeSleep > 0)
-			//{
-			//	std::this_thread::sleep_for(std::chrono::nanoseconds((long)(timeSleep*1000000000+1)));
-			//}
+			//	_FpsManager->CalculateRealFrameCounter();
+			auto timeSleep = (_FpsManager->getTimePerFrame() - _FpsManager->GetCounter_r());
+			if (timeSleep > 0)
+			{
+				std::this_thread::sleep_for(std::chrono::nanoseconds((long)(timeSleep*1000000000 + 1)));
+			}
 		}
 
 	}
