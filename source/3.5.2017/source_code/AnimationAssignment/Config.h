@@ -1,10 +1,13 @@
 #pragma once
-
+#include<map>
+using namespace std;
 
 #pragma region String
 
 #define TITLE_STR "Castle Vania"
 #define CVFORM_CLASS_NAME "CastleVania"  
+
+extern map<const char*, double> params;
 
 #pragma endregion
 
@@ -12,7 +15,7 @@
 #pragma region Size
 
 #define FORM_WIDTH 700
-#define FORM_HEIGHT 500
+#define FORM_HEIGHT 600
 
 #define BACKBUFFER_WIDTH 256
 #define BACKBUFFER_HEIGHT 190

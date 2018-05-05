@@ -3,6 +3,7 @@
 
 
 KEY * KEY::instance = 0;
+
 KEY * KEY::getInstance()
 {
 	if (instance == 0)

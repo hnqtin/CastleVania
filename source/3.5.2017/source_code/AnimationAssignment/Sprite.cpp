@@ -26,15 +26,19 @@ void Sprite::ReadFromFile(char * infopath, char * imagepath)
 	int r, g, b;
 
 	ifstream fs(infopath);
+	// bo qua 1 line
 	ignoreLineIfstream(fs, 1);
+	// doc thong tin mau trong suot cua buc hinh
 	fs >> r >> g >> b;
-
+	//bo qua 2 dong
 	ignoreLineIfstream(fs, 2);
+	//doc so luong animation
 	fs >> animCount;
-
+	// khoi tao mang animation
+	anims = new Animation[animCount];
+	// so luong frame cua animation
 	int frameCount;
 	float x, y, w, h;
-	anims = new Animation[animCount];
 	ignoreLineIfstream(fs, 3);
 	for (int i = 0; i < animCount; i++)
 	{

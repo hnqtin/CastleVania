@@ -10,6 +10,11 @@ SpriteManager * SpriteManager::getInstance()
 	return instance;
 }
 
+Sprite * SpriteManager::getSprite(SPRITE_INFO spriteIndex)
+{
+	return getInstance()->getSprites()[spriteIndex];
+}
+
 Sprite ** SpriteManager::getSprites()
 {
 	return sprites;

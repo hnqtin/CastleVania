@@ -7,7 +7,7 @@ Animation::Animation()
 Animation::~Animation()
 {
 }
-
+//goi trong phuong thuc cap nhat
 void Animation::next(int &index)
 {
 	index++;

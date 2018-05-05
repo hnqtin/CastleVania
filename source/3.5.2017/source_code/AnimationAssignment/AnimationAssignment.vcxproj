@@ -163,7 +163,7 @@
     <ClCompile Include="PhysicsBox.cpp" />
     <ClCompile Include="DirectXTool.cpp" />
     <ClCompile Include="Form.cpp" />
-    <ClCompile Include="Function.cpp" />
+    <ClCompile Include="Constant.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="KEY.cpp" />

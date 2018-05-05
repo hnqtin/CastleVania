@@ -1,5 +1,6 @@
 #include<fstream>
 #include<string>
+#include<map>
 using namespace std;
 void ignoreLineIfstream(ifstream& fs, int lineCount)
 {
@@ -8,4 +9,11 @@ void ignoreLineIfstream(ifstream& fs, int lineCount)
 	{
 		std::getline(fs, s);
 	}
+}
+
+map<const char*, double> params;
+
+void initParams()
+{
+	params["actionIndex"] = 1;
 }

@@ -12,11 +12,13 @@
 #include <chrono>
 #include <thread>
 using namespace std;
+extern void initParams();
 
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	initParams();
 	Form::getInstance()->initHandleWindows(hInstance, nCmdShow);
 
 	CKeyboard::Create(hInstance, Form::getInstance()->getHandleWindow());

@@ -11,6 +11,10 @@ __int64 CounterStart = 0;
 
 int FPS = 60;
 
+// 60 hz
+// 70 hz
+// 120 hz
+
 
 FpsManager::FpsManager()
 {
