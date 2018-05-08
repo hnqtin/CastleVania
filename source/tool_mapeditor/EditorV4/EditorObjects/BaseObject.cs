@@ -120,8 +120,8 @@ namespace EditorV4.EditorObjects
         
         public void DrawBorder(Graphics g, IConvertWorldView convertWorldView)
         {
-            //var border = convertWorldView.GetViewRect(_border);
-            //g.DrawRectangle(new Pen(Color.LightYellow, 1), border);
+            var border = convertWorldView.GetViewRect(_border);
+            g.DrawRectangle(new Pen(Color.LightBlue, 2), border);
         }
 
         public void DrawSelected(Graphics g, CanvasViewport viewport,IConvertWorldView convertWorldView)
