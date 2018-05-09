@@ -4,6 +4,16 @@
 #include"GameTime.h"
 #include"FpsManager.h"
 #include"Sprite.h"
+#include"TestObject.h"
+
+enum MOVE_STATE
+{
+	MOVE1,
+	MOVE2,
+	MOVE3
+};
+
+
 
 class GameTest
 {
@@ -13,6 +23,11 @@ class GameTest
 
 	Texture hinh;
 	float xHinh, yHinh;
+	float r, alpha, y00;
+
+	int dx, dy;
+
+	MOVE_STATE moveState;
 
 	FpsManager calculateTime;
 
@@ -33,6 +48,9 @@ class GameTest
 	Sprite* sprite2;
 	int actionIndex2;
 	int frameIndex2;
+
+	TestObject simonObj;
+	TestObject gach;
 
 public:
 	static GameTest* getInstance();

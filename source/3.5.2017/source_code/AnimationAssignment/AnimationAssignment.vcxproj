@@ -95,6 +95,7 @@
     <ClInclude Include="Candle.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionsObjectCollection.h" />
+    <ClInclude Include="CollisionTest.h" />
     <ClInclude Include="CollisionType.h" />
     <ClInclude Include="CollisionTypeCollide.h" />
     <ClInclude Include="ConsoleLogger.h" />
@@ -129,6 +130,7 @@
     <ClInclude Include="SmallHeart.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteManager.h" />
+    <ClInclude Include="TestObject.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TileMap.h" />
     <ClInclude Include="Weapon.h" />
@@ -146,6 +148,7 @@
     <ClCompile Include="Candle.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionsObjectCollection.cpp" />
+    <ClCompile Include="CollisionTest.cpp" />
     <ClCompile Include="CollisionTypeCollide.cpp" />
     <ClCompile Include="ConsoleLogger.cpp" />
     <ClCompile Include="DelayTime.cpp" />
@@ -177,6 +180,7 @@
     <ClCompile Include="SmallHeart.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
+    <ClCompile Include="TestObject.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TileMap.cpp" />
     <ClCompile Include="Weapon.cpp" />

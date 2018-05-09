@@ -40,9 +40,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				TranslateMessage(&msg);
 				DispatchMessage(&msg);
 			}
-			//CKeyboard::getInstance()->PollKeyboard();
-			//CKeyboard::getInstance()->UpdateKeyboard();
-			//KEY::getInstance()->update();
+			CKeyboard::getInstance()->PollKeyboard();
+			CKeyboard::getInstance()->UpdateKeyboard();
+			KEY::getInstance()->update();
 			//Game::getInstance()->update();
 			GameTest::getInstance()->update();
 			DirectXTool::getInstance()->BeginGraphics();//bat dau ve len backbuffer

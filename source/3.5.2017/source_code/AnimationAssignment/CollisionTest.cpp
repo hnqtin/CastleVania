@@ -1,11 +1,18 @@
-#include "Collision.h"
-#include<iostream>
-#include<string>
-
-using namespace std;
+#include "CollisionTest.h"
 
 
-MovableBox * Collision::GetSweptBroadPhaseBox(MovableBox * box)
+
+CollisionTest::CollisionTest()
+{
+}
+
+
+CollisionTest::~CollisionTest()
+{
+}
+
+
+MovableBox * CollisionTest::GetSweptBroadPhaseBox(MovableBox * box)
 {
 	MovableBox* bigBox = new MovableBox();
 	bigBox->setX(box->getDx() > 0 ? box->getX() : (box->getX() + box->getDx()));
@@ -15,13 +22,13 @@ MovableBox * Collision::GetSweptBroadPhaseBox(MovableBox * box)
 	return bigBox;
 }
 
-bool Collision::AABBCheck(Rect * M, Rect * S)
+bool CollisionTest::AABBCheck(Rect * M, Rect * S)
 {
 	return ((M->getX() < S->getX() + S->getWidth() && M->getX() + M->getWidth() > S->getX()) &&
 		(M->getY() - M->getHeight() < S->getY() && M->getY() > S->getY() - S->getHeight()));
 }
 
-float Collision::SweptAABB(MovableBox* M, MovableBox* S, float & normalx, float & normaly)
+float CollisionTest::SweptAABB(MovableBox* M, MovableBox* S, float & normalx, float & normaly)
 {
 	float xInvEntry, yInvEntry;
 	float xInvExit, yInvExit;
@@ -123,23 +130,14 @@ float Collision::SweptAABB(MovableBox* M, MovableBox* S, float & normalx, float 
 	}
 }
 
-void Collision::CheckCollision(MovableBox * M, MovableBox * S)
+void CollisionTest::CheckCollision(MovableBox * M, MovableBox * S)
 {
-	if (M->canCollision() == false || S->canCollision() == false)
-		return;
 	// kiem tra va cham
 	MovableBox* broadPhaseBox = GetSweptBroadPhaseBox(M);
 	// kiem tra broadphasbox va static box co dang giao nhau hay khong
 	if (AABBCheck(broadPhaseBox, S))
 	{
 		delete broadPhaseBox; //*********************
-
-		if (AABBCheck(M, S))
-		{
-			M->onIntersect(S);
-			S->onIntersect(M);
-			return;
-		}
 
 		float normalX = 0, normalY = 0;
 		float nx, ny;
@@ -164,23 +162,15 @@ void Collision::CheckCollision(MovableBox * M, MovableBox * S)
 			}
 
 			////chac chan co va cham
-			//M->isCollision = true;
+			//M->isCollisionTest = true;
 			//xu ly va cham
-			M->setIsCollision(true);
-			M->onCollision(S, normalX, normalY,collisionTime);
-			S->onCollision(M, normalX, normalY, collisionTime);
+			M->onCollision(S, normalX, normalY, collisionTime);
+
+
 		}
 
 		return;
 	}
 	// neu khong thi chac chan khong co va cham va bo qua
 	delete broadPhaseBox;
-}
-
-Collision::Collision()
-{
-}
-
-Collision::~Collision()
-{
 }

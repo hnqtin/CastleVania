@@ -4,10 +4,10 @@
 #define MIN(a,b) a>b? b:a
 #include<iostream>
 using namespace std;
-
-class Collision
+class CollisionTest
 {
 public:
+
 	// tim broadphase box
 	static MovableBox* GetSweptBroadPhaseBox(MovableBox* box);
 	// kiem tra giao nhau interserct
@@ -17,7 +17,7 @@ public:
 	// Kiem tra va xu ly va cham
 	static void CheckCollision(MovableBox* M, MovableBox* S);
 
-	/* CONSTRUCTOR & DESTRUCTOR */
-	Collision();
-	~Collision();
+	CollisionTest();
+	~CollisionTest();
 };
+
