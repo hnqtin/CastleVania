@@ -3,7 +3,7 @@
 #include"DirectXTool.h"
 #include"Texture.h"
 #include"Game.h"
-#include"GameTest.h"
+#include"GameTestTilemap.h"
 #include"KEY.h"
 #include<iostream>
 #include<fstream>
@@ -28,7 +28,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 
 	Game::getInstance()->init();
-	GameTest::getInstance()->init();
+	GameTestTilemap::getInstance()->init();
 
 	_FpsManager->StartCounter_r();
 	while (msg.message != WM_QUIT)
@@ -44,9 +44,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			CKeyboard::getInstance()->UpdateKeyboard();
 			KEY::getInstance()->update();
 			//Game::getInstance()->update();
-			GameTest::getInstance()->update();
+			GameTestTilemap::getInstance()->update();
 			DirectXTool::getInstance()->BeginGraphics();//bat dau ve len backbuffer
-			GameTest::getInstance()->render();
+			GameTestTilemap::getInstance()->render();
 			//Game::getInstance()->render();
 			DirectXTool::getInstance()->EndGraphics();// ket thuc ve len backbuffer
 			DirectXTool::getInstance()->PresentBackBuffer();// ve backbuffer len man hinh

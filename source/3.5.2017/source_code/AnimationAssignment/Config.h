@@ -17,8 +17,8 @@ extern map<const char*, double> params;
 #define FORM_WIDTH 700
 #define FORM_HEIGHT 600
 
-#define BACKBUFFER_WIDTH 256
-#define BACKBUFFER_HEIGHT 190
+#define BACKBUFFER_WIDTH 249
+#define BACKBUFFER_HEIGHT 153
 
 #pragma endregion
 

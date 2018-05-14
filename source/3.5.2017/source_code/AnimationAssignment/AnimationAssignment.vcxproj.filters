@@ -204,6 +204,9 @@
     <ClInclude Include="CollisionTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GameTestTilemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp">
@@ -351,6 +354,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CollisionTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTestTilemap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
