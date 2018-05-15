@@ -10,14 +10,28 @@
 class World :
 	public TileMap
 {
-	BaseObject** gameObjects;
+	// tat ca doi tuong co trong world
+	BaseObject** allObjectsInWorld;
+
+	// tong so doi tuong co trong world
 	int nObjects;
+
+	// camera cua world
 	Camera* camera;
+
+	// .. bai sau
 	CollisionsObjectCollection collisionObjectCollection;
 
+	// danh sach collision voi nhau
 	CollisionTypeCollide** collisionTypeCollides;
+
+	// so luong ...
 	int nCollisionTypeCollides;
+
+	// player
 	SimonPlayer* simon;
+
+	// quadtree
 	QuadTree quadTree;
 public:
 	void init(const char* tilesheetPath,

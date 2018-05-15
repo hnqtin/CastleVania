@@ -62,7 +62,12 @@ void GameTest::init()
 	//dx = 2;
 	//dy = 1;
 
-	simonObj.setLocation(50, 50);
+	t = new TileMap();
+	t->init("Data/Worlds/test/tilesheet.png",
+		"Data/Worlds/test/matrix.dat");
+
+
+	simonObj.setLocation(200, 89);
 
 	simonObj.sprite = SpriteManager::getSprite(SI_SIMON);;
 	simonObj.actionIndex = SIMON_PLAYER_ACTION_SIMON_JUMP;
@@ -71,8 +76,8 @@ void GameTest::init()
 
 	gach.sprite = new Sprite();
 	gach.sprite->initFromSingleFrame("Data/Misc/gach.png");
-	gach.setLocation(150, 150);
-	gach.setSize(50, 50);
+	gach.set(320, 96, 80, 16);
+	Camera::getInstance()->set(190, 153, BACKBUFFER_WIDTH, BACKBUFFER_HEIGHT);
 }
 void GameTest::update()
 {
@@ -143,6 +148,8 @@ void GameTest::update()
 	simonObj.update();
 	int d = 2;
 
+	//Camera::getInstance()->setX(Camera::getInstance()->getX() + 1);
+
 	if (KEY::getInstance()->isUpDown)
 	{
 		simonObj.setDy(d);
@@ -186,8 +193,10 @@ void GameTest::render()
 {
 	//sprite2->render(xHinh, yHinh, actionIndex2, frameIndex2);
 
+	t->render(Camera::getInstance());
 	simonObj.render();
 	gach.render();
+
 }
 GameTest::GameTest()
 {

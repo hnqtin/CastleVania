@@ -11,7 +11,7 @@ void QuadTree::setRootNode(QuadTreeNode * rootnode)
 	this->rootnode = rootnode;
 }
 
-void QuadTree::build(const char * quadtreePath, BaseObject** allObjects, int mapHeight)
+void QuadTree::init(const char * quadtreePath, BaseObject** allObjects, int worldHeight)
 {
 	ReadFileManager fileManager(quadtreePath);
 	int nodesCount = fileManager.linesCount();
@@ -56,7 +56,7 @@ void QuadTree::build(const char * quadtreePath, BaseObject** allObjects, int map
 		currentNode->setId(id);
 		quadTreeNodeTable[id] = currentNode;
 		x = fileManager.nextInt();
-		y = mapHeight - fileManager.nextInt();
+		y = worldHeight - fileManager.nextInt();
 		width = fileManager.nextInt();
 		height = fileManager.nextInt();
 		nodes = fileManager.nextInt();

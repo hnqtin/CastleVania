@@ -23,21 +23,20 @@ void World::init(const char* tilesheetPath,
 	initCollisionTypeCollides(collisionTypeCollidesPath);
 	initObjects(objectsPath);
 	initQuadtree(quadtreePath);
-
 }
 
 void World::initObjects(const char * objectsPath)
 {
-	int collisionType, spriteId, x, y, width, height;
+	int collisionType, objectId, x, y, width, height;
 	BaseObject* gameObject;
 	fstream fs(objectsPath);
 	fs >> nObjects;
-	gameObjects = new BaseObject*[nObjects];
+	allObjectsInWorld = new BaseObject*[nObjects];
 	for (size_t i = 0; i < nObjects; i++)
 	{
-		fs >> spriteId >> collisionType >> x >> y >> width >> height;
+		fs >> objectId >> collisionType >> x >> y >> width >> height;
 
-		switch (spriteId)
+		switch (objectId)
 		{
 		case SI_GROUND:
 			gameObject = new BaseObject();
@@ -72,17 +71,17 @@ void World::initObjects(const char * objectsPath)
 		Rect* initBox = new Rect();
 		initBox->set(x, getWorldHeight() - y, width, height);
 		gameObject->setInitBox(initBox);
-		gameObject->setSpriteId(spriteId);
+		gameObject->setSpriteId(objectId);
 		gameObject->setCollisionType(collisionType);
 		gameObject->onInit(fs);
-		gameObjects[i] = gameObject;
+		allObjectsInWorld[i] = gameObject;
 		//collisionObjectCollection.getCollection((COLLISION_TYPE)collisionType)->_Add(gameObject);
 	}
 }
 
 void World::initQuadtree(const char * quadtreePath)
 {
-	quadTree.build(quadtreePath, gameObjects, getWorldHeight());
+	quadTree.init(quadtreePath, allObjectsInWorld, getWorldHeight());
 }
 
 void World::initCollisionTypeCollides(const char * collisionTypeCollidesPath)

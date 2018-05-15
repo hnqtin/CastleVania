@@ -21,7 +21,7 @@ void GameTestTilemap::init()
 
 void GameTestTilemap::update()
 {
-	c.setX(c.getX() + 10);
+	//c.setX(c.getX() + 10);
 }
 
 void GameTestTilemap::render()

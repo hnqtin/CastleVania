@@ -16,7 +16,6 @@ void TileMap::init(const char * tilesheetPath, const char * matrixPath)
 {
 	//khoi tao hinh. mo file tilesheet.png
 	tilesheet = new Texture(tilesheetPath, 0);
-
 	//khoi tao ma tran tile trong file matrix.txt
 	fstream fs(matrixPath);
 	fs >> rowCount >> columnCount >> tileWidth >> tileHeight >> tilesheetColumnCount;
@@ -29,7 +28,6 @@ void TileMap::init(const char * tilesheetPath, const char * matrixPath)
 			fs >> matrix[rowIndex][columnIndex];
 		}
 	}
-
 	worldHeight = rowCount * tileHeight;
 }
 

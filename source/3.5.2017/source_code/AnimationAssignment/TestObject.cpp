@@ -1,5 +1,6 @@
 #include "TestObject.h"
 #include"Config.h"
+#include"Camera.h"
 
 
 TestObject::TestObject()
@@ -21,7 +22,9 @@ void TestObject::update()
 }
 void TestObject::render()
 {
-	sprite->render(getX(), BACKBUFFER_HEIGHT - getY(), actionIndex, frameIndex);
+	int xV = 0, yV = 0;
+	Camera::getInstance()->getWorldToViewLocation(getX(), getY(), xV, yV);
+	sprite->render(xV, yV, actionIndex, frameIndex);
 }
 
 void TestObject::onCollision(MovableBox * other, int nx, int ny, float collisionTime)

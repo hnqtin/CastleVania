@@ -18,11 +18,17 @@ private:
 	QuadTreeNode * rootnode;
 	Camera* camera;
 public:
+	QuadTree();
+
+	// khoi tao quadtree tu file quadtree
+	void init(const char* quadtreePath, BaseObject** allObjects, int mapHeight);
+
+	//root node
 	QuadTreeNode * getRootNode();
 	void setRootNode(QuadTreeNode* rootnode);
-	void build(const char* quadtreePath, BaseObject** allObjects, int mapHeight);
+
+	//bai sau
 	void update(CollisionsObjectCollection* collection);
-	QuadTree();
 	~QuadTree();
 };
 

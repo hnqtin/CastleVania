@@ -5,6 +5,7 @@
 #include"FpsManager.h"
 #include"Sprite.h"
 #include"TestObject.h"
+#include "TileMap.h"
 
 enum MOVE_STATE
 {
@@ -18,7 +19,7 @@ enum MOVE_STATE
 class GameTest
 {
 	static GameTest* instance;
-
+	TileMap*t; 
 	RECT* rects;
 
 	Texture hinh;
