@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{34620172-4e5f-4213-a489-2512529cd119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enemies">
+      <UniqueIdentifier>{d3185b6c-4fd8-4217-bbb1-51cfb724275a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AdditionalObject.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseObject.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionsObjectCollection.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionTypeCollide.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleLogger.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="DelayTime.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXTool.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Form.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="FpsManager.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTime.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="KEY.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="MovableBox.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="MovableObject.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsBox.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTreeNode.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadFileManager.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteManager.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMap.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerWeapon.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="globalsParameter.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdditionalObject.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObject.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionsObjectCollection.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionType.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionTypeCollide.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleLogger.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="DelayTime.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXTool.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Form.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="FpsManager.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTime.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="ICameraLimit.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="KEY.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="MovableBox.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="MovableObject.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectContainer.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsBox.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTreeNode.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadFileManager.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteManager.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMap.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerWeapon.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,57 @@
+R		G		B
+0		10		0
+Count
+4
+Sprite Info
+
+Index		Name
+0			Animation0
+
+			FramesCount
+			10
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			121				188				7				7
+            121             198             7               7
+            129             188             7               7
+            129             198             7               7
+            137             188             7               7
+            137             198             7               7
+            145             188             7               7
+            145             198             7               7
+            153             188             7               7
+            153             198             7               7
+
+
+Index		Name
+1			PlayerWeaponItem
+
+			FramesCount
+			1
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+            74              22              16              16
+
+
+Index		Name
+2			LostHealth
+
+			FramesCount
+			1
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+            184              189              3              6
+
+
+Index		Name
+3			KnifeItem
+
+			FramesCount
+			1
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+            115              4              16              9
