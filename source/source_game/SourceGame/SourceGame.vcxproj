@@ -77,6 +77,14 @@
     <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -95,6 +103,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>dinput8.lib;dxguid.lib;d3d9.lib;d3dx9.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -123,6 +134,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>dinput8.lib;dxguid.lib;d3d9.lib;d3dx9.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -136,14 +148,17 @@
     <ClCompile Include="ConsoleLogger.cpp" />
     <ClCompile Include="DelayTime.cpp" />
     <ClCompile Include="DirectXTool.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Form.cpp" />
     <ClCompile Include="FpsManager.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="globalsParameter.cpp" />
+    <ClCompile Include="IgorEnemy.cpp" />
     <ClCompile Include="KEY.cpp" />
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="linh.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="MovableBox.cpp" />
     <ClCompile Include="MovableObject.cpp" />
@@ -175,14 +190,17 @@
     <ClInclude Include="ConsoleLogger.h" />
     <ClInclude Include="DelayTime.h" />
     <ClInclude Include="DirectXTool.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Form.h" />
     <ClInclude Include="FpsManager.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameTime.h" />
     <ClInclude Include="ICameraLimit.h" />
+    <ClInclude Include="IgorEnemy.h" />
     <ClInclude Include="KEY.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="linh.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="MovableBox.h" />

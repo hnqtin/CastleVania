@@ -27,6 +27,10 @@ SpriteManager::SpriteManager()
 	enemiesImage->direction = Left;
 
 	sprites = new Sprite*[SI_COUNT];
+	sprites[SI_LINH] = new Sprite();
+	sprites[SI_LINH]->ReadFromFile("Data/Sprites/linh/info.simple.txt", "Data/Sprites/linh/image.png");
+	sprites[SI_LINH]->img->direction = Right;
+
 
 	sprites[SI_SIMON] = new Sprite();
 	sprites[SI_SIMON]->ReadFromFile("Data/Sprites/Simon/info.simple.txt", "Data/Sprites/Simon/image.png");

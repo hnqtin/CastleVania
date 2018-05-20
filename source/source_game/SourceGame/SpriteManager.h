@@ -20,7 +20,8 @@ enum SPRITE_INFO
 	SI_MERMAN_BULLET,//13
 	SI_IGOR,//14
 	SI_WEAPON,//15
-	SI_MISC,//15
+	SI_MISC,//16
+	SI_LINH,//17
 	SI_COUNT
 };
 class SpriteManager
