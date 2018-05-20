@@ -117,10 +117,10 @@ namespace EditorV4.Controls
             if (ConvertWorldView != null)
             {
 
-                e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+                e.Graphics.CompositingQuality = CompositingQuality.HighSpeed;
                 e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
-                e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
-                e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                e.Graphics.SmoothingMode = SmoothingMode.HighSpeed;
+                e.Graphics.PixelOffsetMode = PixelOffsetMode.HighSpeed;
 
                 canvasWorldViewGroup.OnPaint(e.Graphics, ConvertWorldView);
             }

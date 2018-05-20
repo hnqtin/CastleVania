@@ -1,0 +1,52 @@
+R		G		B
+0		0		0
+Count
+4
+Sprite Info
+
+Index		Name
+0			Stand
+
+			FramesCount
+			1
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			2				2				19				22
+
+
+Index		Name
+1			Wait
+
+			FramesCount
+			2
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			24				2				19				22
+			46				2				18				22
+
+
+Index		Name
+2			Run
+
+			FramesCount
+			3
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			67				2				22				22
+			92				2				14				22
+			109				2				19				22
+
+
+Index		Name
+3			Jump
+
+			FramesCount
+			1
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			131				2				24				28
+
