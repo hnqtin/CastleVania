@@ -2,6 +2,7 @@
 #include"List.h"
 #include"CollisionType.h"
 #include"BaseObject.h"
+// loc cac danh sach theo collision type
 class CollisionsObjectCollection
 {
 	List<BaseObject*>* collisionsObjectCollection;

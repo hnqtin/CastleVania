@@ -64,6 +64,10 @@ void Rect::setWidth(float width)
 
 void Rect::setHeight(float height)
 {
+	if (this->height != height && this->height != 0)
+	{
+		moveY(height - this->height);
+	}
 	this->height = height;
 }
 

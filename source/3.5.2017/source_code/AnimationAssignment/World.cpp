@@ -123,7 +123,7 @@ void World::update()
 	simon->performUpdate();
 
 	auto allObjectInFrame = collisionObjectCollection.getCollection(CT_ALL);
-
+	//xu ly update tat ca object tai thoi diem hien tai va va cham giua chung trong camera va simon
 	for (size_t i = 0; i < allObjectInFrame->Count; i++)
 	{
 		auto obj = allObjectInFrame->at(i);

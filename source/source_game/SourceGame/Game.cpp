@@ -1,5 +1,6 @@
 #include "Game.h"
 #include"KEY.h"
+#include"Player.h"
 
 Game::Game(void)
 {
@@ -28,7 +29,15 @@ void Game::nextStage()
 void Game::init()
 {
 	//Camera::getInstance()->set(0, 190, 256, 190);
+
+	Player::getInstance()->set(getGlobalValue("player_x"),
+		getGlobalValue("player_y"),
+		getGlobalValue("player_width"),
+		getGlobalValue("player_height")
+	);
+
 	Camera::getInstance()->set(0, 222, BACKBUFFER_WIDTH, BACKBUFFER_HEIGHT);
+	Camera::getInstance()->setPlayer(Player::getInstance());
 	stages = new World*[2];
 	stages[0] = new World();
 	stages[0]->init(
@@ -38,6 +47,8 @@ void Game::init()
 		"Data/Worlds/Stage10/quadtree.dat",
 		"Data/Worlds/Stage10/collision_type_collides.dat"
 		);
+
+	stages[0]->setPlayer(Player::getInstance());
 
 	stages[1] = new World();
 	stages[1]->init(

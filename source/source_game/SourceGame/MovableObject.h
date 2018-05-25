@@ -2,6 +2,7 @@
 #include"BaseObject.h"
 class MovableObject : public BaseObject
 {
+	// doi tuong co dang o tren mat dat hay khong
 	bool onGround;
 protected:
 public:

@@ -13,7 +13,16 @@ void MovableObject::onCollision(MovableBox * other, int nx, int ny, float collis
 	{
 		//van toc khong duoc tang dan deu khi dung tren san
 		if (ny == 1)
+		{
 			setIsOnGround(true);
+		}
+
+		if (ny != 0)
+		{
+			setVy(-10);
+		}
+
+		preventMoveWhenCollision(collisionTime, nx, ny);
 	}
 }
 
@@ -31,7 +40,7 @@ bool MovableObject::isOnGround()
 
 MovableObject::MovableObject()
 {
-	setAy(-0.0004);
+	setAy(getGlobalValue("game_gravity"));
 }
 
 

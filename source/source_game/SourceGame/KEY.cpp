@@ -15,6 +15,7 @@ void KEY::update()
 	CKeyboard::getInstance()->UpdateKeyboard();
 
 	isUpDown = CKeyboard::getInstance()->IsKeyDown(DIK_UP);
+	isPDown = CKeyboard::getInstance()->IsKeyDown(DIK_P);
 	isUpPress = isUpDown && !isPreviousUpDown;
 	isPreviousUpDown = isUpDown;
 

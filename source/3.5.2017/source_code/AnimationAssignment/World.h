@@ -19,7 +19,7 @@ class World :
 	// camera cua world
 	Camera* camera;
 
-	// .. bai sau
+	// danh sach phan loai doi tuong tai thoi diem hien tai (nhung object trong camera)
 	CollisionsObjectCollection collisionObjectCollection;
 
 	// danh sach collision voi nhau

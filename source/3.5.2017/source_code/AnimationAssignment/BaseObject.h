@@ -44,6 +44,7 @@ public:
 	void setDirection(Direction direction);
 
 	virtual void onInit(fstream& fs);
+	//them sprite vao doi tuong
 	void setSpriteId(int spriteId);
 
 	void performUpdate();

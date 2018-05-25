@@ -20,7 +20,7 @@ void DelayTime::init(DWORD time)
 DelayTime::DelayTime()
 {
 	ready= true;
-	terminated = true;
+	terminated = false;
 }
 
 bool DelayTime::isReady()
@@ -43,12 +43,16 @@ bool DelayTime::isOnTime()
 }
 void DelayTime::update()
 {
-	DWORD now = GetTickCount();
-	DWORD deltaTime = now - startTime;
-	if (deltaTime >= tickPerFrame)
+	if (isOnTime())
 	{
-		terminated = true;
+		DWORD now = GetTickCount();
+		DWORD deltaTime = now - startTime;
+		if (deltaTime >= tickPerFrame)
+		{
+			terminated = true;
+		}
 	}
+
 }
 
 DelayTime::~DelayTime()

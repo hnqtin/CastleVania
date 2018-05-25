@@ -66,6 +66,7 @@ void QuadTreeNode::fillObject(CollisionsObjectCollection * collection, Rect * vi
 {
 	if (!Collision::AABBCheck(this, viewport))
 		return;
+	//loai 1 co 4 node con va khong co doi tuong
 	if (TL != NULL)
 	{
 		TL->fillObject(collection, viewport);
@@ -74,6 +75,8 @@ void QuadTreeNode::fillObject(CollisionsObjectCollection * collection, Rect * vi
 		BR->fillObject(collection, viewport);
 		return;
 	}
+	//khong co node con
+	//objectsCount>0 thi loai 1 co doi tuong
 	BaseObject* obj;
 	for (size_t i = 0; i < objectsCount; i++)
 	{

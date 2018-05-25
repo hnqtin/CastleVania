@@ -7,6 +7,7 @@ class MovableBox : public Rect
 	float dx, dy;
 	bool isCollision;
 	bool isChangeDxOrDy;
+	// loai va cham
 	COLLISION_TYPE collisionType;
 public:
 	COLLISION_TYPE getCollisionType();

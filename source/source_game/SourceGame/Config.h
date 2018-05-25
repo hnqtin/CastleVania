@@ -1,6 +1,6 @@
 #pragma once
 
-
+extern double getGlobalValue(const char* key);
 
 #include"List.h"
 

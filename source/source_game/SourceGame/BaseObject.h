@@ -9,14 +9,23 @@ class BaseObject :
 	public PhysicsBox
 {
 private:
+	// hinh ve va animation
 	Sprite* sprite;
+	// chua action va frame cua animation
 	int actionIndex, actionFrameIndex;
+	// delay animation
 	int interval;
+	// id
 	int spriteId;
+	// delay animation
 	GameTime* animationDelay;
+	// huong mat cua doi
 	Direction direction;
+	// dung animation
 	bool pauseAnimation;
+	// xem doi tuong co hoat dong khong
 	bool alive;
+	// dung de restore location
 	Rect* initBox;
 protected:
 	virtual	void update();

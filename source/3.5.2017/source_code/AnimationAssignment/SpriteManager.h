@@ -1,5 +1,8 @@
 #pragma once
 #include"Sprite.h"
+//2 nhiem vu
+//1 index cua sprite
+//2 id cua doi tuong
 enum SPRITE_INFO
 {
 	SI_GROUND=-1,
