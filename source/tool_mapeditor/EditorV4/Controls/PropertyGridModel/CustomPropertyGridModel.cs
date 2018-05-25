@@ -227,6 +227,7 @@ namespace EditorV4.Controls.PropertyGridModel
     /// <summary>
     /// Custom property class 
     /// </summary>
+    [Serializable]
     public class CustomProperty
     {
         private string sName = string.Empty;

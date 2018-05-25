@@ -102,6 +102,10 @@ namespace EditorV4.Services
 
         public void Save(string path)
         {
+            if(path.Contains("."))
+            {
+                path = path.Substring(0, path.IndexOf("."));
+            }
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
             string tilesheetPath = path + "\\tilesheet.png";
@@ -272,6 +276,18 @@ namespace EditorV4.Services
                 builder.Append(obj.Width);
                 builder.Append("\t");
                 builder.Append(obj.Height);
+                var customPropeties = obj.GetCustomProperties();
+                foreach(var cProperty in customPropeties)
+                {
+                    var name = obj.GetValue(cProperty).ToString();
+                    if (name!="")
+                    {
+                        builder.Append("\t");
+                        builder.Append(cProperty);
+                        builder.Append("\t");
+                        builder.Append(name);
+                    }
+                }
             }
             StreamWriter stream = new StreamWriter(objectsPath);
             stream.Write(builder.ToString());
