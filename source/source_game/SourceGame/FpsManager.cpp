@@ -9,7 +9,7 @@ FpsManager* _FpsManager = autoFreeFpsManager;
 double PCFreq = 0.0;
 __int64 CounterStart = 0;
 
-int FPS = 61;
+int FPS = 71;
 
 
 FpsManager::FpsManager()

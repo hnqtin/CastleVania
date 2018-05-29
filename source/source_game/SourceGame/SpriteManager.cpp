@@ -72,6 +72,15 @@ SpriteManager::SpriteManager()
 	sprites[SI_EXPLOSION_EFFECT]->readInfo("Data/Sprites/Enemies/explosion.info.txt");
 	sprites[SI_EXPLOSION_EFFECT]->img = enemiesImage;
 
+	sprites[SI_GHOST] = new Sprite();
+	sprites[SI_GHOST]->readInfo("Data/Sprites/Enemies/ghost.info.txt");
+	sprites[SI_GHOST]->img = enemiesImage;
+
+
+	sprites[SI_MEO] = new Sprite();
+	sprites[SI_MEO]->readInfo("Data/Sprites/Enemies/meo.info.txt");
+	sprites[SI_MEO]->img = enemiesImage;
+
 	//sprites[SI_EXPLOSION_EFFECT] = new Sprite();
 	//sprites[SI_EXPLOSION_EFFECT]->ReadFromFile("Data/Sprites/ExplosionEffect/info.simple.txt", "Data/Sprites/ExplosionEffect/image.png");
 	//sprites[SI_EXPLOSION_EFFECT]->img->direction = Left;

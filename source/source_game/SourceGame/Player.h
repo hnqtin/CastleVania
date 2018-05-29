@@ -28,7 +28,10 @@ class Player :
 
 	DelayTime d;
 
+	bool isOnAttack;
+
 public:
+	void setIsOnAttack(bool isOnAttack);
 	CREATE_INSTANCE_INSIDE(Player);
 	Player();
 	~Player();

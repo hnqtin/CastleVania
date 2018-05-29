@@ -1,6 +1,11 @@
 #include "Player.h"
 CREATE_INSTANCE_OUTSIDE(Player);
+#include"ConsoleLogger.h"
 
+void Player::setIsOnAttack(bool isOnAttack)
+{
+	this->isOnAttack = isOnAttack;
+}
 
 Player::Player()
 {
@@ -26,6 +31,20 @@ void Player::update()
 {
 	d.update();
 	SIMON_PLAYER_ACTION action;
+
+	if (getIsLastFrame() && isOnAttack)
+	{
+		setIsOnAttack(false);
+		consoleLogger->LogLine(getActionFrameIndex());
+	}
+
+	if (key->isAttackPress)
+	{
+		setIsOnAttack(true);
+	}
+
+
+
 	if (isOnGround()) // is on ground
 	{
 		if (key->isPDown)
@@ -52,6 +71,11 @@ void Player::update()
 			//sit down
 			action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_JUMP;
 			setHeight(getGlobalValue("player_jump_height"));
+
+			if (isOnAttack)
+			{
+				action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK_SIT;
+			}
 		}
 		else // is not sit
 		{
@@ -69,7 +93,13 @@ void Player::update()
 				setVx(0);
 				action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAND;
 			}
-			if (key->isJumpPress && isOnGround()) //is key jump press
+
+			if (isOnAttack)
+			{
+				action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK;
+			}
+
+			if (key->isJumpPress) //is key jump press
 			{
 				setVy(getGlobalValue("player_vy_jump"));
 			}
@@ -85,6 +115,12 @@ void Player::update()
 			action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAND;
 			setHeight(getGlobalValue("player_height"));
 		}
+
+		if (isOnAttack)
+		{
+			action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK;
+		}
+
 	}
 
 

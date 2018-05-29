@@ -16,14 +16,23 @@ void BaseObject::performUpdate()
 	if (!isAlive())
 		return;
 
-	if (sprite != 0 && animationDelay->atTime())
+	if (sprite != 0)
 	{
-		this->sprite->update(actionIndex, actionFrameIndex);
-		if (actionFrameIndex == 0)
+		// truoc khi update frame
+		int previousActionFrameIndex = actionFrameIndex;
+		if (animationDelay->atTime())
 		{
+			this->sprite->update(actionIndex, actionFrameIndex);
+
+		}
+		setIsLastFrame(false);
+		if (actionFrameIndex == 0 && previousActionFrameIndex == sprite->anims[getAction()].frameCount - 1)
+		{
+			setIsLastFrame(true);
 			onLastFrameAnimation();
 		}
 	}
+
 
 	updateLocation();
 	update();
@@ -34,6 +43,8 @@ void BaseObject::render()
 	if (sprite == 0)
 		return;
 	if (!isAlive())
+		return;
+	if (!getRenderActive())
 		return;
 	int xV, yV;
 	Camera::getInstance()->getWorldToViewLocation(getX(), getY(), xV, yV);
@@ -76,6 +87,9 @@ BaseObject::BaseObject()
 	animationDelay = new GameTime();
 	setInterval(100);
 	setAlive(true);
+	setRenderActive(true);
+	setIsLastFrame(false);
+
 }
 
 
@@ -127,6 +141,15 @@ void BaseObject::setActionFrameIndex(int actionFrameIndex)
 	this->actionFrameIndex = actionFrameIndex;
 }
 
+void BaseObject::setRenderActive(bool renderActive)
+{
+	this->renderActive = renderActive;
+}
+bool BaseObject::getRenderActive()
+{
+	return this->renderActive;
+}
+
 void BaseObject::setInterval(int interval)
 {
 	this->animationDelay->setTickPerFrame(interval);
@@ -175,6 +198,16 @@ bool BaseObject::isAlive()
 void BaseObject::setAlive(bool alive)
 {
 	this->alive = alive;
+}
+
+
+bool BaseObject::getIsLastFrame()
+{
+	return this->isLastFrame;
+}
+void BaseObject::setIsLastFrame(bool isLastFrame)
+{
+	this->isLastFrame = isLastFrame;
 }
 
 bool BaseObject::canCollision()

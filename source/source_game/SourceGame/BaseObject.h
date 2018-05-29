@@ -23,10 +23,15 @@ private:
 	Direction direction;
 	// dung animation
 	bool pauseAnimation;
-	// xem doi tuong co hoat dong khong
+	// xem doi tuong co ton tai khong
+	// ton tai (co update co render va co xet va cham)
 	bool alive;
 	// dung de restore location
 	Rect* initBox;
+	bool renderActive;
+
+	bool isLastFrame;
+
 protected:
 	virtual	void update();
 public:
@@ -38,6 +43,8 @@ public:
 	int getCurrentFrameHeight();
 	void setAction(int actionIndex);
 	void setActionFrameIndex(int actionFrameIndex);
+	void setRenderActive(bool renderActive);
+	bool getRenderActive();
 	void setInterval(int interval);
 	int getInterval();
 	Rect* getInitBox();
@@ -46,6 +53,9 @@ public:
 
 	void setPauseAnimation(bool pauseAnimation);
 	bool isPauseAnimation();
+
+	bool getIsLastFrame();
+	void setIsLastFrame(bool isLastFrame);
 
 	bool isAlive();
 	void setAlive(bool alive);

@@ -36,28 +36,37 @@ void Game::init()
 		getGlobalValue("player_height")
 	);
 
-	Camera::getInstance()->set(0, 222, BACKBUFFER_WIDTH, BACKBUFFER_HEIGHT);
+	Camera::getInstance()->set(getGlobalValue("camera_x"), 
+		getGlobalValue("camera_y"), 
+		BACKBUFFER_WIDTH, 
+		BACKBUFFER_HEIGHT);
 	Camera::getInstance()->setPlayer(Player::getInstance());
 	stages = new World*[2];
 	stages[0] = new World();
+	//stages[0]->init(
+	//	"data/worlds/stage10/tilesheet.png",
+	//	"data/worlds/stage10/matrix.dat",
+	//	"data/worlds/stage10/objects.dat",
+	//	"data/worlds/stage10/quadtree.dat",
+	//	"data/worlds/stage10/collision_type_collides.dat"
+	//	);
 	stages[0]->init(
-		"Data/Worlds/Stage10/tilesheet.png",
-		"Data/Worlds/Stage10/matrix.dat",
-		"Data/Worlds/Stage10/objects.dat",
-		"Data/Worlds/Stage10/quadtree.dat",
-		"Data/Worlds/Stage10/collision_type_collides.dat"
-		);
-
+		"Data/Worlds/Stage01/tilesheet.png",
+		"Data/Worlds/Stage01/matrix.dat",
+		"Data/Worlds/Stage01/objects.dat",
+		"Data/Worlds/Stage01/quadtree.dat",
+		"Data/Worlds/Stage01/collision_type_collides.dat"
+	);
 	stages[0]->setPlayer(Player::getInstance());
 
-	stages[1] = new World();
-	stages[1]->init(
-		"Data/Worlds/Stage12/tilesheet.png",
-		"Data/Worlds/Stage12/matrix.dat",
-		"Data/Worlds/Stage12/objects.dat",
-		"Data/Worlds/Stage12/quadtree.dat",
-		"Data/Worlds/Stage12/collision_type_collides.dat"
-	);
+	//stages[1] = new World();
+	//stages[1]->init(
+	//	"Data/Worlds/Stage12/tilesheet.png",
+	//	"Data/Worlds/Stage12/matrix.dat",
+	//	"Data/Worlds/Stage12/objects.dat",
+	//	"Data/Worlds/Stage12/quadtree.dat",
+	//	"Data/Worlds/Stage12/collision_type_collides.dat"
+	//);
 
 
 	Camera::getInstance()->setCameraLimit(currentStage());

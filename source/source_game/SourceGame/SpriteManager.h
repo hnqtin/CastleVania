@@ -22,6 +22,8 @@ enum SPRITE_INFO
 	SI_WEAPON,//15
 	SI_MISC,//16
 	SI_LINH,//17
+	SI_MEO,//18
+    SI_GHOST,//19
 	SI_COUNT
 };
 class SpriteManager
