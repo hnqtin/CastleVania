@@ -225,9 +225,9 @@ Direction BaseObject::getDirection()
 	return direction;
 }
 
-void BaseObject::setDirection(Direction direction)
+void BaseObject::setDirection(int direction)
 {
-	this->direction = direction;
+	this->direction = (Direction)direction;
 }
 
 void BaseObject::onInit(fstream & fs)

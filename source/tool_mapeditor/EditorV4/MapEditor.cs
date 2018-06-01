@@ -1307,52 +1307,56 @@ namespace EditorV4
             settingForm.ShowDialog();
         }
 
+        public void OpenFile(String fileName)
+        {
+            canvasScrollControl1.canvasWorldViewGroup.WorldViewGroup.EditorCanvas.RemoveObject(Objects);
+            SaveService saveService = new SaveService(this);
+            SaveModel m = saveService.ReadFile(fileName);
+            this.CopyFrom(m);
+            this.TilesModel.CopyFrom(m);
+
+            m.TreeViewObject.TreeView = TreeViewObject;
+            m.TreeViewObject.Load();
+
+            m.TreeViewCollisionTypeCollide.TreeView = TreeViewCollisionTypeCollide;
+            m.TreeViewCollisionTypeCollide.Load();
+
+            //m.CollisionTypeTree.TreeView = CollisionTypeTree;
+            //m.CollisionTypeTree.Load();
+
+            CollisionTypeTree.RootObject.Node.Nodes.Clear();
+
+
+
+            CollisionTypeTable.Rows.Clear();
+            foreach (var collisionType in m.CollisionTypes)
+            {
+                AddCollisionType(collisionType);
+            }
+
+            InitShowTile();
+            canvasScrollTile.canvasWorldViewGroup.WorldViewGroup.EditorCanvas.CanvasState = CanvasState.DRAWABLE;
+            canvasScrollControl1.canvasWorldViewGroup.WorldViewGroup.EditorCanvas.AppendObject(Objects);
+            RefreshCanvas();
+            RefreshTileCanvas();
+
+            foreach (var action in UndoRedoManager.UndoList)
+            {
+                action.ObjectManager = this;
+            }
+
+            foreach (var action in UndoRedoManager.RedoList)
+            {
+                action.ObjectManager = this;
+            }
+            RefreshUndoRedoEnable();
+        }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
             if (openDatFile.ShowDialog() == DialogResult.OK)
             {
-                canvasScrollControl1.canvasWorldViewGroup.WorldViewGroup.EditorCanvas.RemoveObject(Objects);
-                SaveService saveService = new SaveService(this);
-                SaveModel m = saveService.ReadFile(openDatFile.FileName);
-                this.CopyFrom(m);
-                this.TilesModel.CopyFrom(m);
-
-                m.TreeViewObject.TreeView = TreeViewObject;
-                m.TreeViewObject.Load();
-
-                m.TreeViewCollisionTypeCollide.TreeView = TreeViewCollisionTypeCollide;
-                m.TreeViewCollisionTypeCollide.Load();
-
-                //m.CollisionTypeTree.TreeView = CollisionTypeTree;
-                //m.CollisionTypeTree.Load();
-
-                CollisionTypeTree.RootObject.Node.Nodes.Clear();
-
-
-
-                CollisionTypeTable.Rows.Clear();
-                foreach (var collisionType in m.CollisionTypes)
-                {
-                    AddCollisionType(collisionType);
-                }
-
-                InitShowTile();
-                canvasScrollTile.canvasWorldViewGroup.WorldViewGroup.EditorCanvas.CanvasState = CanvasState.DRAWABLE;
-                canvasScrollControl1.canvasWorldViewGroup.WorldViewGroup.EditorCanvas.AppendObject(Objects);
-                RefreshCanvas();
-                RefreshTileCanvas();
-
-                foreach (var action in UndoRedoManager.UndoList)
-                {
-                    action.ObjectManager = this;
-                }
-
-                foreach (var action in UndoRedoManager.RedoList)
-                {
-                    action.ObjectManager = this;
-                }
-                RefreshUndoRedoEnable();
+                OpenFile(openDatFile.FileName);
             }
         }
 

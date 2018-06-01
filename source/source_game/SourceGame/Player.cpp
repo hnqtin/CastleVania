@@ -10,6 +10,7 @@ void Player::setIsOnAttack(bool isOnAttack)
 Player::Player()
 {
 	setSprite(SpriteManager::getInstance()->getSprite(SI_SIMON));
+	setCollisionType(CT_PLAYER);
 	setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAND);
 	key = KEY::getInstance();
 	d.init(3000);
@@ -120,7 +121,6 @@ void Player::update()
 		{
 			action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK;
 		}
-
 	}
 
 

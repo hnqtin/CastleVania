@@ -13,8 +13,6 @@ void Meo::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 	Enemy::onCollision(other, nx, ny, collisionTime);
 }
 
-
-
 void Meo::update()
 {
 	switch (meoState)

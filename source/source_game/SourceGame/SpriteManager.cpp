@@ -15,9 +15,10 @@ Sprite ** SpriteManager::getSprites()
 	return sprites;
 }
 
+
 Sprite * SpriteManager::getSprite(SPRITE_INFO si)
 {
-	return sprites[si];
+	return getInstance()->sprites[si];
 }
 
 SpriteManager::SpriteManager()

@@ -23,7 +23,7 @@ void Game::nextStage()
 {
 	currentStageIndex++;
 	Camera::getInstance()->setCameraLimit(currentStage());
-	Camera::getInstance()->set(0, 222, BACKBUFFER_WIDTH, BACKBUFFER_HEIGHT);
+	//Camera::getInstance()->set(0, 222, BACKBUFFER_WIDTH, BACKBUFFER_HEIGHT);
 }
 
 void Game::init()
@@ -51,11 +51,16 @@ void Game::init()
 	//	"data/worlds/stage10/collision_type_collides.dat"
 	//	);
 	stages[0]->init(
-		"Data/Worlds/Stage01/tilesheet.png",
-		"Data/Worlds/Stage01/matrix.dat",
-		"Data/Worlds/Stage01/objects.dat",
-		"Data/Worlds/Stage01/quadtree.dat",
-		"Data/Worlds/Stage01/collision_type_collides.dat"
+		//"Data/Worlds/Stage01/tilesheet.png",
+		//"Data/Worlds/Stage01/matrix.dat",
+		//"Data/Worlds/Stage01/objects.dat",
+		//"Data/Worlds/Stage01/quadtree.dat",
+		//"Data/Worlds/Stage01/collision_type_collides.dat"
+		"Data/Worlds/Stage02/tilesheet.png",
+		"Data/Worlds/Stage02/matrix.dat",
+		"Data/Worlds/Stage02/objects.dat",
+		"Data/Worlds/Stage02/quadtree.dat",
+		"Data/Worlds/Stage02/collision_type_collides.dat"
 	);
 	stages[0]->setPlayer(Player::getInstance());
 

@@ -34,7 +34,7 @@ class SpriteManager
 public:
 	static SpriteManager* getInstance();
 	Sprite** getSprites();
-	Sprite* getSprite(SPRITE_INFO si);
+ 	static Sprite* getSprite(SPRITE_INFO si);
 	SpriteManager();
 	~SpriteManager();
 };

@@ -1,6 +1,6 @@
 #pragma once
 #include"PhysicsBox.h"
-#include"GameTime.h"
+#include"DelayTime.h"
 #include"Sprite.h"
 #include"Camera.h"
 #include"SpriteManager.h"
@@ -65,7 +65,7 @@ public:
 	virtual bool canRemoveFromCamera();
 
 	Direction getDirection();
-	void setDirection(Direction direction);
+	void setDirection(int direction);
 
 	virtual void onInit(fstream& fs);
 	void setSpriteId(int spriteId);

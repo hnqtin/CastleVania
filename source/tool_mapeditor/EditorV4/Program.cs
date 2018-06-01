@@ -14,11 +14,17 @@ namespace EditorV4
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(String[] args)
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MapEditor());
+            var mapEditorForm = new MapEditor();
+            if (args.Length > 0)
+            {
+                mapEditorForm.OpenFile(args[0]);
+            }
+            Application.Run(mapEditorForm);
             //Application.Run(new TestForm(10, 10, 16, null));
         }
     }
