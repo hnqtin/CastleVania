@@ -30,7 +30,7 @@ class Bat :
 	// neu isActivity = true thi cho phep con bat xuat hien
 	static bool isActivity;
 public:
-	void onInit(fstream& fs);
+	void onInit(fstream& fs, int worldHeight) override;
 	void setBatState(BAT_STATE batState);
 	void update();
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);

@@ -39,6 +39,7 @@ void MovableBox::setCollisionType(int collisionType)
 
 void MovableBox::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 {
+
 }
 
 void MovableBox::update()

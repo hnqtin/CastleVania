@@ -4,11 +4,12 @@ REGISTER_OBJECT_GAME(Bat, SI_BAT)
 
 bool Bat::isActivity = false;
 
-void Bat::onInit(fstream & fs)
+void Bat::onInit(fstream & fs, int worldHeight)
 {
 	int x, y, width, height, direction;
 	string name;
 	fs >> name >> x >> name >> y >> name >> width >> name >> height >> name >> direction;
+	y = worldHeight - y;
 	discoverSpace.set(x, y, width, height);
 	discoverDirection = (Direction)direction;
 	invisibleDelay.init(getGlobalValue("bat_invisible_delay"));
@@ -59,6 +60,7 @@ void Bat::update()
 		}
 		setY(getInitBox()->getY() + d * sin(alpha * 0.1));
 		Enemy::update();
+		//ra khoi camera
 		if (!Collision::AABBCheck(this, Camera::getInstance()))
 		{
 			setBatState(BAT_STATE_INVISIBLE);
@@ -77,25 +79,24 @@ void Bat::update()
 }
 void Bat::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 {
-	Enemy::onCollision(other, nx, ny, collisionTime);
 }
 
 void Bat::restoreLocation()
 {
+	//khi object ra khoi camera
+
 	BaseObject::restoreLocation();
 	int direction = getDirection();
-	if (direction == -1)
+	//khi object ra khoi camera ma chua thuc hien isActivity = false;
+	if (batState > BAT_STATE_INVISIBLE)
 	{
-		setBatState(BAT_STATE::BAT_STATE_VISIBLE);
+		isActivity = false;
 	}
-	else
-	{
-		setBatState(BAT_STATE::BAT_STATE_INVISIBLE);
-	}
+	setBatState(BAT_STATE::BAT_STATE_INVISIBLE);
 	setPhysicsEnable(false);
 	alpha = 0;
 	setAction(1);
-	setDx(-0.5);
+	setDx(0);
 
 }
 

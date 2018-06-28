@@ -72,6 +72,8 @@ void Player::update()
 			//sit down
 			action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_JUMP;
 			setHeight(getGlobalValue("player_jump_height"));
+			setDx(0);
+			setVx(0);
 
 			if (isOnAttack)
 			{

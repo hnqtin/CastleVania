@@ -8,7 +8,7 @@ void Ghost::setGhostState(GHOST_STATE ghostState)
 	this->ghostState = ghostState;
 }
 
-void Ghost::onInit(fstream & fs)
+void Ghost::onInit(fstream & fs, int worldHeight)
 {
 	string name;
 	fs >> name;

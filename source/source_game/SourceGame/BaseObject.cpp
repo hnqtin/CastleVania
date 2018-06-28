@@ -73,6 +73,7 @@ void BaseObject::onLastFrameAnimation()
 {
 }
 
+
 int BaseObject::distanceHorToFirstLocation()
 {
 	return abs(this->getMidX() - initBox->getMidX());
@@ -230,7 +231,7 @@ void BaseObject::setDirection(int direction)
 	this->direction = (Direction)direction;
 }
 
-void BaseObject::onInit(fstream & fs)
+void BaseObject::onInit(fstream & fs, int worldHeight)
 {
 }
 

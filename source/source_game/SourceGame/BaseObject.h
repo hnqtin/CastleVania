@@ -67,12 +67,13 @@ public:
 	Direction getDirection();
 	void setDirection(int direction);
 
-	virtual void onInit(fstream& fs);
+	virtual void onInit(fstream& fs,int worldHeight);
 	void setSpriteId(int spriteId);
 
 	void performUpdate();
 	virtual void render();
 	virtual void onLastFrameAnimation();
+
 
 	int distanceHorToFirstLocation();
 

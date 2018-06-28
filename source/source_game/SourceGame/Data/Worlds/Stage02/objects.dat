@@ -1,5 +1,5 @@
 27
-3	1	223	326	16	16	BatDiscoverSpaceX	80	BatDiscoverSpaceY	336	BatDiscoverSpaceWidth	48	BatDiscoverSpaceHeight	16	BatDiscoverSpaceDirection	1
+3	1	239	319	16	16	BatDiscoverSpaceX	80	BatDiscoverSpaceY	336	BatDiscoverSpaceWidth	48	BatDiscoverSpaceHeight	16	BatDiscoverSpaceDirection	1
 10	1	67	627	16	30
 10	1	177	624	16	30
 10	1	-80	374	16	30
@@ -20,9 +20,9 @@
 -1	0	384	449	129	15
 -1	0	416	352	96	15
 -1	0	480	288	33	15
-3	1	222	369	16	16	BatDiscoverSpaceX	128	BatDiscoverSpaceY	366	BatDiscoverSpaceWidth	48	BatDiscoverSpaceHeight	16	BatDiscoverSpaceDirection	1
-3	1	1	430	16	16	BatDiscoverSpaceX	65	BatDiscoverSpaceY	430	BatDiscoverSpaceWidth	189	BatDiscoverSpaceHeight	16	BatDiscoverSpaceDirection	-1
-3	1	1	367	16	16	BatDiscoverSpaceX	128	BatDiscoverSpaceY	366	BatDiscoverSpaceWidth	48	BatDiscoverSpaceHeight	16	BatDiscoverSpaceDirection	-1
-3	1	2	318	16	16	BatDiscoverSpaceX	80	BatDiscoverSpaceY	336	BatDiscoverSpaceWidth	48	BatDiscoverSpaceHeight	16	BatDiscoverSpaceDirection	-1
+3	1	238	368	16	16	BatDiscoverSpaceX	128	BatDiscoverSpaceY	371	BatDiscoverSpaceWidth	47	BatDiscoverSpaceHeight	12	BatDiscoverSpaceDirection	1
+3	1	10	430	16	16	BatDiscoverSpaceX	8	BatDiscoverSpaceY	417	BatDiscoverSpaceWidth	247	BatDiscoverSpaceHeight	30	BatDiscoverSpaceDirection	-1
+3	1	10	368	16	16	BatDiscoverSpaceX	128	BatDiscoverSpaceY	371	BatDiscoverSpaceWidth	47	BatDiscoverSpaceHeight	12	BatDiscoverSpaceDirection	-1
+3	1	3	318	16	16	BatDiscoverSpaceX	80	BatDiscoverSpaceY	336	BatDiscoverSpaceWidth	48	BatDiscoverSpaceHeight	16	BatDiscoverSpaceDirection	-1
 -1	0	-15	284	0	0
-3	1	221	422	16	16	BatDiscoverSpaceX	65	BatDiscoverSpaceY	430	BatDiscoverSpaceWidth	189	BatDiscoverSpaceHeight	16	BatDiscoverSpaceDirection	1
+3	1	239	428	16	16	BatDiscoverSpaceX	8	BatDiscoverSpaceY	417	BatDiscoverSpaceWidth	247	BatDiscoverSpaceHeight	30	BatDiscoverSpaceDirection	1

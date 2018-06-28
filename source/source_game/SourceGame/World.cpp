@@ -3,17 +3,18 @@
 #include"ConsoleLogger.h"
 #include"AdditionalObject.h"
 
-
 void World::init(const char* tilesheetPath,
 	const char* matrixPath,
 	const char* objectsPath,
 	const char* quadtreePath,
-	const char* collisionTypeCollidesPath)
+	const char* collisionTypeCollidesPath,
+	const char * cameraLocationPath)
 {
 	TileMap::init(tilesheetPath, matrixPath);
 	initCollisionTypeCollides(collisionTypeCollidesPath);
 	initObjects(objectsPath);
 	initQuadtree(quadtreePath);
+	initCameraLocation(cameraLocationPath);
 
 }
 
@@ -45,7 +46,7 @@ void World::initObjects(const char * objectsPath)
 		gameObject->setInitBox(initBox);
 		gameObject->setSpriteId(spriteId);
 		gameObject->setCollisionType(collisionType);
-		gameObject->onInit(fs);
+		gameObject->onInit(fs, getWorldHeight());
 		gameObjects[i] = gameObject;
 		//collisionObjectCollection.getCollection((COLLISION_TYPE)collisionType)->_Add(gameObject);
 	}
@@ -68,6 +69,21 @@ void World::initCollisionTypeCollides(const char * collisionTypeCollidesPath)
 		fs >> c1 >> c2;
 		collisionTypeCollides[i] = new CollisionTypeCollide((COLLISION_TYPE)c1, (COLLISION_TYPE)c2);
 	}
+}
+
+void World::initCameraLocation(const char * cameraLocationPath)
+{
+	ifstream fs(cameraLocationPath);
+	ignoreLineIfstream(fs, 1);
+	fs >> cameraStartX >> cameraStartY;
+	ignoreLineIfstream(fs, 2);
+	fs >> simonStartX >> simonStartY;
+}
+
+void World::resetCameraAndPlayerLocation()
+{
+	camera->setLocation(cameraStartX, cameraStartY);
+	player->setLocation(simonStartX, simonStartY);
 }
 
 void World::setPlayer(MovableObject * player)

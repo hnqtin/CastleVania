@@ -1,7 +1,10 @@
 #pragma once
 
+#include<fstream>
+using namespace std;
 extern double getGlobalValue(const char* key);
 
+extern void ignoreLineIfstream(ifstream& fs, int lineCount);
 #include"List.h"
 
 #pragma region String

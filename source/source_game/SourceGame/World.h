@@ -8,6 +8,7 @@
 #include"ICameraLimit.h"
 #include"PlayerWeapon.h"
 #include"QuadTree.h"
+#include"Config.h"
 class World :
 	public TileMap,
 	public ICameraLimit
@@ -20,15 +21,24 @@ class World :
 	int nCollisionTypeCollides;
 	MovableObject* player;
 	QuadTree quadTree;
+
+	int cameraStartX;
+	int cameraStartY;
+	int simonStartX;
+	int simonStartY;
+
 public:
 	void init(const char* tilesheetPath,
 		const char* matrixPath,
 		const char* objectsPath,
 		const char* quadtreePath,
-		const char* collisionTypeCollidesPath);
+		const char* collisionTypeCollidesPath,
+		const char* cameraLocationPath);
 	void initObjects(const char* objectsPath);
 	void initQuadtree(const char* quadtreePath);
 	void initCollisionTypeCollides(const char* collisionTypeCollidesPath);
+	void initCameraLocation(const char* cameraLocationPath);
+	void resetCameraAndPlayerLocation();
 
 	void setPlayer(MovableObject* player);
 

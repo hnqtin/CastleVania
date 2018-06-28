@@ -16,6 +16,7 @@ void Enemy::setDirectionFollowPlayer()
 
 void Enemy::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 {
+	MovableObject::onCollision(other, nx, ny, collisionTime);
 }
 
 Enemy::Enemy()
