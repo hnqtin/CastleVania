@@ -33,12 +33,13 @@ void Ghost::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 
 void Ghost::update()
 {
-	int d = getGlobalValue("ghost_distance_to_activ");
 	switch (ghostState)
 	{
 	case GHOST_STATE_INVISIBLE:
 		setRenderActive(false);
-		if (Player::getInstance()->getMidX() - getMidX() > d)
+		setVx(0);
+		setDx(0);
+		if (Player::getInstance()->getMidX() - getMidX() > getGlobalValue("ghost_distance_to_activ"))
 		{
 			setGhostState(GHOST_STATE_VISIBLE);
 			setRenderActive(true);
@@ -69,7 +70,7 @@ void Ghost::restoreLocation()
 
 Ghost::Ghost()
 {
-	
+
 }
 
 

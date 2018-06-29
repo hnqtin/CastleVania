@@ -2,6 +2,7 @@
 #include"Collision.h"
 #include"ConsoleLogger.h"
 #include"AdditionalObject.h"
+#include"SimonRope.h"
 
 void World::init(const char* tilesheetPath,
 	const char* matrixPath,
@@ -110,6 +111,7 @@ void World::update()
 {
 	quadTree.update(getCollisionsObjectCollection());
 	camera->update();
+	SimonRope::getInstance()->performUpdate();
 	if (player != 0)
 		player->performUpdate();
 	AdditionalObject::objectsUpdate();
@@ -149,6 +151,8 @@ void World::render()
 	}
 	if (player != 0)
 		player->render();
+
+	SimonRope::getInstance()->render();
 }
 
 int World::getLeft() { return 0; }

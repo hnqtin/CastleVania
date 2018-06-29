@@ -36,9 +36,9 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("ghost_vx", 60));
 		globals->insert(pair<const char*, double>("ghost_distance_to_activ", 100));
 
-		globals->insert(pair<const char*, double>("meo_distance_to_activ", 50));
-		globals->insert(pair<const char*, double>("meo_vy_jump", 180));
-		globals->insert(pair<const char*, double>("meo_vx", 120));
+		globals->insert(pair<const char*, double>("panther_distance_to_activ", 50));
+		globals->insert(pair<const char*, double>("panther_vy_jump", 100));
+		globals->insert(pair<const char*, double>("panther_vx", 120));
 
 		globals->insert(pair<const char*, double>("merman_distance_to_activ", 50));
 		globals->insert(pair<const char*, double>("merman_vy_jump", 300));
@@ -51,8 +51,10 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("bat_bankinh", 20));
 		globals->insert(pair<const char*, double>("bat_invisible_delay", 1000));
 		globals->insert(pair<const char*, double>("bat_dx", 1));
-		
-		
+
+		globals->insert(pair<const char*, double>("object_animation_interval", 120));
+
+		globals->insert(pair<const char*, double>("weapon_change_color_time", 40));
 	}
 	return globals->at(key);
 }

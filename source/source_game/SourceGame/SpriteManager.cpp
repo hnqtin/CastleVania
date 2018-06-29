@@ -46,7 +46,7 @@ SpriteManager::SpriteManager()
 	sprites[SI_EAGLE]->img = enemiesImage;
 
 	sprites[SI_PANTHER] = new Sprite();
-	sprites[SI_PANTHER]->readInfo("Data/Sprites/Enemies/panther.info.txt");
+	sprites[SI_PANTHER]->readInfo("Data/Sprites/Enemies/meo.info.txt");
 	sprites[SI_PANTHER]->img = enemiesImage;
 
 	sprites[SI_BAT] = new Sprite();
@@ -78,9 +78,9 @@ SpriteManager::SpriteManager()
 	sprites[SI_GHOST]->img = enemiesImage;
 
 
-	sprites[SI_MEO] = new Sprite();
-	sprites[SI_MEO]->readInfo("Data/Sprites/Enemies/meo.info.txt");
-	sprites[SI_MEO]->img = enemiesImage;
+	//sprites[SI_PANTHER] = new Sprite();
+	//sprites[SI_PANTHER]->readInfo("Data/Sprites/Enemies/panther.info.txt");
+	//sprites[SI_PANTHER]->img = enemiesImage;
 
 	//sprites[SI_EXPLOSION_EFFECT] = new Sprite();
 	//sprites[SI_EXPLOSION_EFFECT]->ReadFromFile("Data/Sprites/ExplosionEffect/info.simple.txt", "Data/Sprites/ExplosionEffect/image.png");

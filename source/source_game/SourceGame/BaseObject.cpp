@@ -86,7 +86,7 @@ BaseObject::BaseObject()
 	actionIndex = 0;
 	actionFrameIndex = 0;
 	animationDelay = new GameTime();
-	setInterval(100);
+	setInterval(getGlobalValue("object_animation_interval"));
 	setAlive(true);
 	setRenderActive(true);
 	setIsLastFrame(false);

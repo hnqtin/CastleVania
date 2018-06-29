@@ -157,12 +157,11 @@
     <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="globalsParameter.cpp" />
-    <ClCompile Include="IgorEnemy.cpp" />
     <ClCompile Include="KEY.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="linh.cpp" />
     <ClCompile Include="Logger.cpp" />
-    <ClCompile Include="Meo.cpp" />
+    <ClCompile Include="Panther.cpp" />
     <ClCompile Include="Merman.cpp" />
     <ClCompile Include="MermanBullet.cpp" />
     <ClCompile Include="MovableBox.cpp" />
@@ -175,6 +174,7 @@
     <ClCompile Include="QuadTreeNode.cpp" />
     <ClCompile Include="ReadFileManager.cpp" />
     <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="SimonRope.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="TestObject.cpp" />
@@ -205,13 +205,12 @@
     <ClInclude Include="GameTime.h" />
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="ICameraLimit.h" />
-    <ClInclude Include="IgorEnemy.h" />
     <ClInclude Include="KEY.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="linh.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Logger.h" />
-    <ClInclude Include="Meo.h" />
+    <ClInclude Include="Panther.h" />
     <ClInclude Include="Merman.h" />
     <ClInclude Include="MermanBullet.h" />
     <ClInclude Include="MovableBox.h" />
@@ -225,6 +224,7 @@
     <ClInclude Include="QuadTreeNode.h" />
     <ClInclude Include="ReadFileManager.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="SimonRope.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="TestObject.h" />

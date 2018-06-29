@@ -1,6 +1,7 @@
 #include "Player.h"
 CREATE_INSTANCE_OUTSIDE(Player);
 #include"ConsoleLogger.h"
+#include"SimonRope.h"
 
 void Player::setIsOnAttack(bool isOnAttack)
 {
@@ -78,6 +79,7 @@ void Player::update()
 			if (isOnAttack)
 			{
 				action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK_SIT;
+				SimonRope::getInstance()->setAlive(true);
 			}
 		}
 		else // is not sit
@@ -100,6 +102,7 @@ void Player::update()
 			if (isOnAttack)
 			{
 				action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK;
+				SimonRope::getInstance()->setAlive(true);
 			}
 
 			if (key->isJumpPress) //is key jump press
@@ -122,6 +125,7 @@ void Player::update()
 		if (isOnAttack)
 		{
 			action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK;
+			SimonRope::getInstance()->setAlive(true);
 		}
 	}
 
