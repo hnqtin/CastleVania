@@ -1,5 +1,4 @@
 #include "PhysicsBox.h"
-#include"FpsManager.h"
 
 
 PhysicsBox::PhysicsBox()
@@ -63,14 +62,13 @@ void PhysicsBox::setPhysicsEnable(bool physicsEnable)
 	this->physicsEnable = physicsEnable;
 }
 
-void PhysicsBox::updatePhysics()
+void PhysicsBox::updatePhysics(float dt)
 {
-	double time = _FpsManager->getTimeGame();
 	if (isPhysicsEnable())
 	{
-		setVx(getVx() + getAx()*time);
-		setVy(getVy() + getAy()*time);
-		setDx(getVx()*time);
-		setDy(getVy()*time);
+		setVx(getVx() + getAx()*dt);
+		setVy(getVy() + getAy()*dt);
+		setDx(getVx()*dt);
+		setDy(getVy()*dt);
 	}
 }

@@ -14,7 +14,7 @@ public:
 	void setGhostState(GHOST_STATE ghostState);
 	void onInit(fstream& fs, int worldHeight) override;
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
-	void update();
+	void update(float dt);
 	void restoreLocation();
 	Ghost();
 	~Ghost();

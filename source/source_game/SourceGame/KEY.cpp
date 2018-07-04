@@ -1,6 +1,9 @@
 #include "KEY.h"
 
-
+DWORD getKeyChar(char keyChar)
+{
+	return ((int)keyChar - 'a') + 0x41;
+}
 
 KEY * KEY::instance = 0;
 KEY * KEY::getInstance()
@@ -12,25 +15,23 @@ KEY * KEY::getInstance()
 
 void KEY::update()
 {
-	CKeyboard::getInstance()->UpdateKeyboard();
-
-	isUpDown = CKeyboard::getInstance()->IsKeyDown(DIK_UP);
-	isPDown = CKeyboard::getInstance()->IsKeyDown(DIK_P);
+	isUpDown = GetAsyncKeyState(VK_UP);
+	isPDown = GetAsyncKeyState(VK_DOWN);
 	isUpPress = isUpDown && !isPreviousUpDown;
 	isPreviousUpDown = isUpDown;
 
-	isDownDown = CKeyboard::getInstance()->IsKeyDown(DIK_DOWN);
+	isDownDown = GetAsyncKeyState(VK_DOWN);
 	isDownPress = isDownDown && !isPreviousDownDown;
 	isPreviousDownDown = isDownDown;
 
-	isLeftDown = CKeyboard::getInstance()->IsKeyDown(DIK_LEFT);
-	isRightDown = CKeyboard::getInstance()->IsKeyDown(DIK_RIGHT); // || CKeyboard::getInstance()->IsKeyDown(DIK_D)
+	isLeftDown = GetAsyncKeyState(VK_LEFT);
+	isRightDown = GetAsyncKeyState(VK_RIGHT); 
 
-	isJumpDown = CKeyboard::getInstance()->IsKeyDown(DIK_SPACE); // || CKeyboard::getInstance()->IsKeyDown(DIK_X)
+	isJumpDown = GetAsyncKeyState(VK_SPACE);
 	isJumpPress = isJumpDown && !isPreviousJumpDown;
 	isPreviousJumpDown = isJumpDown;
 
-	isAttackDown = CKeyboard::getInstance()->IsKeyDown(DIK_Z);
+	isAttackDown = GetAsyncKeyState(getKeyChar('z'));
 	isAttackPress = isAttackDown && !isPreviousAttackDown;
 	isPreviousAttackDown = isAttackDown;
 

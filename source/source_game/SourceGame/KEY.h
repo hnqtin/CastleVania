@@ -1,5 +1,5 @@
 #pragma once
-#include"Keyboard.h"
+#include<Windows.h>
 class KEY
 {
 public:

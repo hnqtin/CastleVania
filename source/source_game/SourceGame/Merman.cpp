@@ -29,7 +29,7 @@ void Merman::onCollision(MovableBox * other, int nx, int ny, float collisionTime
 	}
 }
 
-void Merman::update()
+void Merman::update(float dt)
 {
 	int d = getGlobalValue("merman_distance_to_activ");
 	switch (mermanState)
@@ -51,12 +51,12 @@ void Merman::update()
 			setDirectionFollowPlayer();
 			runDelay.start();
 		}
-		Enemy::update();
+		Enemy::update(dt);
 		break;
 	case MERMAN_STATE_RUN:
 		runDelay.update();
 		setVx(getGlobalValue("merman_vx")*getDirection());
-		Enemy::update();
+		Enemy::update(dt);
 		if (runDelay.isTerminated())
 		{
 			setMermanState(MERMAN_STATE_ATTACK);
@@ -71,7 +71,7 @@ void Merman::update()
 	case MERMAN_STATE_ATTACK:
 		setVx(0);
 		attackDelay.update();
-		Enemy::update();
+		Enemy::update(dt);
 		
 		if (attackDelay.isTerminated())
 		{

@@ -27,7 +27,7 @@ class Merman :
 	DelayTime attackDelay;
 
 public:
-	void update();
+	void update(float dt);
 	void setMermanState(MERMAN_STATE mermanState);
 	MERMAN_STATE getMermanState();
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);

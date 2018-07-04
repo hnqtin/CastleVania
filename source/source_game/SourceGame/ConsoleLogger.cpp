@@ -1,8 +1,7 @@
 #include "ConsoleLogger.h"
-#include"ObjectContainer.h"
 #include<Windows.h>
 
-ObjectContainer<ConsoleLogger> consoleLogger = new ConsoleLogger();
+ConsoleLogger* consoleLogger = new ConsoleLogger();
 
 void ConsoleLogger::Log(const int & value)
 {

@@ -17,7 +17,7 @@ public:
 	bool isPhysicsEnable();
 	void setPhysicsEnable(bool physicsEnable);
 
-	void updatePhysics();
+	void updatePhysics(float dt);
 
 	PhysicsBox();
 	~PhysicsBox();

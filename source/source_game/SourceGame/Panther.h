@@ -22,7 +22,7 @@ class Panther :
 public:
 	void setMeoState(PANTHER_STATE pantherState);
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
-	void update();
+	void update(float dt);
 	void restoreLocation();
 	Panther();
 	~Panther();

@@ -32,7 +32,7 @@ class Bat :
 public:
 	void onInit(fstream& fs, int worldHeight) override;
 	void setBatState(BAT_STATE batState);
-	void update();
+	void update(float dt);
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 	void restoreLocation();
 	Bat();

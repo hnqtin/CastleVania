@@ -20,7 +20,7 @@ void Bat::setBatState(BAT_STATE batState)
 	this->batState = batState;
 }
 
-void Bat::update()
+void Bat::update(float dt)
 {
 	switch (batState)
 	{
@@ -59,7 +59,7 @@ void Bat::update()
 			alpha -= 360;
 		}
 		setY(getInitBox()->getY() + d * sin(alpha * 0.1));
-		Enemy::update();
+		Enemy::update(dt);
 		//ra khoi camera
 		if (!Collision::AABBCheck(this, Camera::getInstance()))
 		{

@@ -4,7 +4,7 @@
 #include"AdditionalObject.h"
 #include"SimonRope.h"
 
-void World::init(const char* tilesheetPath,
+void Stage::init(const char* tilesheetPath,
 	const char* matrixPath,
 	const char* objectsPath,
 	const char* quadtreePath,
@@ -19,7 +19,7 @@ void World::init(const char* tilesheetPath,
 
 }
 
-void World::initObjects(const char * objectsPath)
+void Stage::initObjects(const char * objectsPath)
 {
 	auto objectFuncts = getCreateObjectFuncts();
 	int collisionType, spriteId, x, y, width, height;
@@ -41,6 +41,8 @@ void World::initObjects(const char * objectsPath)
 			gameObject = new BaseObject();
 		}
 
+
+
 		gameObject->set(x, getWorldHeight() - y, width, height);
 		Rect* initBox = new Rect();
 		initBox->set(x, getWorldHeight() - y, width, height);
@@ -53,12 +55,12 @@ void World::initObjects(const char * objectsPath)
 	}
 }
 
-void World::initQuadtree(const char * quadtreePath)
+void Stage::initQuadtree(const char * quadtreePath)
 {
 	quadTree.build(quadtreePath, gameObjects, getWorldHeight());
 }
 
-void World::initCollisionTypeCollides(const char * collisionTypeCollidesPath)
+void Stage::initCollisionTypeCollides(const char * collisionTypeCollidesPath)
 {
 	fstream fs(collisionTypeCollidesPath);
 	fs >> nCollisionTypeCollides;
@@ -72,7 +74,7 @@ void World::initCollisionTypeCollides(const char * collisionTypeCollidesPath)
 	}
 }
 
-void World::initCameraLocation(const char * cameraLocationPath)
+void Stage::initCameraLocation(const char * cameraLocationPath)
 {
 	ifstream fs(cameraLocationPath);
 	ignoreLineIfstream(fs, 1);
@@ -81,39 +83,39 @@ void World::initCameraLocation(const char * cameraLocationPath)
 	fs >> simonStartX >> simonStartY;
 }
 
-void World::resetCameraAndPlayerLocation()
+void Stage::resetCameraAndPlayerLocation()
 {
 	camera->setLocation(cameraStartX, cameraStartY);
 	player->setLocation(simonStartX, simonStartY);
 }
 
-void World::setPlayer(MovableObject * player)
+void Stage::setPlayer(MovableObject * player)
 {
 	this->player = player;
 }
 
-CollisionsObjectCollection * World::getCollisionsObjectCollection()
+CollisionsObjectCollection * Stage::getCollisionsObjectCollection()
 {
 	return CollisionsObjectCollection::getInstance();
 }
 
-World::World()
+Stage::Stage()
 {
 	camera = Camera::getInstance();
 }
 
 
-World::~World()
+Stage::~Stage()
 {
 }
 
-void World::update()
+void Stage::update(float dt)
 {
 	quadTree.update(getCollisionsObjectCollection());
 	camera->update();
-	SimonRope::getInstance()->performUpdate();
+	SimonRope::getInstance()->performUpdate(dt);
 	if (player != 0)
-		player->performUpdate();
+		player->performUpdate(dt);
 	AdditionalObject::objectsUpdate();
 
 	auto allObjectInFrame = getCollisionsObjectCollection()->getCollection(CT_ALL);
@@ -121,7 +123,7 @@ void World::update()
 	for (size_t i = 0; i < allObjectInFrame->Count; i++)
 	{
 		auto obj = allObjectInFrame->at(i);
-		obj->performUpdate();
+		obj->performUpdate(dt);
 		if (player != 0)
 			Collision::CheckCollision(player, obj);
 	}
@@ -140,7 +142,7 @@ void World::update()
 	}
 }
 
-void World::render()
+void Stage::render()
 {
 	TileMap::render(camera);
 	auto allObjectInFrame = getCollisionsObjectCollection()->getCollection(CT_ALL);
@@ -155,6 +157,6 @@ void World::render()
 	SimonRope::getInstance()->render();
 }
 
-int World::getLeft() { return 0; }
+int Stage::getLeft() { return 0; }
 
-int World::getRight() { return getWorldWidth(); }
+int Stage::getRight() { return getWorldWidth(); }

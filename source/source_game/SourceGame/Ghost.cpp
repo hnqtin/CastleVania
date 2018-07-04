@@ -3,6 +3,7 @@
 
 REGISTER_OBJECT_GAME(Ghost, SI_GHOST)
 
+
 void Ghost::setGhostState(GHOST_STATE ghostState)
 {
 	this->ghostState = ghostState;
@@ -31,7 +32,7 @@ void Ghost::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 	Enemy::onCollision(other, nx, ny, collisionTime);
 }
 
-void Ghost::update()
+void Ghost::update(float dt)
 {
 	switch (ghostState)
 	{
@@ -47,7 +48,7 @@ void Ghost::update()
 		break;
 	case GHOST_STATE_VISIBLE:
 		setVx(getGlobalValue("ghost_vx")*getDirection());
-		Enemy::update();
+		Enemy::update(dt);
 		break;
 	default:
 		break;

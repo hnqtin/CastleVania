@@ -1,7 +1,7 @@
 #include "BaseObject.h"
 
 
-void BaseObject::update()
+void BaseObject::update(float dt)
 {
 	if (sprite == 0)
 		return;
@@ -11,7 +11,7 @@ void BaseObject::update()
 	PhysicsBox::update();
 }
 
-void BaseObject::performUpdate()
+void BaseObject::performUpdate(float dt)
 {
 	if (!isAlive())
 		return;
@@ -35,7 +35,7 @@ void BaseObject::performUpdate()
 
 
 	updateLocation();
-	update();
+	update(dt);
 }
 
 void BaseObject::render()
@@ -153,12 +153,12 @@ bool BaseObject::getRenderActive()
 
 void BaseObject::setInterval(int interval)
 {
-	this->animationDelay->setTickPerFrame(interval);
+	this->animationDelay->setTimeDelay(interval);
 }
 
 int BaseObject::getInterval()
 {
-	return this->animationDelay->getTickPerFrame();
+	return this->animationDelay->getTimeDelay();
 }
 
 Rect * BaseObject::getInitBox()

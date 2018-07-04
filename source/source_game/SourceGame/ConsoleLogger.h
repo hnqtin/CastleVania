@@ -1,5 +1,4 @@
 #pragma once
-#include"ObjectContainer.h"
 #include"Logger.h"
 
 
@@ -24,4 +23,4 @@ public:
    ~ConsoleLogger();
 };
 
-extern ObjectContainer<ConsoleLogger> consoleLogger;
+extern ConsoleLogger* consoleLogger;

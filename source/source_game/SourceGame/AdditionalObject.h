@@ -12,7 +12,7 @@ public:
 	static List<AdditionalObject*>* getObjects();
 	static void objectsUpdate();
 	void setNeedDelete(bool needDelete);
-	void update();
+	void update(float dt);
 	AdditionalObject();
 	~AdditionalObject();
 };

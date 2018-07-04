@@ -29,9 +29,8 @@ void Player::onCollision(MovableBox * other, int nx, int ny, float collisionTime
 
 }
 
-void Player::update()
+void Player::update(float dt)
 {
-	d.update();
 	SIMON_PLAYER_ACTION action;
 
 	if (getIsLastFrame() && isOnAttack)
@@ -49,16 +48,6 @@ void Player::update()
 
 	if (isOnGround()) // is on ground
 	{
-		if (key->isPDown)
-		{
-			d.start();
-		}
-
-		if (d.isTerminated())
-		{
-			setVy(getGlobalValue("player_vy_jump"));
-		}
-
 		setHeight(getGlobalValue("player_height"));
 		if (key->isLeftDown)
 		{
@@ -129,9 +118,14 @@ void Player::update()
 		}
 	}
 
+	// khi danh thi dung lai
+	if (isOnAttack)
+	{
+		setVx(0);
+	}
 
 
 	setAction(action);
-	MovableObject::update();
+	MovableObject::update(dt);
 
 }

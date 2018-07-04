@@ -4,7 +4,7 @@
 #include<d3dx9.h>
 #include<Windows.h>
 #include"Config.h"
-#include"Form.h"
+#include"WindowGame.h"
 
 class DirectXTool
 {
@@ -16,15 +16,13 @@ public:
 
 private:
 	LPDIRECT3DDEVICE9 d3ddv;// Cong cu load hinh ve hinh ve surface
-	LPDIRECT3DSURFACE9 frameBuffer;// Hinh luon nam tren man hinh
 	LPDIRECT3DSURFACE9 backBuffer;// Bo nho tam
 	LPD3DXSPRITE sprite;
 	HWND hWnd;
 	static DirectXTool* instance;
 
-	bool isInitDirectX();
+	bool initDirectX();
 	bool isInitSprite();
-	bool isSetFrameBuffer();
 	bool isSetBackBuffer();
 	void init();
 	void error();

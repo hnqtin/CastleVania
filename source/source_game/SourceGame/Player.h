@@ -37,6 +37,6 @@ public:
 	~Player();
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 
-	void update();
+	void update(float dt);
 };
 

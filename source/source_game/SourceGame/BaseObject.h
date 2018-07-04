@@ -33,7 +33,7 @@ private:
 	bool isLastFrame;
 
 protected:
-	virtual	void update();
+	virtual	void update(float dt);
 public:
 	Sprite * getSprite();
 	void setSprite(Sprite* sprite);
@@ -70,7 +70,7 @@ public:
 	virtual void onInit(fstream& fs,int worldHeight);
 	void setSpriteId(int spriteId);
 
-	void performUpdate();
+	void performUpdate(float dt);
 	virtual void render();
 	virtual void onLastFrameAnimation();
 

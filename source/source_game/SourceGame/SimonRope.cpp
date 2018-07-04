@@ -12,7 +12,7 @@ SimonRope * SimonRope::getInstance()
 	return instance;
 }
 
-void SimonRope::update()
+void SimonRope::update(float dt)
 {
 	setAlive(false);
 }
@@ -129,7 +129,7 @@ SimonRope::SimonRope()
 	fs >> locations[0].x >> locations[0].y >> locations[1].x >> locations[1].y >> locations[2].x >> locations[2].y;
 	setSprite(SpriteManager::getSprite(SI_WEAPON));
 	simonRopeType = SIMON_ROPE_TYPE_3;
-	changeColorTime.setTickPerFrame(getGlobalValue("weapon_change_color_time"));
+	changeColorTime.setTimeDelay(getGlobalValue("weapon_change_color_time"));
 }
 
 

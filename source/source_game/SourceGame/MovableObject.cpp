@@ -26,11 +26,11 @@ void MovableObject::onCollision(MovableBox * other, int nx, int ny, float collis
 	}
 }
 
-void MovableObject::update()
+void MovableObject::update(float dt)
 {
-	BaseObject::update();
+	BaseObject::update(dt);
 	setIsOnGround(false);
-	updatePhysics();
+	updatePhysics(dt);
 }
 
 bool MovableObject::isOnGround()

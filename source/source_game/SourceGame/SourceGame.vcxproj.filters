@@ -51,12 +51,6 @@
     <ClCompile Include="DirectXTool.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="Form.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
-    <ClCompile Include="FpsManager.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="Function.cpp">
       <Filter>common</Filter>
     </ClCompile>
@@ -67,9 +61,6 @@
       <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="KEY.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
-    <ClCompile Include="Keyboard.cpp">
       <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
@@ -117,19 +108,10 @@
     <ClCompile Include="World.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerWeapon.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="globalsParameter.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="TestObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="linh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -151,6 +133,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SimonRope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowGame.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerWeapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -191,12 +179,6 @@
     <ClInclude Include="DirectXTool.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="Form.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="FpsManager.h">
-      <Filter>common</Filter>
-    </ClInclude>
     <ClInclude Include="Function.h">
       <Filter>common</Filter>
     </ClInclude>
@@ -212,9 +194,6 @@
     <ClInclude Include="KEY.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="Keyboard.h">
-      <Filter>common</Filter>
-    </ClInclude>
     <ClInclude Include="List.h">
       <Filter>common</Filter>
     </ClInclude>
@@ -225,9 +204,6 @@
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="MovableObject.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectContainer.h">
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsBox.h">
@@ -263,22 +239,10 @@
     <ClInclude Include="World.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerWeapon.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="TestObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="linh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Ghost.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bat.h">
@@ -294,6 +258,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SimonRope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowGame.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Ghost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerWeapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

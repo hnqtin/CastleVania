@@ -3,7 +3,7 @@
 
 DirectXTool::DirectXTool(void)
 {
-	this->hWnd = Form::getInstance()->getHandleWindow();
+	this->hWnd = WindowGame::getInstance()->getHandleWindow();
 	init();
 }
 
@@ -23,7 +23,7 @@ DirectXTool* DirectXTool::getInstance()
 }
 
 
-bool DirectXTool::isInitDirectX()
+bool DirectXTool::initDirectX()
 {
 	LPDIRECT3D9 d3d;
 	if (NULL == (d3d = Direct3DCreate9(D3D_SDK_VERSION)))
@@ -61,17 +61,6 @@ bool DirectXTool::isInitSprite()
 	return !FAILED(hr);
 }
 
-bool DirectXTool::isSetFrameBuffer()
-{
-	HRESULT hr = d3ddv->CreateOffscreenPlainSurface(272,
-		192,
-		D3DFMT_X8R8G8B8,
-		D3DPOOL_DEFAULT,
-		&frameBuffer,
-		0);
-	return !FAILED(hr);
-}
-
 bool DirectXTool::isSetBackBuffer()
 {
 	HRESULT hr = d3ddv->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO,
@@ -81,7 +70,7 @@ bool DirectXTool::isSetBackBuffer()
 
 void DirectXTool::init()
 {
-	if (!isInitDirectX() || !isInitSprite() || !isSetBackBuffer() || !isSetFrameBuffer())
+	if (!initDirectX() || !isInitSprite() || !isSetBackBuffer() )
 		error();
 }
 
@@ -99,11 +88,6 @@ void DirectXTool::Release()
 	{
 		d3ddv->Release();
 		d3ddv = 0;
-	}
-	if (frameBuffer)
-	{
-		frameBuffer->Release();
-		frameBuffer = 0;
 	}
 	if (backBuffer)
 	{

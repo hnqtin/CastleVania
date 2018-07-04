@@ -12,7 +12,7 @@ void GameTime::start()
 
 GameTime::GameTime(DWORD tickPerFrame)
 {
-	this->tickPerFrame = tickPerFrame;
+	this->timeDelay = tickPerFrame;
 }
 
 
@@ -22,7 +22,7 @@ bool GameTime::atTime()
 	DWORD now = GetTickCount();
 	deltaTime = now - startTime;
 
-	if(deltaTime>=tickPerFrame)
+	if(deltaTime>=timeDelay)
 	{
 		startTime = GetTickCount();
 		return true;
@@ -43,13 +43,13 @@ void GameTime::setStartTime(DWORD startTime)
 {
 	this->startTime = startTime;
 }
-DWORD GameTime::getTickPerFrame()
+DWORD GameTime::getTimeDelay()
 {
-	return tickPerFrame;
+	return timeDelay;
 }
-void GameTime::setTickPerFrame(DWORD tickPerFrame)
+void GameTime::setTimeDelay(DWORD tickPerFrame)
 {
-	this->tickPerFrame = tickPerFrame;
+	this->timeDelay = tickPerFrame;
 }
 DWORD GameTime::getDeltaTime()
 {

@@ -23,7 +23,7 @@ private:
 public:
 	static SimonRope* getInstance();
 	RopeLocation locations[3];
-	void update() override;
+	void update(float dt) override;
 	void render() override;
 	SimonRope();
 	~SimonRope();

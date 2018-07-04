@@ -8,7 +8,7 @@ protected:
 public:
 	void setIsOnGround(bool onGround);
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
-	void update();
+	void update(float dt) override;
 	bool isOnGround();
 	MovableObject();
 	~MovableObject();

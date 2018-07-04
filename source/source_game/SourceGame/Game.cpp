@@ -14,7 +14,7 @@ Game* Game::getInstance()
 	return instance;
 }
 
-World * Game::currentStage()
+Stage * Game::currentStage()
 {
 	return stages[currentStageIndex];
 }
@@ -41,8 +41,8 @@ void Game::init()
 		BACKBUFFER_WIDTH, 
 		BACKBUFFER_HEIGHT);
 	Camera::getInstance()->setPlayer(Player::getInstance());
-	stages = new World*[2];
-	stages[0] = new World();
+	stages = new Stage*[2];
+	stages[0] = new Stage();
 	//stages[0]->init(
 	//	"data/worlds/stage10/tilesheet.png",
 	//	"data/worlds/stage10/matrix.dat",
@@ -81,9 +81,9 @@ void Game::init()
 	currentStage()->resetCameraAndPlayerLocation();
 }
 
-void Game::update()
+void Game::update(float dt)
 {
-	currentStage()->update();
+	currentStage()->update(dt);
 }
 void Game::render()
 {

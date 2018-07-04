@@ -38,13 +38,13 @@ void AdditionalObject::setNeedDelete(bool needDelete)
 }
 
 
-void AdditionalObject::update()
+void AdditionalObject::update(float dt)
 {
 	if (!Collision::AABBCheck(this, Camera::getInstance()))
 	{
 		this->needDelete = true;
 	}
-	MovableObject::update();
+	MovableObject::update(dt);
 }
 
 AdditionalObject::AdditionalObject()

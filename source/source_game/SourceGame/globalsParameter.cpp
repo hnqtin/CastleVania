@@ -55,6 +55,8 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("object_animation_interval", 120));
 
 		globals->insert(pair<const char*, double>("weapon_change_color_time", 40));
+
+		globals->insert(pair<const char*, double>("game_fps", 70.0f));
 	}
 	return globals->at(key);
 }

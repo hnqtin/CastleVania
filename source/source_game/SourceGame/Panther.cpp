@@ -28,7 +28,7 @@ void Panther::onCollision(MovableBox * other, int nx, int ny, float collisionTim
 
 }
 
-void Panther::update()
+void Panther::update(float dt)
 {
 	switch (pantherState)
 	{
@@ -61,7 +61,7 @@ void Panther::update()
 	default:
 		break;
 	}
-	Enemy::update();
+	Enemy::update(dt);
 }
 
 void Panther::restoreLocation()

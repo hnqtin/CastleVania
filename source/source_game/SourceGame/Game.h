@@ -7,18 +7,18 @@
 class Game
 {
 	static Game* instance;
-	World** stages;
+	Stage** stages;
 
 	int currentStageIndex;
 
 public:
 	static Game* getInstance();
-	World* currentStage();
+	Stage* currentStage();
 
 	void nextStage();
 
 	void init();
-	void update();
+	void update(float dt);
 	void render();
 
 	Game(void);

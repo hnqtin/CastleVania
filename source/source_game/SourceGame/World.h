@@ -9,7 +9,7 @@
 #include"PlayerWeapon.h"
 #include"QuadTree.h"
 #include"Config.h"
-class World :
+class Stage :
 	public TileMap,
 	public ICameraLimit
 {
@@ -43,9 +43,9 @@ public:
 	void setPlayer(MovableObject* player);
 
 	CollisionsObjectCollection* getCollisionsObjectCollection();
-	World();
-	~World();
-	void update();
+	Stage();
+	~Stage();
+	void update(float dt);
 	void render();
 
 	int getLeft();

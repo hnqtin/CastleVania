@@ -80,7 +80,7 @@ float Collision::SweptAABB(MovableBox* M, MovableBox* S, float & normalx, float 
 	float exitTime = MIN(xExit, yExit);
 
 	// Trường hợp không xảy ra va chạm:
-	//Logger::getInstance()->write_text_to_log_file(std::to_string(GetVy()));
+	//Logger::getInstance()->getWidth()rite_text_to_log_file(std::to_string(GetVy()));
 	if (entryTime > exitTime || xEntry < 0.0f && yEntry < 0.0f || xEntry > 1.0f || yEntry > 1.0f)
 	{
 		normalx = 0.0f;
@@ -123,6 +123,107 @@ float Collision::SweptAABB(MovableBox* M, MovableBox* S, float & normalx, float 
 	}
 }
 
+float Collision::SweptAABB2(MovableBox * M, MovableBox * S, float & normalx, float & normaly)
+{
+
+	float xInvEntry, yInvEntry;
+	float xInvExit, yInvExit;
+
+	// find the distance between the objects on the near and far sides for both x and y
+	if (M->getDx() > 0)
+	{
+		xInvEntry = S->getX() - (M->getX() + M->getWidth());
+		xInvExit = (S->getX() + S->getWidth()) - M->getX();
+	}
+	else
+	{
+		xInvEntry = (S->getX() + S->getWidth()) - M->getX();
+		xInvExit = S->getX() - (M->getX() + M->getWidth());
+	}
+
+	if (M->getDy() > 0)
+	{
+		yInvEntry = S->getY() - (M->getY() + M->getHeight());
+		yInvExit = (S->getY() + S->getHeight()) - M->getY();
+	}
+	else
+	{
+		yInvEntry = (S->getY() + S->getHeight()) - M->getY();
+		yInvExit = S->getY() - (M->getY() + M->getHeight());
+	}
+
+	// find time of collision and time of leaving for each axis (if statement is to prevent divide by zero)
+	float xEntry, yEntry;
+	float xExit, yExit;
+
+	if (M->getDx() == 0)
+	{
+		xEntry = -std::numeric_limits<float>::infinity();
+		xExit = std::numeric_limits<float>::infinity();
+	}
+	else
+	{
+		xEntry = xInvEntry / M->getDx();
+		xExit = xInvExit / M->getDx();
+	}
+
+	if (M->getDy() == 0)
+	{
+		yEntry = -std::numeric_limits<float>::infinity();
+		yExit = std::numeric_limits<float>::infinity();
+	}
+	else
+	{
+		yEntry = yInvEntry / M->getDy();
+		yExit = yInvExit / M->getDy();
+	}
+
+	// find the earliest/latest times of collision
+	float entryTime = MAX(xEntry, yEntry);
+	float exitTime = MIN(xExit, yExit);
+
+	// if there was no collision
+	if (entryTime > exitTime || xEntry < 0 && yEntry < 0 || xEntry > 1 || yEntry > 1)
+	{
+		normalx = 0;
+		normaly = 0;
+		return 1;
+	}
+	else // if there was a collision
+	{
+		// calculate normal of collided surface
+		if (xEntry > yEntry)
+		{
+			if (xInvEntry < 0)
+			{
+				normalx = 1;
+				normaly = 0;
+			}
+			else
+			{
+				normalx = -1;
+				normaly = 0;
+			}
+		}
+		else
+		{
+			if (yInvEntry < 0)
+			{
+				normalx = 0;
+				normaly = 1;
+			}
+			else
+			{
+				normalx = 0;
+				normaly = -1;
+			}
+		}
+
+		// return the time of collision
+		return entryTime;
+	}
+}
+
 void Collision::CheckCollision(MovableBox * M, MovableBox * S)
 {
 	if (M->canCollision() == false || S->canCollision() == false)
@@ -139,28 +240,28 @@ void Collision::CheckCollision(MovableBox * M, MovableBox * S)
 		}
 		float normalX = 0, normalY = 0;
 		float nx, ny;
-		float collisionTime = SweptAABB(M, S, nx, ny);
+		float collisionTime = SweptAABB(M, S, normalX, normalY);
 		if (collisionTime < 1)
 		{
-			if (M->getX() < S->getX() + S->getWidth() && M->getX() + M->getWidth() > S->getX())
-			{
-				if (M->getDy() > 0)
-					normalY = -1;
-				else
-					normalY = 1;
-			}
-			else if (M->getY() - M->getHeight() < S->getY() && M->getY() > S->getY() - S->getHeight())
-			{
-				if (M->getDx() > 0)
-					normalX = -1;
-				else
-					normalX = 1;
-			}
+			//if (M->getX() < S->getX() + S->getWidth() && M->getX() + M->getWidth() > S->getX())
+			//{
+			//	if (M->getDy() > 0)
+			//		normalY = -1;
+			//	else
+			//		normalY = 1;
+			//}
+			//else if (M->getY() - M->getHeight() < S->getY() && M->getY() > S->getY() - S->getHeight())
+			//{
+			//	if (M->getDx() > 0)
+			//		normalX = -1;
+			//	else
+			//		normalX = 1;
+			//}
 
 			////chac chan co va cham
 			//M->isCollision = true;
 			//xu ly va cham
-			M->onCollision(S, normalX, normalY,collisionTime);
+			M->onCollision(S, normalX, normalY, collisionTime);
 			S->onCollision(M, normalX, normalY, collisionTime);
 		}
 
