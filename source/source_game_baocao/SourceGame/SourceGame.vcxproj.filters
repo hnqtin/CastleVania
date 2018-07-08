@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{34620172-4e5f-4213-a489-2512529cd119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Collision">
+      <UniqueIdentifier>{50c57f6a-548e-4f83-a096-f8f9198dd864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\QuadTree">
+      <UniqueIdentifier>{cacf52d0-c8e7-48dc-b004-f7906fa05294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\World">
+      <UniqueIdentifier>{b21a4230-ee4d-4a2c-b23c-ab091ee1cae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Utils">
+      <UniqueIdentifier>{1f7104af-6d4e-406b-a3e3-731368650fd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Sprite">
+      <UniqueIdentifier>{729da8ca-4ce1-4372-89a2-b27dd2e086f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Viewport">
+      <UniqueIdentifier>{02c4d47c-4152-4fe5-981d-e5a7d32fa456}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Config">
+      <UniqueIdentifier>{2a63397b-5524-4777-85f6-d5dab78deaa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\GameTime">
+      <UniqueIdentifier>{812c2a09-8782-4489-8d39-f2746c4ede1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Game">
+      <UniqueIdentifier>{b04263fc-7438-4f9d-b440-ec0339059cd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{624a0364-647a-4c71-8ee9-4d9e0a8a2650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\StaticObject">
+      <UniqueIdentifier>{6f79a624-c6fc-46b9-aa7a-64b5520ae174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\MovableObject">
+      <UniqueIdentifier>{44e116e2-6387-48bf-bdd4-df24403ccfc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\MovableObject\Item">
+      <UniqueIdentifier>{33cb5e4e-f432-43af-9bab-d4eb6460c17e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\MovableObject\Enemy">
+      <UniqueIdentifier>{f31c4e74-b823-4fc8-a0ed-d736479e4a44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\AdditionalObject">
+      <UniqueIdentifier>{c42b8902-56fe-428b-823a-d9ec1c797da6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\BaseObject">
+      <UniqueIdentifier>{d1eb6720-2122-4e9f-8991-20f6425d87ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\MiscObject">
+      <UniqueIdentifier>{038c8fef-c714-4206-a703-1b56061959ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\PlayerWeapon">
+      <UniqueIdentifier>{ab98c48e-d163-4822-b49e-06d6d13fb4af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Shape">
+      <UniqueIdentifier>{d7972e25-c22b-4139-b73e-96d3fef331c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Simon">
+      <UniqueIdentifier>{e6438bde-9b09-4d2c-a764-a00ae1177061}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>common\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>common\Viewport</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>common\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionsObjectCollection.cpp">
+      <Filter>common\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionTypeCollide.cpp">
+      <Filter>common\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleLogger.cpp">
+      <Filter>common\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="DelayTime.cpp">
+      <Filter>common\GameTime</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXTool.cpp">
+      <Filter>common\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.cpp">
+      <Filter>common\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTime.cpp">
+      <Filter>common\GameTime</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="globalsParameter.cpp">
+      <Filter>common\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="KEY.cpp">
+      <Filter>common\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>common\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>common\QuadTree</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTreeNode.cpp">
+      <Filter>common\QuadTree</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadFileManager.cpp">
+      <Filter>common\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>common\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteManager.cpp">
+      <Filter>common\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>common\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMap.cpp">
+      <Filter>common\World</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowGame.cpp">
+      <Filter>common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>common\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Area.cpp">
+      <Filter>common\World</Filter>
+    </ClCompile>
+    <ClCompile Include="AdditionalObject.cpp">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseObject.cpp">
+      <Filter>Objects\BaseObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionEffect.cpp">
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate1.cpp">
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
+    <ClCompile Include="MorningStar.cpp">
+      <Filter>Objects\PlayerWeapon</Filter>
+    </ClCompile>
+    <ClCompile Include="MorningStarAttack.cpp">
+      <Filter>Objects\PlayerWeapon</Filter>
+    </ClCompile>
+    <ClCompile Include="MovableBox.cpp">
+      <Filter>Objects\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsBox.cpp">
+      <Filter>Objects\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Objects\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="MovableObject.cpp">
+      <Filter>Objects\MovableObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Objects\Simon</Filter>
+    </ClCompile>
+    <ClCompile Include="Stair.cpp">
+      <Filter>Objects\StaticObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Torch.cpp">
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>common\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>common\Viewport</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>common\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionsObjectCollection.h">
+      <Filter>common\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionType.h">
+      <Filter>common\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionTypeCollide.h">
+      <Filter>common\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>common\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleLogger.h">
+      <Filter>common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="DelayTime.h">
+      <Filter>common\GameTime</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXTool.h">
+      <Filter>common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTime.h">
+      <Filter>common\GameTime</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ICameraLimit.h">
+      <Filter>common\Viewport</Filter>
+    </ClInclude>
+    <ClInclude Include="KEY.h">
+      <Filter>common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>common\QuadTree</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTreeNode.h">
+      <Filter>common\QuadTree</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadFileManager.h">
+      <Filter>common\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>common\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteManager.h">
+      <Filter>common\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>common\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMap.h">
+      <Filter>common\World</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowGame.h">
+      <Filter>common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>common\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Area.h">
+      <Filter>common\World</Filter>
+    </ClInclude>
+    <ClInclude Include="IChangeArea.h">
+      <Filter>common\World</Filter>
+    </ClInclude>
+    <ClInclude Include="AdditionalObject.h">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObject.h">
+      <Filter>Objects\BaseObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionEffect.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate1.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="MorningStar.h">
+      <Filter>Objects\PlayerWeapon</Filter>
+    </ClInclude>
+    <ClInclude Include="MorningStarAttack.h">
+      <Filter>Objects\PlayerWeapon</Filter>
+    </ClInclude>
+    <ClInclude Include="MovableBox.h">
+      <Filter>Objects\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsBox.h">
+      <Filter>Objects\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Objects\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="MovableObject.h">
+      <Filter>Objects\MovableObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Objects\Simon</Filter>
+    </ClInclude>
+    <ClInclude Include="Stair.h">
+      <Filter>Objects\StaticObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Torch.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SourceGame.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

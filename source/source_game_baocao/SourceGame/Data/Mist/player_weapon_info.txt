@@ -1,0 +1,13 @@
+WeaponCount
+3
+Width   Height   Attack
+24      6       1
+23      6       2
+42      6       3
+
+DistanceToPlayerFrameCount
+3
+DistanceXToPlayer   DistanceYToPlayer
+-8                  -7
+0                   -5
+22                  -10

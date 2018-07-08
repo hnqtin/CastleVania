@@ -1,0 +1,52 @@
+AreasCount
+5
+
+
+AreaIndex
+0
+AreaX       AreaY       AreaWidth       AreaHeight
+0           3152        768             176
+CameraX     CameraY
+0           3152
+SimonX      SimonY
+67          3230
+
+
+AreaIndex
+1
+AreaX       AreaY       AreaWidth       AreaHeight
+768         3152        1536            176
+CameraX     CameraY
+768         3152
+SimonX      SimonY
+784         3328
+
+
+AreaIndex
+2
+AreaX       AreaY       AreaWidth       AreaHeight
+2304        3152        512             176
+CameraX     CameraY
+2304        3152
+SimonX      SimonY
+2320        3232
+
+
+AreaIndex
+3
+AreaX       AreaY       AreaWidth       AreaHeight
+2304        3344        512             176
+CameraX     CameraY
+2304        3344
+SimonX      SimonY
+2400        3408
+
+
+AreaIndex
+4
+AreaX       AreaY       AreaWidth       AreaHeight
+2816        3152        767             176
+CameraX     CameraY
+2816        3152 
+SimonX      SimonY
+2832        3232
