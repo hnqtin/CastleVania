@@ -143,6 +143,7 @@
     <ClCompile Include="Area.cpp" />
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Candle.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionsObjectCollection.cpp" />
     <ClCompile Include="CollisionTypeCollide.cpp" />
@@ -152,7 +153,9 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="ExplosionEffect.cpp" />
     <ClCompile Include="Gate1.cpp" />
+    <ClCompile Include="Gate2.cpp" />
     <ClCompile Include="MorningStarAttack.cpp" />
+    <ClCompile Include="Panther.cpp" />
     <ClCompile Include="Stair.cpp" />
     <ClCompile Include="Torch.cpp" />
     <ClCompile Include="WindowGame.cpp" />
@@ -185,6 +188,7 @@
     <ClInclude Include="Area.h" />
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Candle.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionsObjectCollection.h" />
     <ClInclude Include="CollisionType.h" />
@@ -196,6 +200,9 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="ExplosionEffect.h" />
     <ClInclude Include="Gate1.h" />
+    <ClInclude Include="Gate2.h" />
+    <ClInclude Include="IChangeArea2.h" />
+    <ClInclude Include="Panther.h" />
     <ClInclude Include="Zombie.h" />
     <ClInclude Include="IChangeArea.h" />
     <ClInclude Include="MorningStarAttack.h" />

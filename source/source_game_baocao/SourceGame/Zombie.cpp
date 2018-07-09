@@ -35,8 +35,15 @@ void Zombie::onIntersect(MovableBox * other)
 	}
 }
 
+void Zombie::setDx(float dx)
+{
+	Enemy::setDx(dx);
+}
+
 void Zombie::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 {
+	if (nx != 0)
+		return;
 	Enemy::onCollision(other, nx, ny, collisionTime);
 }
 

@@ -1,7 +1,7 @@
 R		G		B
 0		10		0
 Count
-6
+7
 Sprite Info
 
 Index		Name
@@ -25,7 +25,7 @@ Index		Name
 
 
 Index		Name
-1			PlayerMorningStar
+1			PlayerWeaponItem
 
 			FramesCount
 			1
@@ -80,3 +80,15 @@ Index		Name
             2               57              15               15
             2               74              15               15
 			2				92				15			 	 15
+
+
+Index		Name
+6			Candle
+
+			FramesCount
+			2
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+            37              21              8               16
+            47              21              8               16

@@ -119,7 +119,7 @@ void Player::update(float dt)
 	}
 
 	// khi danh thi dung lai
-	if (isOnAttack)
+	if (isOnAttack && isOnGround())
 	{
 		setVx(0);
 	}

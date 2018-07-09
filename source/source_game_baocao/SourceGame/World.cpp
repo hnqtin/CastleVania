@@ -4,6 +4,7 @@
 #include"AdditionalObject.h"
 #include"MorningStar.h"
 #include"Gate1.h"
+#include"Player.h"
 
 void Stage::changeArea(int areaIndex)
 {
@@ -39,8 +40,6 @@ void Stage::initObjects(const char * objectsPath)
 		fs >> spriteId >> collisionType >> x >> y >> width >> height;
 
 		// objectFuncts : Danh sach cac con tro ham (REGISTER_OBJECT_GAME la cai tao ra con tro ham do)
-		// torch : co con tro ham kiem tra spriteId co phai la church khong de tao 1 vung nho torch
-		// zombie : co con tro ham kiem tra spriteId co phai la zombie khong de tao 1 vung nho zombie
 
 		for (size_t iObjectFunct = 0; iObjectFunct < objectFuncts->size(); iObjectFunct++)
 		{
@@ -58,6 +57,11 @@ void Stage::initObjects(const char * objectsPath)
 		if (spriteId == SI_GATE_1)
 		{
 			((Gate1*)gameObject)->setChangeArea(this);
+		}
+
+		if (spriteId == SI_GATE2)
+		{
+			((Gate2*)gameObject)->setChangeArea(this);
 		}
 
 
@@ -130,6 +134,11 @@ void Stage::setPlayer(MovableObject * player)
 	this->player = player;
 }
 
+void Stage::setGate2(BaseObject * gate2)
+{
+	this->gate2 = (Gate2*)gate2;
+}
+
 CollisionsObjectCollection * Stage::getCollisionsObjectCollection()
 {
 	return CollisionsObjectCollection::getInstance();
@@ -138,6 +147,8 @@ CollisionsObjectCollection * Stage::getCollisionsObjectCollection()
 Stage::Stage()
 {
 	camera = Camera::getInstance();
+	gate2 = 0;
+	changeAreaState = CHANGE_AREA2_STATE::CHANGE_AREA2_STATE_CAMERA_MOVE_TEMP;
 }
 
 
@@ -147,6 +158,82 @@ Stage::~Stage()
 
 void Stage::update(float dt)
 {
+
+	if (gate2 != 0)
+	{
+		switch (changeAreaState)
+		{
+		case CHANGE_AREA2_STATE_CAMERA_MOVE_TEMP:
+			player->setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAND);
+			player->setHeight(getGlobalValue("player_height"));
+			player->setDy(0);
+			player->setVy(0);
+			player->setY(gate2->getBottom() + player->getHeight());
+			camera->moveX(getGlobalValue("change_state_camera_move"));
+			if (areas[currentAreaIndex].getRight() - camera->getleft() < camera->getWidth() / 2)
+			{
+				changeAreaState = CHANGE_AREA2_STATE_GATE2_OPENING;
+				gate2->setState(GATE2_STATE::GATE2_STATE_OPENING);
+			}
+			break;
+		case CHANGE_AREA2_STATE_GATE2_OPENING:
+			gate2->performUpdate(dt);
+			camera->moveX(0);
+			if (gate2->getActionFrameIndex() == 1)
+			{
+				gate2->setState(GATE2_STATE::GATE2_STATE_OPENED);
+				changeAreaState = CHANGE_AREA2_STATE_SIMON_MOVE;
+				gate2->performUpdate(dt);
+			}
+			break;
+		case CHANGE_AREA2_STATE_SIMON_MOVE:
+			player->setVx(0);
+			player->moveX(getGlobalValue("change_state_simon_move"));
+			player->setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_WALK);
+			player->updateAnimation();
+			if (player->getleft() - gate2->getRight() > 16)
+			{
+				gate2->setState(GATE2_STATE::GATE2_STATE_CLOSING);
+				changeAreaState = CHANGE_AREA2_STATE_GATE2_CLOSING;
+				player->setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAND);
+				gate2->setActionFrameIndex(0);
+			}
+			break;
+		case CHANGE_AREA2_STATE_GATE2_CLOSING:
+			gate2->performUpdate(dt);
+			if (gate2->getActionFrameIndex() == 1)
+			{
+				gate2->setState(GATE2_STATE::GATE2_STATE_INVISIBLE);
+				gate2->performUpdate(dt);
+				changeAreaState = CHANGE_AREA2_STATE_CAMERA_MOVE_OFFICAL;
+
+				for (size_t i = 0; i < areasCount; i++)
+				{
+					if (areas[i].getleft() > areas[currentAreaIndex].getLeft())
+					{
+						changeArea(i);
+						break;
+					}
+				}
+			}
+			break;
+		case CHANGE_AREA2_STATE_CAMERA_MOVE_OFFICAL:
+		{
+			camera->moveX(getGlobalValue("change_state_camera_move"));
+			if (camera->getX() >= areas[currentAreaIndex].getX())
+			{
+				gate2->setWidth(0);
+				gate2 = 0;
+				changeAreaState = CHANGE_AREA2_STATE::CHANGE_AREA2_STATE_CAMERA_MOVE_TEMP;
+			}
+			break;
+		}
+		default:
+			break;
+		}
+		return;
+	}
+
 	quadTree.update(getCollisionsObjectCollection());
 	camera->update();
 	MorningStar::getInstance()->performUpdate(dt);

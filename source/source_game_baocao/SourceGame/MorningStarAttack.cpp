@@ -1,5 +1,6 @@
 #include "MorningStarAttack.h"
 #include "ExplosionEffect.h"
+#include "Player.h" 
 
 
 void MorningStarAttack::update(float dt)
@@ -13,9 +14,14 @@ void MorningStarAttack::update(float dt)
 
 void MorningStarAttack::onIntersect(MovableBox * other)
 {
-	setNeedDelete(true);
-	ExplosionEffect* effect = new ExplosionEffect();
-	effect->setLocation(other->getMidX(), other->getY() - 5);
+
+	if (other != Player::getInstance())
+	{
+		setNeedDelete(true);
+		ExplosionEffect* effect = new ExplosionEffect();
+		effect->setLocation(other->getMidX(), other->getY() - 5);
+	}
+	
 }
 
 MorningStarAttack::MorningStarAttack()

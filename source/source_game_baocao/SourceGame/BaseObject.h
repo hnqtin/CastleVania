@@ -48,6 +48,8 @@ public:
 	void setAction(int actionIndex);
 	void setActionFrameIndex(int actionFrameIndex);
 
+	void updateAnimation();
+
 	// active ve
 	void setRenderActive(bool renderActive);
 	bool getRenderActive();

@@ -25,8 +25,8 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("player_y", 400));
 		globals->insert(pair<const char*, double>("player_width", 16));
 		globals->insert(pair<const char*, double>("player_height", 30));
-		globals->insert(pair<const char*, double>("player_vx", 120));
-		globals->insert(pair<const char*, double>("player_vy_jump", 250));
+		globals->insert(pair<const char*, double>("player_vx", 320));
+		globals->insert(pair<const char*, double>("player_vy_jump", 450));
 		globals->insert(pair<const char*, double>("player_jump_height", 23));
 		globals->insert(pair<const char*, double>("player_vy_fall_stand", -70));
 
@@ -46,18 +46,6 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("panther_vy_jump", 100));
 		globals->insert(pair<const char*, double>("panther_vx", 120));
 
-		globals->insert(pair<const char*, double>("merman_distance_to_activ", 50));
-		globals->insert(pair<const char*, double>("merman_vy_jump", 300));
-		globals->insert(pair<const char*, double>("merman_vx", 50));
-		globals->insert(pair<const char*, double>("merman_run_delay", 1000));
-		globals->insert(pair<const char*, double>("merman_attack_delay", 500));
-
-		globals->insert(pair<const char*, double>("mermanbullet_vx", 150));
-
-		globals->insert(pair<const char*, double>("bat_bankinh", 20));
-		globals->insert(pair<const char*, double>("bat_invisible_delay", 1000));
-		globals->insert(pair<const char*, double>("bat_dx", 1));
-
 		globals->insert(pair<const char*, double>("object_animation_interval", 120));
 
 		globals->insert(pair<const char*, double>("explosion_effect_interval", 160));
@@ -67,6 +55,9 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("game_fps", 70.0f));
 
 		globals->insert(pair<const char*, double>("morning_star_attack_alive_time", 100));
+
+		globals->insert(pair<const char*, double>("change_state_camera_move", 1));
+		globals->insert(pair<const char*, double>("change_state_simon_move", 1));
 		
 	}
 	return globals->at(key);

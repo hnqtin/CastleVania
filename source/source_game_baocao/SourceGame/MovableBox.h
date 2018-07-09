@@ -12,7 +12,7 @@ class MovableBox : public Rect
 public:
 	COLLISION_TYPE getCollisionType();
 	void setCollisionType(int collisionType);
-	void setDx(float dx);
+	virtual void setDx(float dx);
 	void setDy(float dy);
 	void setIsCollision(bool isCollision);
 	float getDx();

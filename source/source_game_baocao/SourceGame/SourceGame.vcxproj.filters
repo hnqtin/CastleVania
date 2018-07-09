@@ -198,6 +198,15 @@
     <ClCompile Include="Zombie.cpp">
       <Filter>Objects\MovableObject\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Panther.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Candle.cpp">
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -331,6 +340,18 @@
     </ClInclude>
     <ClInclude Include="Zombie.h">
       <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Panther.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Candle.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IChangeArea2.h">
+      <Filter>common\World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

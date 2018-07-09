@@ -16,23 +16,7 @@ void BaseObject::performUpdate(float dt)
 	if (!isAlive())
 		return;
 
-	if (sprite != 0)
-	{
-		// truoc khi update frame
-		int previousActionFrameIndex = actionFrameIndex;
-		if (animationDelay->atTime())
-		{
-			this->sprite->update(actionIndex, actionFrameIndex);
-
-		}
-		setIsLastFrame(false);
-		if (actionFrameIndex == 0 && previousActionFrameIndex == sprite->anims[getAction()].frameCount - 1)
-		{
-			setIsLastFrame(true);
-			onLastFrameAnimation();
-		}
-	}
-
+	updateAnimation();
 
 	updateLocation();
 	update(dt);
@@ -140,6 +124,26 @@ void BaseObject::setAction(int actionIndex)
 void BaseObject::setActionFrameIndex(int actionFrameIndex)
 {
 	this->actionFrameIndex = actionFrameIndex;
+}
+
+void BaseObject::updateAnimation()
+{
+	if (sprite != 0)
+	{
+		// truoc khi update frame
+		int previousActionFrameIndex = actionFrameIndex;
+		if (animationDelay->atTime())
+		{
+			this->sprite->update(actionIndex, actionFrameIndex);
+
+		}
+		setIsLastFrame(false);
+		if (actionFrameIndex == 0 && previousActionFrameIndex == sprite->anims[getAction()].frameCount - 1)
+		{
+			setIsLastFrame(true);
+			onLastFrameAnimation();
+		}
+	}
 }
 
 void BaseObject::setRenderActive(bool renderActive)

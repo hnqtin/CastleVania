@@ -14,6 +14,7 @@ public:
 	void setZombieState(ZOMBIE_STATE zombieState);
 	void onInit(fstream& fs, int worldHeight) override;
 	void onIntersect(MovableBox* other) override;
+	void setDx(float dx) override;
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 	void update(float dt);
 	void restoreLocation();

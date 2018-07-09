@@ -34,9 +34,20 @@ SpriteManager::SpriteManager()
 	sprites[SI_SIMON]->ReadFromFile("Data/Sprites/Simon/info.simple.txt", "Data/Sprites/Simon/image.png");
 	sprites[SI_SIMON]->img->direction = Right;
 
+#pragma region Enemies
+
 	sprites[SI_ZOMBIE] = new Sprite();
 	sprites[SI_ZOMBIE]->readInfo("Data/Sprites/Enemies/zombie.info.txt");
 	sprites[SI_ZOMBIE]->img = enemiesImage;
+
+	sprites[SI_PANTHER] = new Sprite();
+	sprites[SI_PANTHER]->readInfo("Data/Sprites/Enemies/panther.info.txt");
+	sprites[SI_PANTHER]->img = enemiesImage;
+
+#pragma endregion
+
+
+
 
 	sprites[SI_EXPLOSION_EFFECT] = new Sprite();
 	sprites[SI_EXPLOSION_EFFECT]->readInfo("Data/Sprites/Enemies/explosion.info.txt");
@@ -45,6 +56,10 @@ SpriteManager::SpriteManager()
 	sprites[SI_WEAPON] = new Sprite();
 	sprites[SI_WEAPON]->ReadFromFile("Data/Sprites/SimonWeapon/weapon.info.txt", "Data/Sprites/SimonWeapon/image.png");
 	sprites[SI_WEAPON]->img->direction = Right;
+
+	sprites[SI_GATE2] = new Sprite();
+	sprites[SI_GATE2]->ReadFromFile("Data/Sprites/Gate2/info.simple.txt", "Data/Sprites/Gate2/image.png");
+	sprites[SI_GATE2]->img->direction = Right;
 
 	sprites[SI_MISC] = new Sprite();
 	sprites[SI_MISC]->ReadFromFile("Data/Sprites/Misc/misc.info.txt", "Data/Sprites/Misc/misc.png");

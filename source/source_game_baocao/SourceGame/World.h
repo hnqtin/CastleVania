@@ -10,10 +10,25 @@
 #include"Config.h"
 #include"Area.h"
 #include"IChangeArea.h"
+#include"IChangeArea2.h"
+#include"Gate2.h"
+
+
+enum CHANGE_AREA2_STATE
+{
+	CHANGE_AREA2_STATE_CAMERA_MOVE_TEMP,
+	CHANGE_AREA2_STATE_GATE2_OPENING,
+	CHANGE_AREA2_STATE_SIMON_MOVE,
+	CHANGE_AREA2_STATE_GATE2_CLOSING,
+	CHANGE_AREA2_STATE_CAMERA_MOVE_OFFICAL,
+};
+
+
 class Stage :
 	public TileMap,
 	public ICameraLimit,
-	public IChangeArea
+	public IChangeArea,
+	public IChangeArea2
 {
 	BaseObject** gameObjects;
 	int nObjects;
@@ -28,6 +43,9 @@ class Stage :
 	int currentAreaIndex;
 	int areasCount;
 
+	CHANGE_AREA2_STATE changeAreaState;
+
+	Gate2* gate2;
 
 public:
 	void init(const char* tilesheetPath,
@@ -44,6 +62,8 @@ public:
 	void changeArea(int areaIndex) override;
 
 	void setPlayer(MovableObject* player);
+
+	void setGate2(BaseObject* gate2) override;
 
 	CollisionsObjectCollection* getCollisionsObjectCollection();
 	Stage();
