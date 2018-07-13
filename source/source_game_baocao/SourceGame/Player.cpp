@@ -14,7 +14,9 @@ Player::Player()
 	setCollisionType(CT_PLAYER);
 	setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAND);
 	key = KEY::getInstance();
-	d.init(3000);
+
+	blinkTime.setDeltaTime(getGlobalValue("player_blink_time"));
+	blinkDelay.init(getGlobalValue("player_blink_delay"));
 }
 
 
@@ -31,6 +33,30 @@ void Player::onCollision(MovableBox * other, int nx, int ny, float collisionTime
 
 void Player::update(float dt)
 {
+	blinkDelay.update();
+	if (blinkDelay.isOnTime())
+	{
+		if (blinkTime.atTime())
+		{
+			setRenderActive(!getRenderActive());
+		}
+	}
+
+	if (blinkDelay.isTerminated())
+	{
+		setRenderActive(true);
+	}
+
+	if (getAction() == SIMON_PLAYER_ACTION_SIMON_INJURED)
+	{
+		if (isOnGround())
+		{
+			setAction(SIMON_PLAYER_ACTION_SIMON_STAND);
+		}
+		MovableObject::update(dt);
+		return;
+	}
+
 	SIMON_PLAYER_ACTION action;
 
 	if (getIsLastFrame() && isOnAttack)

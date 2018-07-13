@@ -52,7 +52,7 @@ void Bat::update(float dt)
 		break;
 	case BAT_STATE_VISIBLE:
 	{
-		int d = getGlobalValue("bat_bankinh");
+		int d = getGlobalValue("bat_r");
 		alpha += 1;
 		if (alpha >= 360)
 		{
@@ -85,7 +85,7 @@ void Bat::restoreLocation()
 {
 	//khi object ra khoi camera
 
-	BaseObject::restoreLocation();
+	Enemy::restoreLocation();
 	int direction = getDirection();
 	//khi object ra khoi camera ma chua thuc hien isActivity = false;
 	if (batState > BAT_STATE_INVISIBLE)
@@ -94,10 +94,16 @@ void Bat::restoreLocation()
 	}
 	setBatState(BAT_STATE::BAT_STATE_INVISIBLE);
 	setPhysicsEnable(false);
+	setRenderActive(false);
 	alpha = 0;
 	setAction(1);
 	setDx(0);
 
+}
+
+void Bat::onDeath()
+{
+	restoreLocation();
 }
 
 Bat::Bat()

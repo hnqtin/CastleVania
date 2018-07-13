@@ -25,10 +25,8 @@ class Player :
 	public MovableObject
 {
 	KEY* key;
-
-	DelayTime d;
-
 	bool isOnAttack;
+	GameTime blinkTime;
 
 public:
 	void setIsOnAttack(bool isOnAttack);
@@ -38,5 +36,8 @@ public:
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 
 	void update(float dt);
+	DelayTime blinkDelay;
+
+
 };
 

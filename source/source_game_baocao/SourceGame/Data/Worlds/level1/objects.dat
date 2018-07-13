@@ -1,4 +1,4 @@
-99
+108
 -1	0	0	3344	768	16
 -1	0	2784	3200	32	16
 -1	0	1520	3264	160	16
@@ -98,3 +98,12 @@
 -6	1	2910	3232	8	16
 3	5	2288	3248	16	16
 3	5	2800	3248	16	16
+5	1	2575	3228	16	16	bat_discover_space_x	2352	bat_discover_space_y	3248	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	1
+5	1	2576	3297	16	16	bat_discover_space_x	2432	bat_discover_space_y	3280	bat_discover_space_width	48	bat_discover_space_height	16	bat_discover_space_direction	1
+5	1	2577	3345	16	16	bat_discover_space_x	2368	bat_discover_space_y	3344	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	1
+5	1	2310	3223	16	16	bat_discover_space_x	2352	bat_discover_space_y	3248	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	-1
+5	1	2296	3296	16	16	bat_discover_space_x	2432	bat_discover_space_y	3280	bat_discover_space_width	48	bat_discover_space_height	16	bat_discover_space_direction	-1
+5	1	2296	3344	16	16	bat_discover_space_x	2368	bat_discover_space_y	3344	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	-1
+4	1	2475	3537	16	30
+4	1	2559	3537	16	30
+4	1	2716	3537	16	30

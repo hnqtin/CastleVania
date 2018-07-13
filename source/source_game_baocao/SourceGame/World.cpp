@@ -64,8 +64,6 @@ void Stage::initObjects(const char * objectsPath)
 			((Gate2*)gameObject)->setChangeArea(this);
 		}
 
-
-
 		gameObject->set(x, getWorldHeight() - y, width, height);
 		Rect* initBox = new Rect();
 		// set init box de restore

@@ -30,12 +30,12 @@ int Area::getSimonY()
 
 int Area::getLeft()
 {
-	return Rect::getleft();
+	return Rect::getleft()+1;
 }
 
 int Area::getRight()
 {
-	return Rect::getRight();
+	return Rect::getRight()-1;
 }
 
 Area::Area()

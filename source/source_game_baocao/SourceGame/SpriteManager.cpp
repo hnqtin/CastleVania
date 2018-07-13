@@ -44,6 +44,14 @@ SpriteManager::SpriteManager()
 	sprites[SI_PANTHER]->readInfo("Data/Sprites/Enemies/panther.info.txt");
 	sprites[SI_PANTHER]->img = enemiesImage;
 
+	sprites[SI_MERMAN] = new Sprite();
+	sprites[SI_MERMAN]->readInfo("Data/Sprites/Enemies/merman.info.txt");
+	sprites[SI_MERMAN]->img = enemiesImage;
+
+	sprites[SI_BAT] = new Sprite();
+	sprites[SI_BAT]->readInfo("Data/Sprites/Enemies/bat.info.txt");
+	sprites[SI_BAT]->img = enemiesImage;
+
 #pragma endregion
 
 

@@ -76,6 +76,9 @@
     <Filter Include="Objects\Simon">
       <UniqueIdentifier>{e6438bde-9b09-4d2c-a764-a00ae1177061}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common\UI">
+      <UniqueIdentifier>{63bfb97d-cc43-4dbd-b331-5a05857422c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -204,8 +207,20 @@
     <ClCompile Include="Candle.cpp">
       <Filter>Objects\MiscObject</Filter>
     </ClCompile>
+    <ClCompile Include="Merman.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Bat.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="MermanBullet.cpp">
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
     <ClCompile Include="Gate2.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreBar.cpp">
+      <Filter>common\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -347,11 +362,23 @@
     <ClInclude Include="Candle.h">
       <Filter>Objects\MiscObject</Filter>
     </ClInclude>
-    <ClInclude Include="Gate2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="IChangeArea2.h">
       <Filter>common\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Merman.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Bat.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="MermanBullet.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate2.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreBar.h">
+      <Filter>common\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

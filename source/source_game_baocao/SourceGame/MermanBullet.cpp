@@ -3,7 +3,8 @@
 
 MermanBullet::MermanBullet()
 {
-	setSprite(SpriteManager::getSprite(SI_MERMAN_BULLET));
+	setSprite(SpriteManager::getSprite(SI_MISC));
+	setAction(MISC_SPRITE_ID_MERMAN_BULLET);
 	setWidth(getSprite()->getFrameWidth(0, 0));
 	setHeight(getSprite()->getFrameHeight(0, 0));
 	setCollisionType(CT_ENEMY);

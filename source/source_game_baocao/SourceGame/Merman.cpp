@@ -29,6 +29,12 @@ void Merman::onCollision(MovableBox * other, int nx, int ny, float collisionTime
 	}
 }
 
+void Merman::restoreLocation()
+{
+	mermanState = MERMAN_STATE_INVISIBLE;
+	Enemy::restoreLocation();
+}
+
 void Merman::update(float dt)
 {
 	int d = getGlobalValue("merman_distance_to_activ");

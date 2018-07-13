@@ -1,6 +1,7 @@
 #include "Game.h"
 #include"KEY.h"
 #include"Player.h"
+#include"ScoreBar.h"
 
 Game::Game(void)
 {
@@ -52,7 +53,7 @@ void Game::init()
 	);
 
 	stages[0]->setPlayer(Player::getInstance());
-	stages[0]->changeArea(1);
+	stages[0]->changeArea(3);
 	stages[0]->resetCameraAndPlayerLocation();
 
 	
@@ -61,10 +62,12 @@ void Game::init()
 void Game::update(float dt)
 {
 	currentStage()->update(dt);
+	ScoreBar::getInstance()->update();
 }
 void Game::render()
 {
 	currentStage()->render();
+	ScoreBar::getInstance()->render();
 }
 
 

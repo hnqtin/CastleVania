@@ -1,5 +1,6 @@
 #pragma once
 #include<Windows.h>
+//co tinh tam thoi
 class DelayTime
 {
 private:

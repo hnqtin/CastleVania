@@ -25,10 +25,14 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("player_y", 400));
 		globals->insert(pair<const char*, double>("player_width", 16));
 		globals->insert(pair<const char*, double>("player_height", 30));
-		globals->insert(pair<const char*, double>("player_vx", 320));
-		globals->insert(pair<const char*, double>("player_vy_jump", 450));
+		globals->insert(pair<const char*, double>("player_vx", 130));
+		globals->insert(pair<const char*, double>("player_vy_jump", 250));
 		globals->insert(pair<const char*, double>("player_jump_height", 23));
 		globals->insert(pair<const char*, double>("player_vy_fall_stand", -70));
+		globals->insert(pair<const char*, double>("player_hit_vx", 130));
+		globals->insert(pair<const char*, double>("player_hit_vy", 100));
+		globals->insert(pair<const char*, double>("player_blink_time", 10));
+		globals->insert(pair<const char*, double>("player_blink_delay", 1000));
 
 		globals->insert(pair<const char*, double>("camera_x", 0));
 		globals->insert(pair<const char*, double>("camera_y", 430));
@@ -58,6 +62,18 @@ double getGlobalValue(const char* key)
 
 		globals->insert(pair<const char*, double>("change_state_camera_move", 1));
 		globals->insert(pair<const char*, double>("change_state_simon_move", 1));
+
+		globals->insert(pair<const char*, double>("merman_distance_to_activ", 50));
+		globals->insert(pair<const char*, double>("merman_vy_jump", 450));
+		globals->insert(pair<const char*, double>("merman_vx", 50));
+		globals->insert(pair<const char*, double>("merman_run_delay", 1000));
+		globals->insert(pair<const char*, double>("merman_attack_delay", 500));
+
+		globals->insert(pair<const char*, double>("mermanbullet_vx", 150));
+
+		globals->insert(pair<const char*, double>("bat_r", 20));
+		globals->insert(pair<const char*, double>("bat_invisible_delay", 1000));
+		globals->insert(pair<const char*, double>("bat_dx", 1));
 		
 	}
 	return globals->at(key);

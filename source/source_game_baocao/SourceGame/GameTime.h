@@ -1,5 +1,6 @@
 #pragma once
 #include<Windows.h>
+//Co tinh lap lai
 class GameTime
 {
 
