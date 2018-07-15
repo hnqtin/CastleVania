@@ -85,6 +85,14 @@ void Zombie::restoreLocation()
 	}
 }
 
+void Zombie::onContactPlayer()
+{
+	if (getRenderActive())
+	{
+		Enemy::onContactPlayer();
+	}
+}
+
 Zombie::Zombie()
 {
 

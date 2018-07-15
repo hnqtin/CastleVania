@@ -18,6 +18,7 @@ public:
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 	void update(float dt);
 	void restoreLocation();
+	void onContactPlayer() override;
 	Zombie();
 	~Zombie();
 };
