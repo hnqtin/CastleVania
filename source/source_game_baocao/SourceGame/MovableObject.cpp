@@ -2,6 +2,11 @@
 
 
 
+float MovableObject::getDt()
+{
+	return dt;
+}
+
 void MovableObject::setIsOnGround(bool onGround)
 {
 	this->onGround = onGround;
@@ -29,6 +34,7 @@ void MovableObject::onCollision(MovableBox * other, int nx, int ny, float collis
 void MovableObject::update(float dt)
 {
 	BaseObject::update(dt);
+	this->dt = dt;
 	setIsOnGround(false);
 	updatePhysics(dt);
 }

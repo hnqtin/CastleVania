@@ -33,6 +33,7 @@ void Zombie::onIntersect(MovableBox * other)
 	{
 		this->setAlive(false);
 	}
+	Enemy::onIntersect(other);
 }
 
 void Zombie::setDx(float dx)

@@ -33,6 +33,7 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("player_hit_vy", 100));
 		globals->insert(pair<const char*, double>("player_blink_time", 10));
 		globals->insert(pair<const char*, double>("player_blink_delay", 1000));
+		globals->insert(pair<const char*, double>("player_goto_stair_time", 200));
 
 		globals->insert(pair<const char*, double>("camera_x", 0));
 		globals->insert(pair<const char*, double>("camera_y", 430));
@@ -66,7 +67,7 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("merman_distance_to_activ", 50));
 		globals->insert(pair<const char*, double>("merman_vy_jump", 450));
 		globals->insert(pair<const char*, double>("merman_vx", 50));
-		globals->insert(pair<const char*, double>("merman_run_delay", 1000));
+		globals->insert(pair<const char*, double>("merman_run_delay", 1500));
 		globals->insert(pair<const char*, double>("merman_attack_delay", 500));
 
 		globals->insert(pair<const char*, double>("mermanbullet_vx", 150));

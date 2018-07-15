@@ -106,6 +106,14 @@ void Bat::onDeath()
 	restoreLocation();
 }
 
+void Bat::onContactPlayer()
+{
+	if (getRenderActive())
+	{
+		Enemy::onContactPlayer();
+	}
+}
+
 Bat::Bat()
 {
 	setPhysicsEnable(false);

@@ -33,6 +33,10 @@ bool DelayTime::isTerminated()
 	}
 	return false;
 }
+void DelayTime::setIsTerminated(bool isTerminated)
+{
+	terminated = isTerminated;
+}
 bool DelayTime::isOnTime()
 {
 	return !terminated && !ready;

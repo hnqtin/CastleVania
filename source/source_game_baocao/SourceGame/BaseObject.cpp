@@ -33,7 +33,7 @@ void BaseObject::render()
 	int xV, yV;
 	Camera::getInstance()->getWorldToViewLocation(getX(), getY(), xV, yV);
 	xV -= (getCurrentFrameWidth() - getWidth()) / 2;
-	yV += (getCurrentFrameHeight() - getHeight()) / 2;
+	yV -= (getCurrentFrameHeight() - getHeight()) / 2;
 
 	if (direction != sprite->img->direction)
 	{

@@ -39,19 +39,7 @@ void Enemy::onIntersect(MovableBox * other)
 	auto player = Player::getInstance();
 	if (other == player && !player->blinkDelay.isOnTime())
 	{
-
-		player->blinkDelay.start();
-		player->setVy(getGlobalValue("player_hit_vy"));
-		player->setAction(SIMON_PLAYER_ACTION_SIMON_INJURED);
-		player->setIsOnGround(false);
-		if (player->getX() > this->getX())
-		{
-			player->setVx(getGlobalValue("player_hit_vx"));
-		}
-		else
-		{
-			player->setVx(-getGlobalValue("player_hit_vx"));
-		}
+		onContactPlayer();
 	}
 	if (other->getCollisionType() == CT_WEAPON)
 	{
@@ -68,6 +56,28 @@ void Enemy::restoreLocation()
 {
 	setHealth(1);
 	BaseObject::restoreLocation();
+}
+
+void Enemy::onContactPlayer()
+{
+	auto player = Player::getInstance();
+	auto camera = Camera::getInstance();
+	player->blinkDelay.start();
+	player->setVy(getGlobalValue("player_hit_vy"));
+	if (!player->getIsOnStair())
+	{
+		player->setAction(SIMON_PLAYER_ACTION_SIMON_INJURED);
+		player->setIsOnGround(false);
+		player->setDy(0);
+		if (player->getX() > this->getX())
+		{
+			player->setVx(getGlobalValue("player_hit_vx"));
+		}
+		else
+		{
+			player->setVx(-getGlobalValue("player_hit_vx"));
+		}
+	}
 }
 
 Enemy::Enemy()

@@ -32,6 +32,9 @@ void Merman::onCollision(MovableBox * other, int nx, int ny, float collisionTime
 void Merman::restoreLocation()
 {
 	mermanState = MERMAN_STATE_INVISIBLE;
+	setRenderActive(false);
+	setDx(0);
+	setVx(0);
 	Enemy::restoreLocation();
 }
 
@@ -41,6 +44,7 @@ void Merman::update(float dt)
 	switch (mermanState)
 	{
 	case MERMAN_STATE_INVISIBLE:
+		setVx(0);
 		if (abs(Player::getInstance()->getMidX() - getMidX()) < d)
 		{
 			setVy(getGlobalValue("merman_vy_jump"));
@@ -50,11 +54,12 @@ void Merman::update(float dt)
 		}
 		break;
 	case MERMAN_STATE_JUMP:
+		setVx(0);
 		if (isOnGround())
 		{
 			setAction(MERMAN_ACTION::MERMAN_ACTION_RUN);
-			setMermanState(MERMAN_STATE_RUN);
 			setDirectionFollowPlayer();
+			setMermanState(MERMAN_STATE_RUN);
 			runDelay.start();
 		}
 		Enemy::update(dt);
@@ -65,6 +70,7 @@ void Merman::update(float dt)
 		Enemy::update(dt);
 		if (runDelay.isTerminated())
 		{
+			setDirectionFollowPlayer();
 			setMermanState(MERMAN_STATE_ATTACK);
 			attackDelay.start();
 			MermanBullet* bullet = new MermanBullet();

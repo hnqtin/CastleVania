@@ -36,6 +36,7 @@ public:
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 	void restoreLocation();
 	void onDeath();
+	void onContactPlayer() override;
 	Bat();
 	~Bat();
 };

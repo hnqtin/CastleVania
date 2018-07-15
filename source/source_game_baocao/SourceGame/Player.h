@@ -4,6 +4,7 @@
 
 #include"GameTime.h"
 #include"DelayTime.h"
+#include"GoToAction.h"
 
 enum SIMON_PLAYER_ACTION
 {
@@ -27,13 +28,27 @@ class Player :
 	KEY* key;
 	bool isOnAttack;
 	GameTime blinkTime;
-
+	void goToStair(int xDestination, int yDestination);
+	bool isOnStair;
 public:
+	GoToAction goToAction;
+	bool isContactStair;
+	void setIsOnStair(bool isOnStair);
+	bool getIsOnStair();
+
+	void goToStairUpLeft();
+	void goToStairUpRight();
+	void goToStairDownLeft();
+	void goToStairDownRight();
+
+
 	void setIsOnAttack(bool isOnAttack);
 	CREATE_INSTANCE_INSIDE(Player);
 	Player();
 	~Player();
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
+
+	bool onGoTo();
 
 	void update(float dt);
 	DelayTime blinkDelay;

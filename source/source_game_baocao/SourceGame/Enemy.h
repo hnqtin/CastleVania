@@ -14,6 +14,7 @@ public:
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 	void onIntersect(MovableBox* other) override;
 	void restoreLocation() override;
+	virtual void onContactPlayer();
 	Enemy();
 	~Enemy();
 };

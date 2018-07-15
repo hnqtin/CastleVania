@@ -155,6 +155,7 @@
     <ClCompile Include="ExplosionEffect.cpp" />
     <ClCompile Include="Gate1.cpp" />
     <ClCompile Include="Gate2.cpp" />
+    <ClCompile Include="GoToAction.cpp" />
     <ClCompile Include="Merman.cpp" />
     <ClCompile Include="MermanBullet.cpp" />
     <ClCompile Include="MorningStarAttack.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="ExplosionEffect.h" />
     <ClInclude Include="Gate1.h" />
     <ClInclude Include="Gate2.h" />
+    <ClInclude Include="GoToAction.h" />
     <ClInclude Include="IChangeArea2.h" />
     <ClInclude Include="Merman.h" />
     <ClInclude Include="MermanBullet.h" />
