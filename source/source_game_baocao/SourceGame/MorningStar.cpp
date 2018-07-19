@@ -107,7 +107,7 @@ void MorningStar::render()
 			setY(Player::getInstance()->getY() - locations[1].y);
 			break;
 		case 2:
-			setX(Player::getInstance()->getleft() -getWidth());
+			setX(Player::getInstance()->getleft() - getWidth());
 			setY(Player::getInstance()->getY() - locations[2].y);
 			if (Player::getInstance()->getAction() == SIMON_PLAYER_ACTION_SIMON_ATTACK_SIT)
 			{
@@ -123,6 +123,7 @@ void MorningStar::render()
 		}
 	}
 
+
 	if (playerFrameIndex == 1)
 	{
 		canCreateMorningStarAttack = true;
@@ -136,6 +137,16 @@ void MorningStar::render()
 			morningStarAttack->set(getX(), getY(), getWidth(), getHeight());
 			canCreateMorningStarAttack = false;
 		}
+	}
+
+	if (Player::getInstance()->isOnGround() == false)
+	{
+		moveY(6);
+	}
+
+	if (morningStarType == MORNINGSTAR_TYPE_1)
+	{
+		moveY(3);
 	}
 
 	BaseObject::render();

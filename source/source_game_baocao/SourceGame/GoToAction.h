@@ -9,6 +9,7 @@ public:
 	void update(float dt);
 	void setGoto(BaseObject* objectGoto,int xDestination, int yDestination, int time,float dt);
 	bool isOnGoTo();
+	void setOnGoTo(bool onGoTo);
 	GoToAction();
 	~GoToAction();
 };

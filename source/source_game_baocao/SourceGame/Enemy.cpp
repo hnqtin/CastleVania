@@ -26,6 +26,7 @@ void Enemy::setDirectionFollowPlayer()
 
 void Enemy::onDeath()
 {
+	//restoreLocation();
 }
 
 void Enemy::onCollision(MovableBox * other, int nx, int ny, float collisionTime)

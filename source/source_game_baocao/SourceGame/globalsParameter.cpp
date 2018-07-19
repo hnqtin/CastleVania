@@ -25,7 +25,7 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("player_y", 400));
 		globals->insert(pair<const char*, double>("player_width", 16));
 		globals->insert(pair<const char*, double>("player_height", 30));
-		globals->insert(pair<const char*, double>("player_vx", 130));
+		globals->insert(pair<const char*, double>("player_vx", 120));
 		globals->insert(pair<const char*, double>("player_vy_jump", 250));
 		globals->insert(pair<const char*, double>("player_jump_height", 23));
 		globals->insert(pair<const char*, double>("player_vy_fall_stand", -70));
@@ -49,7 +49,7 @@ double getGlobalValue(const char* key)
 
 		globals->insert(pair<const char*, double>("panther_distance_to_activ", 50));
 		globals->insert(pair<const char*, double>("panther_vy_jump", 100));
-		globals->insert(pair<const char*, double>("panther_vx", 120));
+		globals->insert(pair<const char*, double>("panther_vx", 140));
 
 		globals->insert(pair<const char*, double>("object_animation_interval", 120));
 

@@ -32,7 +32,6 @@ void Bat::update(float dt)
 			&& Player::getInstance()->getDirection() == discoverDirection
 			)
 		{
-			// bat dau tinh thoi gian doi
 			invisibleDelay.start();
 			setBatState(BAT_STATE_WAIT);
 			// de ngan can con khac hien

@@ -1,5 +1,6 @@
 #include "GoToAction.h"
 #include"ConsoleLogger.h"
+#include"Player.h"
 #include<string>
 using namespace std;
 
@@ -20,10 +21,13 @@ void GoToAction::update(float dt)
 		//objectGoto->setX(xDestination);
 		objectGoto->setDx(0);
 		objectGoto->setVx(0);
-		//objectGoto->setY(yDestination);
-		objectGoto->setLocation(xDestination, yDestination);
 		objectGoto->setDy(0);
 		objectGoto->setVy(0);
+		//objectGoto->setY(yDestination);
+		objectGoto->setLocation(xDestination, yDestination);
+		auto player = Player::getInstance();
+		consoleLogger->LogLine(((string)"di toi dich :" + std::to_string(player->getX()) + "," + std::to_string(player->getY()) + ")"));
+
 		onGoTo = false;
 
 	}
@@ -45,6 +49,11 @@ void GoToAction::setGoto(BaseObject * objectGoto, int xDestination, int yDestina
 bool GoToAction::isOnGoTo()
 {
 	return onGoTo;
+}
+
+void GoToAction::setOnGoTo(bool onGoTo)
+{
+	this->onGoTo = onGoTo;
 }
 
 GoToAction::GoToAction()

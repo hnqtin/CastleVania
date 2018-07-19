@@ -89,6 +89,9 @@ public:
 
 	int distanceHorToFirstLocation();
 
+	void onIntersect(MovableBox* other) override {}
+	void onCollision(MovableBox* other, int nx, int ny, float collisionTime) override {}
+
 
 	BaseObject();
 	~BaseObject();

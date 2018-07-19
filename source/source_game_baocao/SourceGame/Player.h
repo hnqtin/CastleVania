@@ -30,28 +30,29 @@ class Player :
 	GameTime blinkTime;
 	void goToStair(int xDestination, int yDestination);
 	bool isOnStair;
+
+	bool isUpRightStair;
+	bool isLastGoToStair;
+
 public:
 	GoToAction goToAction;
-	bool isContactStair;
 	void setIsOnStair(bool isOnStair);
 	bool getIsOnStair();
-
-	void goToStairUpLeft();
-	void goToStairUpRight();
-	void goToStairDownLeft();
-	void goToStairDownRight();
-
-
 	void setIsOnAttack(bool isOnAttack);
 	CREATE_INSTANCE_INSIDE(Player);
 	Player();
 	~Player();
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
-
 	bool onGoTo();
-
 	void update(float dt);
 	DelayTime blinkDelay;
+
+
+	void moveUpStair(float dt);
+	void moveDownStair(float dt);
+	void moveByStair(int xDestination, int yDestination, float dt);
+	void setisUpRightStair(bool isUpRightStair);
+	void setIsLastGoToStair(bool isLastGoToStair);
 
 
 };

@@ -5,7 +5,6 @@
 REGISTER_OBJECT_GAME(Merman, SI_MERMAN)
 
 
-
 void Merman::setMermanState(MERMAN_STATE mermanState)
 {
 	this->mermanState = mermanState;
@@ -35,6 +34,7 @@ void Merman::restoreLocation()
 	setRenderActive(false);
 	setDx(0);
 	setVx(0);
+	setIsOnGround(false);
 	Enemy::restoreLocation();
 }
 
@@ -84,7 +84,6 @@ void Merman::update(float dt)
 		setVx(0);
 		attackDelay.update();
 		Enemy::update(dt);
-		
 		if (attackDelay.isTerminated())
 		{
 			setDirectionFollowPlayer();

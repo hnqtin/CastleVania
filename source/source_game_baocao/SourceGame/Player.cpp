@@ -11,39 +11,15 @@ void Player::goToStair(int xDestination, int yDestination)
 void Player::setIsOnStair(bool isOnStair)
 {
 	this->isOnStair = isOnStair;
+	if (isOnStair)
+	{
+		setIsLastGoToStair(false);
+	}
 }
 
 bool Player::getIsOnStair()
 {
 	return isOnStair;
-}
-
-void Player::goToStairUpLeft()
-{
-	setDirection(Left);
-	setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_GO_UP_STAIR);
-	goToStair(getX() - 8, getY() + 8);
-}
-
-void Player::goToStairUpRight()
-{
-	setDirection(Right);
-	setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_GO_UP_STAIR);
-	goToStair(getX() + 8, getY() + 8);
-}
-
-void Player::goToStairDownLeft()
-{
-	setDirection(Left);
-	setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_GO_DOWN_STAIR);
-	goToStair(getX() - 8, getY() - 8);
-}
-
-void Player::goToStairDownRight()
-{
-	setDirection(Right);
-	setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_GO_DOWN_STAIR);
-	goToStair(getX() + 8, getY() - 8);
 }
 
 void Player::setIsOnAttack(bool isOnAttack)
@@ -60,7 +36,6 @@ Player::Player()
 
 	blinkTime.setDeltaTime(getGlobalValue("player_blink_time"));
 	blinkDelay.init(getGlobalValue("player_blink_delay"));
-	isContactStair = false;
 }
 
 
@@ -70,9 +45,8 @@ Player::~Player()
 
 void Player::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 {
-
-	MovableObject::onCollision(other, nx, ny, collisionTime);
-
+	if (!getIsOnStair())
+		MovableObject::onCollision(other, nx, ny, collisionTime);
 }
 
 bool Player::onGoTo()
@@ -88,6 +62,12 @@ void Player::update(float dt)
 		goToAction.update(dt);
 		return;
 	}
+
+	if (isLastGoToStair)
+	{
+		setIsOnStair(false);
+	}
+
 	// update blink and injure
 	blinkDelay.update();
 	if (blinkDelay.isOnTime())
@@ -106,6 +86,28 @@ void Player::update(float dt)
 		setRenderActive(true);
 	}
 
+	if (getIsOnStair())
+	{
+		if (key->isUpDown || key->isDownDown)
+		{
+			setPauseAnimation(false);
+		}
+		else
+		{
+			setPauseAnimation(true);
+			setActionFrameIndex(1);
+		}
+		if (key->isUpDown)
+		{
+			this->moveUpStair(dt);
+		}
+		if (key->isDownDown)
+		{
+			this->moveDownStair(dt);
+		}
+		return;
+	}
+
 	if (getAction() == SIMON_PLAYER_ACTION_SIMON_INJURED)
 	{
 		if (isOnGround())
@@ -116,31 +118,14 @@ void Player::update(float dt)
 		return;
 	}
 
+
 	//end update blink and injure
-
-	if (!isContactStair)
-	{
-		setIsOnStair(false);
-	}
-	isContactStair = false;
-	if (getIsOnStair())
-	{
-		//TODO them attack on stair
-
-		if (!goToAction.isOnGoTo())
-		{
-			setActionFrameIndex(1);
-			setPauseAnimation(true);
-		}
-		return;
-	}
 
 	SIMON_PLAYER_ACTION action;
 
 	if (getIsLastFrame() && isOnAttack)
 	{
 		setIsOnAttack(false);
-		consoleLogger->LogLine(getActionFrameIndex());
 	}
 
 	if (key->isAttackPress)
@@ -232,4 +217,47 @@ void Player::update(float dt)
 	setAction(action);
 	MovableObject::update(dt);
 
+}
+
+void Player::moveUpStair(float dt)
+{
+	int yDestination = getY() + 8;
+	int xDestination = getX() + 8;
+	setDirection(Right);
+	if (!isUpRightStair)
+	{
+		xDestination = getX() - 8;
+		setDirection(Left);
+	}
+	moveByStair(xDestination, yDestination, dt);
+	setAction(SIMON_PLAYER_ACTION_SIMON_GO_UP_STAIR);
+}
+
+void Player::moveDownStair(float dt)
+{
+	int yDestination = getY() - 8;
+	int xDestination = getX() - 8;
+	setDirection(Left);
+	if (!isUpRightStair)
+	{
+		xDestination = getX() + 8;
+		setDirection(Right);
+	}
+	moveByStair(xDestination, yDestination, dt);
+	setAction(SIMON_PLAYER_ACTION_SIMON_GO_DOWN_STAIR);
+}
+
+void Player::moveByStair(int xDestination, int yDestination, float dt)
+{
+	goToAction.setGoto(this, xDestination, yDestination, getGlobalValue("player_goto_stair_time"), dt);
+}
+
+void Player::setisUpRightStair(bool isUpRightStair)
+{
+	this->isUpRightStair = isUpRightStair;
+}
+
+void Player::setIsLastGoToStair(bool isLastGoToStair)
+{
+	this->isLastGoToStair = isLastGoToStair;
 }

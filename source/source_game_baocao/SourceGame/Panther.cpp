@@ -3,7 +3,7 @@
 
 REGISTER_OBJECT_GAME(Panther, SI_PANTHER)
 
-void Panther::setMeoState(PANTHER_STATE pantherState)
+void Panther::setPantherState(PANTHER_STATE pantherState)
 {
 	this->pantherState = pantherState;
 }
@@ -19,7 +19,7 @@ void Panther::onCollision(MovableBox * other, int nx, int ny, float collisionTim
 		(getDx() > 0 && getRight() >= other->getRight()))
 		)
 	{
-		setMeoState(PANTHER_STATE_JUMP);
+		setPantherState(PANTHER_STATE_JUMP);
 		setDy(0);
 		setIsOnGround(false);
 		setVy(getGlobalValue("panther_vy_jump"));
@@ -41,7 +41,7 @@ void Panther::update(float dt)
 		setAction(PANTHER_ACTION_WAIT);
 		if (abs(getMidX() - Player::getInstance()->getMidX()) < getGlobalValue("panther_distance_to_activ"))
 		{
-			setMeoState(PANTHER_STATE_RUN);
+			setPantherState(PANTHER_STATE_RUN);
 			setDirectionFollowPlayer();
 		}
 		break;
@@ -49,7 +49,7 @@ void Panther::update(float dt)
 		setAction(PANTHER_ACTION_JUMP);
 		if (isOnGround())
 		{
-			setMeoState(PANTHER_STATE_RUN);
+			setPantherState(PANTHER_STATE_RUN);
 			setDirectionFollowPlayer();
 			setVx(getDirection()*getGlobalValue("panther_vx"));
 		}
@@ -66,7 +66,7 @@ void Panther::update(float dt)
 
 void Panther::restoreLocation()
 {
-	setMeoState(PANTHER_STATE_WAIT);
+	setPantherState(PANTHER_STATE_WAIT);
 	Enemy::restoreLocation();
 }
 

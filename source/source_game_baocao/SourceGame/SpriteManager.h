@@ -2,6 +2,7 @@
 #include"Sprite.h"
 enum SPRITE_INFO
 {
+	SI_EXIT_STAIR = -8,
 	SI_MERMAN_BULLET = -7,
 	SI_CANDLE = -6,
 	SI_TORCH = -5,

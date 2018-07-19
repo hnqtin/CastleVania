@@ -152,6 +152,7 @@
     <ClCompile Include="DelayTime.cpp" />
     <ClCompile Include="DirectXTool.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="ExitStair.cpp" />
     <ClCompile Include="ExplosionEffect.cpp" />
     <ClCompile Include="Gate1.cpp" />
     <ClCompile Include="Gate2.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="DelayTime.h" />
     <ClInclude Include="DirectXTool.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="ExitStair.h" />
     <ClInclude Include="ExplosionEffect.h" />
     <ClInclude Include="Gate1.h" />
     <ClInclude Include="Gate2.h" />

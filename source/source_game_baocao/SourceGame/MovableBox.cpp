@@ -1,4 +1,6 @@
 #include "MovableBox.h"
+#include"ConsoleLogger.h"
+#include"Player.h"
 int abs(int a)
 {
 	if (a > 0)
