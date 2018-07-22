@@ -243,21 +243,6 @@ void Collision::CheckCollision(MovableBox * M, MovableBox * S)
 		float collisionTime = SweptAABB(M, S, normalX, normalY);
 		if (collisionTime < 1)
 		{
-			//if (M->getX() < S->getX() + S->getWidth() && M->getX() + M->getWidth() > S->getX())
-			//{
-			//	if (M->getDy() > 0)
-			//		normalY = -1;
-			//	else
-			//		normalY = 1;
-			//}
-			//else if (M->getY() - M->getHeight() < S->getY() && M->getY() > S->getY() - S->getHeight())
-			//{
-			//	if (M->getDx() > 0)
-			//		normalX = -1;
-			//	else
-			//		normalX = 1;
-			//}
-
 			////chac chan co va cham
 			//M->isCollision = true;
 			//xu ly va cham

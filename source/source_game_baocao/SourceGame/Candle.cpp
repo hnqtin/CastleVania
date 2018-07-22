@@ -15,10 +15,10 @@ void Candle::onIntersect(MovableBox * other)
 		this->setAlive(false);
 	}
 
-	if (other->getCollisionType() == CT_ITEM)
-	{
-		item = other;
-	}
+	//if (other->getCollisionType() == CT_ITEM)
+	//{
+	//	item = other;
+	//}
 }
 
 void Candle::restoreLocation()

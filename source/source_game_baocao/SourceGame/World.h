@@ -64,6 +64,7 @@ public:
 	void setPlayer(MovableObject* player);
 
 	void setGate2(BaseObject* gate2) override;
+	Area* getCurrentArea() override;
 
 	CollisionsObjectCollection* getCollisionsObjectCollection();
 	Stage();

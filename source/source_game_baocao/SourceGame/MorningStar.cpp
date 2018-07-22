@@ -3,6 +3,21 @@
 #include"MorningStarAttack.h"
 
 MorningStar * MorningStar::instance = 0;
+void MorningStar::setType(MORNINGSTAR_TYPE morningStarType)
+{
+	this->morningStarType = morningStarType;
+}
+void MorningStar::increaseType()
+{
+	if (morningStarType + 1 < MORNINGSTAR_TYPE_COUNT)
+	{
+		setType((MORNINGSTAR_TYPE)(morningStarType + 1));
+	}
+}
+void MorningStar::resetType()
+{
+	setType(MORNINGSTAR_TYPE_1);
+}
 MorningStar * MorningStar::getInstance()
 {
 	if (instance == 0)
@@ -157,7 +172,7 @@ MorningStar::MorningStar()
 	ifstream fs("Data/Sprites/SimonWeapon/weapon.location.txt");
 	fs >> locations[0].x >> locations[0].y >> locations[1].x >> locations[1].y >> locations[2].x >> locations[2].y;
 	setSprite(SpriteManager::getSprite(SI_WEAPON));
-	morningStarType = MORNINGSTAR_TYPE_3;
+	morningStarType = MORNINGSTAR_TYPE_1;
 	changeColorTime.setTimeDelay(getGlobalValue("weapon_change_color_time"));
 	canCreateMorningStarAttack = true;
 }

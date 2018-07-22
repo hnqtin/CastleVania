@@ -36,6 +36,7 @@ Player::Player()
 
 	blinkTime.setDeltaTime(getGlobalValue("player_blink_time"));
 	blinkDelay.init(getGlobalValue("player_blink_delay"));
+	simonStairActionBefore = -1;
 }
 
 
@@ -56,6 +57,25 @@ bool Player::onGoTo()
 
 void Player::update(float dt)
 {
+	//end update blink and injure
+
+	SIMON_PLAYER_ACTION action;
+
+	if (getIsLastFrame() && isOnAttack)
+	{
+		setIsOnAttack(false);
+		if (getIsOnStair()) {
+			setAction(simonStairActionBefore);
+			simonStairActionBefore = -1;
+		}
+	}
+
+	if (key->isAttackPress)
+	{
+		setIsOnAttack(true);
+	}
+
+
 	if (goToAction.isOnGoTo())
 	{
 		setPauseAnimation(false);
@@ -88,22 +108,34 @@ void Player::update(float dt)
 
 	if (getIsOnStair())
 	{
-		if (key->isUpDown || key->isDownDown)
+		if (isOnAttack)
 		{
+			if (simonStairActionBefore == -1)
+				simonStairActionBefore = getAction();
+			//action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_GO_UP_STAIR;
+			setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK_SIT);
 			setPauseAnimation(false);
+			MorningStar::getInstance()->setAlive(true);
 		}
 		else
 		{
-			setPauseAnimation(true);
-			setActionFrameIndex(1);
-		}
-		if (key->isUpDown)
-		{
-			this->moveUpStair(dt);
-		}
-		if (key->isDownDown)
-		{
-			this->moveDownStair(dt);
+			if (key->isUpDown || key->isDownDown)
+			{
+				setPauseAnimation(false);
+			}
+			else
+			{
+				setPauseAnimation(true);
+				setActionFrameIndex(1);
+			}
+			if (key->isUpDown)
+			{
+				this->moveUpStair(dt);
+			}
+			if (key->isDownDown)
+			{
+				this->moveDownStair(dt);
+			}
 		}
 		return;
 	}
@@ -119,19 +151,7 @@ void Player::update(float dt)
 	}
 
 
-	//end update blink and injure
 
-	SIMON_PLAYER_ACTION action;
-
-	if (getIsLastFrame() && isOnAttack)
-	{
-		setIsOnAttack(false);
-	}
-
-	if (key->isAttackPress)
-	{
-		setIsOnAttack(true);
-	}
 
 
 

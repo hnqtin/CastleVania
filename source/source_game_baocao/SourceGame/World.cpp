@@ -4,6 +4,7 @@
 #include"AdditionalObject.h"
 #include"MorningStar.h"
 #include"Gate1.h"
+#include"Gate3.h"
 #include"Player.h"
 
 void Stage::changeArea(int areaIndex)
@@ -62,6 +63,11 @@ void Stage::initObjects(const char * objectsPath)
 		if (spriteId == SI_GATE2)
 		{
 			((Gate2*)gameObject)->setChangeArea(this);
+		}
+
+		if (spriteId == SI_GATE_3)
+		{
+			((Gate3*)gameObject)->setChangeArea(this);
 		}
 
 		gameObject->set(x, getWorldHeight() - y, width, height);
@@ -135,6 +141,11 @@ void Stage::setPlayer(MovableObject * player)
 void Stage::setGate2(BaseObject * gate2)
 {
 	this->gate2 = (Gate2*)gate2;
+}
+
+Area * Stage::getCurrentArea()
+{
+	return &areas[currentAreaIndex];
 }
 
 CollisionsObjectCollection * Stage::getCollisionsObjectCollection()
