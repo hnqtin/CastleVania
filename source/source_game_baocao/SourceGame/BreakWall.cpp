@@ -1,10 +1,8 @@
 #include "BreakWall.h"
+#include "Player.h"
+REGISTER_OBJECT_GAME(BreakWall, SI_BREAK_WALL)
 
 
-
-BreakWall::BreakWall()
-{
-}
 
 void BreakWall::onIntersect(MovableBox * other)
 {
@@ -13,6 +11,23 @@ void BreakWall::onIntersect(MovableBox * other)
 		this->setAlive(false);
 	}
 }
+
+void BreakWall::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
+{
+	auto player = Player::getInstance();
+	if (other == player)
+	{
+		player->preventMoveWhenCollision(collisionTime, nx, ny);
+	}
+} 
+
+BreakWall::BreakWall()
+{
+	setSprite(SpriteManager::getSprite(SI_MISC));
+	setAction(MISC_SPRITE_ID::MISC_SPRITE_ID_ITEM_BREAK_WALL);
+	setDirection(getSprite()->img->direction);
+}
+
 BreakWall::~BreakWall()
 {
 }

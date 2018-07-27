@@ -177,6 +177,7 @@
     <ClCompile Include="ScoreBar.cpp" />
     <ClCompile Include="Stair.cpp" />
     <ClCompile Include="Torch.cpp" />
+    <ClCompile Include="VampireBat.cpp" />
     <ClCompile Include="Water.cpp" />
     <ClCompile Include="WaterObj.cpp" />
     <ClCompile Include="WindowGame.cpp" />
@@ -243,6 +244,7 @@
     <ClInclude Include="MermanBullet.h" />
     <ClInclude Include="Panther.h" />
     <ClInclude Include="ScoreBar.h" />
+    <ClInclude Include="VampireBat.h" />
     <ClInclude Include="Water.h" />
     <ClInclude Include="WaterObj.h" />
     <ClInclude Include="Zombie.h" />

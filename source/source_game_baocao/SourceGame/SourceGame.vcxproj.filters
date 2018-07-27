@@ -274,6 +274,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BreakWall1.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="VampireBat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -483,6 +486,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BreakWall1.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="VampireBat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

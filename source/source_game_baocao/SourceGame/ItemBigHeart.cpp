@@ -6,7 +6,7 @@ REGISTER_OBJECT_GAME(ItemBigHeart, SI_IBIGHEART)
 
 void ItemBigHeart::onPlayerContact()
 {
-	ScoreBar::getInstance()->increaseHeartCount(10);
+	ScoreBar::getInstance()->increaseHeartCount(1);
 }
 
 ItemBigHeart::ItemBigHeart()

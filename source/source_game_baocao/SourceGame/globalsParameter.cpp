@@ -79,6 +79,10 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("water_vy", 200));
 		globals->insert(pair<const char*, double>("water_vx", 40));
 
+		globals->insert(pair<const char*, double>("boss_distance_activ", 50));
+		globals->insert(pair<const char*, double>("boss_wait_time", 1000));
+		globals->insert(pair<const char*, double>("vampire_bat_fast_momen", 1));
+
 		
 		
 	}

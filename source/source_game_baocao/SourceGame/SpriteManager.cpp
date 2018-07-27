@@ -52,6 +52,10 @@ SpriteManager::SpriteManager()
 	sprites[SI_BAT]->readInfo("Data/Sprites/Enemies/bat.info.txt");
 	sprites[SI_BAT]->img = enemiesImage;
 
+	sprites[SI_VAMPIRE_BAT] = new Sprite();
+	sprites[SI_VAMPIRE_BAT]->ReadFromFile("Data/Sprites/vampire_bat/info.simple.txt", "Data/Sprites/vampire_bat/bosses.png");
+	sprites[SI_VAMPIRE_BAT]->img->direction = Right;
+
 #pragma endregion
 
 
