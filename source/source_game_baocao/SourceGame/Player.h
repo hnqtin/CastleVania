@@ -19,7 +19,8 @@ enum SIMON_PLAYER_ACTION
 	SIMON_PLAYER_ACTION_SIMON_ATTACK3,
 	SIMON_PLAYER_ACTION_SIMON_GO_UP_STAIR,
 	SIMON_PLAYER_ACTION_SIMON_GO_DOWN_STAIR,
-	SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK
+	SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_UP,
+	SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_DOWN
 };
 
 
@@ -36,8 +37,8 @@ class Player :
 	bool isLastGoToStair;
 
 	int simonStairActionBefore;
-
 public:
+	bool isGoUpStair();
 	GoToAction goToAction;
 	void setIsOnStair(bool isOnStair);
 	bool getIsOnStair();

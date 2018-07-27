@@ -51,6 +51,10 @@ void Gate2::update(float dt)
 	}
 }
 
+void Gate2::restoreLocation()
+{
+}
+
 Gate2::Gate2()
 {
 	gate2State = GATE2_STATE_INVISIBLE;

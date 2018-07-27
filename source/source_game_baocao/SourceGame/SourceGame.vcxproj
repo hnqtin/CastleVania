@@ -144,6 +144,7 @@
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="Bat.cpp" />
     <ClCompile Include="BreakWall.cpp" />
+    <ClCompile Include="BreakWall1.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Candle.cpp" />
     <ClCompile Include="Collision.cpp" />
@@ -177,6 +178,7 @@
     <ClCompile Include="Stair.cpp" />
     <ClCompile Include="Torch.cpp" />
     <ClCompile Include="Water.cpp" />
+    <ClCompile Include="WaterObj.cpp" />
     <ClCompile Include="WindowGame.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -208,6 +210,7 @@
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="Bat.h" />
     <ClInclude Include="BreakWall.h" />
+    <ClInclude Include="BreakWall1.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Candle.h" />
     <ClInclude Include="Collision.h" />
@@ -241,6 +244,7 @@
     <ClInclude Include="Panther.h" />
     <ClInclude Include="ScoreBar.h" />
     <ClInclude Include="Water.h" />
+    <ClInclude Include="WaterObj.h" />
     <ClInclude Include="Zombie.h" />
     <ClInclude Include="IChangeArea.h" />
     <ClInclude Include="MorningStarAttack.h" />

@@ -76,7 +76,7 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("bat_invisible_delay", 1000));
 		globals->insert(pair<const char*, double>("bat_dx", 1));
 
-		globals->insert(pair<const char*, double>("water_vy", 300));
+		globals->insert(pair<const char*, double>("water_vy", 200));
 		globals->insert(pair<const char*, double>("water_vx", 40));
 
 		

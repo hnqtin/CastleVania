@@ -79,6 +79,9 @@
     <Filter Include="common\UI">
       <UniqueIdentifier>{63bfb97d-cc43-4dbd-b331-5a05857422c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\Item">
+      <UniqueIdentifier>{359750e7-4833-4907-9878-60e8e5ead3ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -225,46 +228,52 @@
     <ClCompile Include="GoToAction.cpp">
       <Filter>common\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Gate3.cpp">
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
     <ClCompile Include="ExitStair.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Objects\StaticObject</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemMorningStar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemSmallHeart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Gate3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Water.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemBigHeart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemDagger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemHolyWater.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemHolyCross.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Objects\Item</Filter>
     </ClCompile>
     <ClCompile Include="ItemAxe.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBigHeart.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemDagger.cpp">
+      <Filter>Objects\Item</Filter>
     </ClCompile>
     <ClCompile Include="ItemGoldPotion.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemHolyCross.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemHolyWater.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemMorningStar.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemSmallHeart.cpp">
+      <Filter>Objects\Item</Filter>
     </ClCompile>
     <ClCompile Include="ItemStopWatch.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Objects\Item</Filter>
     </ClCompile>
     <ClCompile Include="BreakWall.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Water.cpp">
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BreakWall1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -428,46 +437,52 @@
     <ClInclude Include="GoToAction.h">
       <Filter>common\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Gate3.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
     <ClInclude Include="ExitStair.h">
-      <Filter>Header Files</Filter>
+      <Filter>Objects\StaticObject</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemMorningStar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemSmallHeart.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Gate3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Water.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemBigHeart.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemDagger.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemHolyWater.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemHolyCross.h">
-      <Filter>Header Files</Filter>
+      <Filter>Objects\Item</Filter>
     </ClInclude>
     <ClInclude Include="ItemAxe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemGoldPotion.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemStopWatch.h">
-      <Filter>Header Files</Filter>
+      <Filter>Objects\Item</Filter>
     </ClInclude>
     <ClInclude Include="BreakWall.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBigHeart.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemDagger.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemGoldPotion.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemHolyCross.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemHolyWater.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemMorningStar.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemSmallHeart.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemStopWatch.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Water.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterObj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BreakWall1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

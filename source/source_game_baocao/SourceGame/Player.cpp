@@ -8,6 +8,11 @@ void Player::goToStair(int xDestination, int yDestination)
 	goToAction.setGoto(this, xDestination, yDestination, getGlobalValue("player_goto_stair_time"), getDt());
 }
 
+bool Player::isGoUpStair()
+{
+	return (isUpRightStair && getDirection()==Right) || (!isUpRightStair && getDirection()==Left);
+}
+
 void Player::setIsOnStair(bool isOnStair)
 {
 	this->isOnStair = isOnStair;
@@ -110,12 +115,27 @@ void Player::update(float dt)
 	{
 		if (isOnAttack)
 		{
-			if (simonStairActionBefore == -1)
-				simonStairActionBefore = getAction();
-			//action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_GO_UP_STAIR;
-			setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK_SIT);
-			setPauseAnimation(false);
-			MorningStar::getInstance()->setAlive(true);
+			if (isPauseAnimation() == false && getAction()<SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_UP)
+			{
+				isOnAttack = false;
+			}
+			else
+			{
+				if (simonStairActionBefore == -1)
+					simonStairActionBefore = getAction();
+				//action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_GO_UP_STAIR;
+				if (isGoUpStair())
+				{
+					setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_UP);
+				}
+				else
+				{
+					setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_DOWN);
+				}
+				setPauseAnimation(false);
+				MorningStar::getInstance()->setAlive(true);
+			}
+			
 		}
 		else
 		{

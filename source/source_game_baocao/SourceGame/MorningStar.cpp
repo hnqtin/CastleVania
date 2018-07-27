@@ -79,7 +79,7 @@ void MorningStar::render()
 	setHeight(getCurrentFrameHeight());
 	setDirection(Player::getInstance()->getDirection());
 
-
+	auto player = Player::getInstance();
 
 	if (getDirection() == Right)
 	{
@@ -160,6 +160,22 @@ void MorningStar::render()
 	}
 
 	if (morningStarType == MORNINGSTAR_TYPE_1)
+	{
+		moveY(3);
+	}
+
+	if (player->getIsOnStair() && player->getDirection() == Left && !player->isGoUpStair() && getActionFrameIndex() == 2)
+	{
+		moveX(-5);
+	}
+
+	if (player->getIsOnStair() && player->getDirection() == Left && player->isGoUpStair() && getActionFrameIndex()==2)
+	{
+		moveY(3);
+		moveX(-5);
+	}
+
+	if (player->getIsOnStair() && player->getDirection() == Right && !player->isGoUpStair() && getActionFrameIndex() == 2)
 	{
 		moveY(3);
 	}

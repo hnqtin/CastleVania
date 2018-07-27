@@ -25,6 +25,7 @@ public:
 	void onInit(fstream& fs, int worldHeight) override;
 	void onIntersect(MovableBox* other) override;
 	void update(float dt) override;
+	void restoreLocation() override;
 	Gate2();
 	~Gate2();
 };

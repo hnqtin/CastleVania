@@ -53,23 +53,7 @@ void Merman::update(float dt)
 			setRenderActive(true);
 			setMermanState(MERMAN_STATE_JUMP);
 
-			Water* water = new Water();
-			water->setX(getX());
-			water->setY(getY());
-			water->setVy(getGlobalValue("water_vy"));
-			water->setVx(-getGlobalValue("water_vx"));
 
-			water = new Water();
-			water->setX(getX());
-			water->setY(getY());
-			water->setVy(getGlobalValue("water_vy"));
-			water->setVx(0);
-
-			water = new Water();
-			water->setX(getX());
-			water->setY(getY());
-			water->setVy(getGlobalValue("water_vy"));
-			water->setVx(getGlobalValue("water_vx"));
 		}
 		break;
 	case MERMAN_STATE_JUMP:

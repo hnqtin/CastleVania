@@ -15,7 +15,7 @@ void MorningStarAttack::update(float dt)
 void MorningStarAttack::onIntersect(MovableBox * other)
 {
 
-	if (other != Player::getInstance())
+	if (other->getCollisionType() == CT_ENEMY || other->getCollisionType() == CT_ITEM)
 	{
 		setNeedDelete(true);
 		ExplosionEffect* effect = new ExplosionEffect();

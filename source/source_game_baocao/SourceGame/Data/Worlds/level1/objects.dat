@@ -1,4 +1,4 @@
-217
+230
 -1	0	0	3344	768	16
 -1	0	2784	3200	32	16
 -1	0	1520	3264	160	16
@@ -100,13 +100,13 @@
 3	5	2800	3248	16	16
 5	1	2556	3228	16	16	bat_discover_space_x	2352	bat_discover_space_y	3248	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	1
 5	1	2557	3297	16	16	bat_discover_space_x	2432	bat_discover_space_y	3280	bat_discover_space_width	48	bat_discover_space_height	16	bat_discover_space_direction	1
-5	1	2558	3345	16	16	bat_discover_space_x	2368	bat_discover_space_y	3344	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	1
+5	1	2585	3337	17	15	bat_discover_space_x	2368	bat_discover_space_y	3344	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	1
 5	1	2310	3223	16	16	bat_discover_space_x	2352	bat_discover_space_y	3248	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	-1
 5	1	2296	3296	16	16	bat_discover_space_x	2432	bat_discover_space_y	3280	bat_discover_space_width	48	bat_discover_space_height	16	bat_discover_space_direction	-1
 5	1	2297	3345	14	13	bat_discover_space_x	2368	bat_discover_space_y	3344	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	-1
-4	1	2475	3537	16	30
-4	1	2559	3537	16	30
-4	1	2716	3537	16	30
+4	1	2475	3550	16	30
+4	1	2559	3550	16	30
+4	1	2716	3547	16	30
 -8	5	1380	3352	21	8	isMoveUp	1	isUpRightStair	1
 -8	5	1481	3288	16	8	isMoveUp	1	isUpRightStair	1
 -8	5	1456	3280	16	16	isMoveUp	0	isUpRightStair	1
@@ -124,7 +124,7 @@
 -8	5	3494	3320	19	8	isMoveUp	1	isUpRightStair	1
 -8	5	3536	3280	16	16	isMoveUp	0	isUpRightStair	1
 -8	5	2744	3464	18	8	isMoveUp	1	isUpRightStair	0
-4	1	2331	3536	16	30
+4	1	2331	3549	16	30
 -8	5	2760	3352	16	8	isMoveUp	1	isUpRightStair	0
 -8	5	2688	3279	16	17	isMoveUp	0	isUpRightStair	0
 -6	1	2972	3266	8	16
@@ -142,7 +142,7 @@
 -6	1	2527	3406	8	16
 -6	1	2587	3407	8	16
 -6	1	2655	3405	8	16
--6	1	2720	3405	8	16
+-6	1	2719	3405	8	16
 -6	1	2784	3405	8	16
 0	1	3007	3264	16	32	Direction	-1
 0	1	3033	3328	16	32	Direction	-1
@@ -185,7 +185,7 @@
 -10	1	2395	3406	8	16
 -10	1	2466	3405	8	16
 -10	1	2655	3405	8	16
--10	1	2720	3405	8	16
+-10	1	2719	3406	8	16
 -10	1	2910	3232	8	16
 -10	1	2972	3266	8	16
 -10	1	3111	3330	8	16
@@ -211,8 +211,21 @@
 -16	1	3165	3297	8	16
 -17	1	3039	3231	8	16
 -18	1	2587	3407	8	16
--8	5	2656	3344	16	16	isMoveUp	0	isUpRightStair	0
--11	5	2663	3392	16	16	playerX	2672	playerY	3330	nextArea	2
--11	5	2668	3398	0	0
--11	5	2695	3360	9	17	playerX	2688	playerY	3386	nextArea	3
--11	5	2699	3358	0	2
+-19	7	2249	3536	501	8
+-21	8	2560	3344	16	16
+-20	5	2560	3328	16	16
+-8	5	2656	3344	0	0
+-8	5	2657	3345	0	0
+-8	5	2659	3348	0	0
+-8	5	2668	3347	0	0
+-8	5	2655	3351	0	0
+-8	5	2665	3350	0	0
+-8	5	2665	3350	0	0
+-8	5	2664	3348	0	0
+-8	5	2664	3348	0	0
+-8	5	2664	3348	0	0
+-8	5	2669	3324	0	0
+-8	5	2656	3354	0	0
+-8	5	2656	3344	16	16
+-11	5	2665	3392	16	16	playerX	2672	playerY	3338	nextArea	2
+-11	5	2695	3360	8	16	playerX	2688	playerY	3385	nextArea	3
