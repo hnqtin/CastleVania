@@ -2,6 +2,7 @@
 CREATE_INSTANCE_OUTSIDE(Player);
 #include"ConsoleLogger.h"
 #include"MorningStar.h"
+#include"ScoreBar.h"
 
 void Player::goToStair(int xDestination, int yDestination)
 {
@@ -169,11 +170,6 @@ void Player::update(float dt)
 		MovableObject::update(dt);
 		return;
 	}
-
-
-
-
-
 
 	if (isOnGround()) // is on ground
 	{

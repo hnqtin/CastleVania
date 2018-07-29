@@ -28,10 +28,13 @@ class VampireBat :
 	int xo, yo, r;
 	float alpha;
 
-public:
+	int xDes, yDes;
 
+public:
+	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 	void setBossState(BOSS_STATE bossState);
 	void update(float dt) override;
+	void calculateOtherPoint();
 	void calculateXoYoR();
 	void calculateM2(int r, int ox, int oy, int x1, int y1, float alpha, int& x2,int& y2);
 	void calculateAlpha(int xo, int yo, int r, int momen,float& alpha);

@@ -1,5 +1,6 @@
 #pragma once
 #include "Item.h"
+#include"Enemy.h"
 class ItemSmallHeart :
 	public Item
 {

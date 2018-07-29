@@ -36,11 +36,13 @@ void Enemy::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 
 void Enemy::onIntersect(MovableBox * other)
 {
+	
 	//xu ly khi enemy cham vao player
 	auto player = Player::getInstance();
-	if (other == player && !player->blinkDelay.isOnTime())
+	if (other == player && !player->blinkDelay.isOnTime() && canAttackPlayer())
 	{
 		onContactPlayer();
+		ScoreBar::getInstance()->increaseHealth(-1);
 	}
 	if (other->getCollisionType() == CT_WEAPON)
 	{
@@ -79,6 +81,11 @@ void Enemy::onContactPlayer()
 			player->setVx(-getGlobalValue("player_hit_vx"));
 		}
 	}
+}
+
+bool Enemy::canAttackPlayer()
+{
+	return this->getRenderActive();
 }
 
 Enemy::Enemy()

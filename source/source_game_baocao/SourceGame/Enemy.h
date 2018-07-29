@@ -6,6 +6,7 @@ class Enemy :
 {
 	int health;
 public:
+
 	void setHealth(int health);
 	int getHealth();
 	void onInit(fstream& fs, int worldHeight) override{}
@@ -15,6 +16,7 @@ public:
 	void onIntersect(MovableBox* other) override;
 	void restoreLocation() override;
 	virtual void onContactPlayer();
+	virtual bool canAttackPlayer();
 	Enemy();
 	~Enemy();
 };
