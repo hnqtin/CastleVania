@@ -32,9 +32,7 @@ public:
 
 	void setBossState(BOSS_STATE bossState);
 	void update(float dt) override;
-
 	void calculateXoYoR();
-
 	void calculateM2(int r, int ox, int oy, int x1, int y1, float alpha, int& x2,int& y2);
 	void calculateAlpha(int xo, int yo, int r, int momen,float& alpha);
 	void calculateCircleFunction(int x1, int y1, int x2, int y2, int x3, int y3, int&xo, int&yo, int&r);

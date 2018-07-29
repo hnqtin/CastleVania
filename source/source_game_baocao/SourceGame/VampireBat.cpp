@@ -101,12 +101,12 @@ void VampireBat::calculateM2(int r, int xo, int yo, int x1, int y1, float alpha,
 
 	// deltaX khoang cach x tu M toi truc tung duong trong
 	float deltaX = r * cos(sumCorner);
-	x2 + deltaX + xo;
+	x2 = deltaX + xo;
 }
 
 void VampireBat::calculateAlpha(int xo, int yo, int r, int momen, float& alpha)
 {
-	alpha = -abs(2 * asin(momen / 2 * r));
+	alpha = -abs(2 * asin(momen / (2 * r)));
 }
 
 void VampireBat::calculateCircleFunction(int x1, int y1, int x2, int y2, int x3, int y3, int & xo, int & yo, int & r)
