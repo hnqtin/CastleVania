@@ -36,6 +36,17 @@ void ScoreBar::renderHealth()
 	}
 }
 
+void ScoreBar::renderBossHealth()
+{
+	int healthLost = maxHealth - bossHealth;
+	int lastLocationXHealth = bossHealthLocation.X + HEALTH_WIDTH * maxHealth - HEALTH_WIDTH;
+	for (size_t i = 0; i < healthLost; i++)
+	{
+		miscSprite->render(lastLocationXHealth, bossHealthLocation.Y, MISC_SPRITE_ID_LOST_HEALTH, 0);
+		lastLocationXHealth -= HEALTH_WIDTH;
+	}
+}
+
 void ScoreBar::renderSubWeapon()
 {
 	//if (Player::getInstance()->getSubWeapon() != 0)
@@ -85,7 +96,11 @@ ScoreBar::ScoreBar()
 	ignoreLineIfstream(ifs, 2);
 	ifs >> subWeaponLocation.X >> subWeaponLocation.Y;
 
+	ignoreLineIfstream(ifs, 2);
+	ifs >> bossHealthLocation.X >> bossHealthLocation.Y>>bossHealthLocation.MaxLength;
+
 	setHealth(maxHealth);
+	setBossHealth(maxHealth);
 	setTime(900);
 
 }
@@ -104,6 +119,7 @@ void ScoreBar::render()
 	renderNumber(score, scoreLocation.X, scoreLocation.Y, scoreLocation.MaxLength);
 	renderNumber(time, timeLocation.X, timeLocation.Y, timeLocation.MaxLength);
 	renderHealth();
+	renderBossHealth();
 	renderSubWeapon();
 }
 
@@ -113,6 +129,16 @@ void ScoreBar::update()
 	{
 		increaseTime(-1);
 	}
+}
+
+void ScoreBar::restoreHealth()
+{
+	setHealth(maxHealth);
+}
+
+void ScoreBar::restoreBossHealth()
+{
+	setBossHealth(maxHealth);
 }
 
 int ScoreBar::getPlayerLife()
@@ -190,4 +216,17 @@ void ScoreBar::setHealth(int health)
 void ScoreBar::increaseHealth(int health)
 {
 	setHealth(this->health + health);
+}
+
+int ScoreBar::getBossHealth()
+{
+	return bossHealth;
+}
+void ScoreBar::setBossHealth(int health)
+{
+	this->bossHealth = health;
+}
+void ScoreBar::increaseBossHealth(int health)
+{
+	setBossHealth(bossHealth + health);
 }

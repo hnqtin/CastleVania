@@ -1,8 +1,18 @@
 #include "VampireBat.h"
 #include"Camera.h"
+#include"ConsoleLogger.h"
+#include"ScoreBar.h"
 REGISTER_OBJECT_GAME(VampireBat, SI_VAMPIRE_BAT)
 
-extern int getRandom(int start, int end);
+#define MAX(a,b) (a>b? a : b)
+#define MIN(a,b) (a<b? a : b)
+
+	extern int getRandom(int start, int end);
+
+void VampireBat::setChangeArea(IChangeArea * changeArea)
+{
+	this->changeArea = changeArea;
+}
 
 void VampireBat::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 {
@@ -15,8 +25,10 @@ void VampireBat::setBossState(BOSS_STATE bossState)
 
 void VampireBat::update(float dt)
 {
-	float dx2=0, dy2=0;
+	float vx2 = 0, vy2 = 0;
 	waitDelay.update();
+	moveFastDelay.update();
+	moveSlowDelay.update();
 	switch (bossState)
 	{
 	case BOSS_STATE_INVISIBLE:
@@ -24,34 +36,45 @@ void VampireBat::update(float dt)
 		int distance = player->getX() - getX();
 		if (distance > getGlobalValue("boss_distance_activ"))
 		{
+			changeArea->changeArea(5);
 			setAction(BOSS_ACTION_ACTIV);
 			setBossState(BOSS_STATE_WAIT);
+			calculateOtherPoint();
+			if (xDes < getX())
+			{
+				vx2 = -getGlobalValue("vampire_bat_fast_momen");
+			}
+			else
+			{
+				vx2 = getGlobalValue("vampire_bat_fast_momen");
+			}
+			vy2 = (vx2 * (yDes - getY()) / (xDes - getX()));
 			waitDelay.start();
 		}
 		break;
 	}
 	case BOSS_STATE_WAIT:
-		//if (waitDelay.isTerminated())
+		setDx(0);
+		setVx(0);
+		setDy(0);
+		setVy(0);
+		if (waitDelay.isTerminated())
 		{
 			setBossState(BOSS_STATE_MOVE_FAST);
+			DWORD moveFastDelayTime = getRandom(getGlobalValue("boss_move_fast_time_min"), getGlobalValue("boss_move_fast_time_max"));
+			moveFastDelay.start(moveFastDelayTime);
 			calculateOtherPoint();
-
-
 			if (xDes < getX())
 			{
-				dx2 = -3;
+				vx2 = -getGlobalValue("vampire_bat_fast_momen");
 			}
 			else
 			{
-				dx2 = 3;
+				vx2 = getGlobalValue("vampire_bat_fast_momen");
 			}
-
-			dy2 = (dx2 * (yDes - getY()) / (xDes - getX()));
-
-			setDx(dx2);
-			setDy(dy2);
-
-			//calculateXoYoR();
+			vy2 = (vx2 * (yDes - getY()) / (xDes - getX()));
+			setVx(vx2);
+			setVy(vy2);
 		}
 		break;
 	case BOSS_STATE_MOVE_FAST:
@@ -60,22 +83,70 @@ void VampireBat::update(float dt)
 
 		if (getDx() < 0 && camera->getleft() > getX() + getDx())
 		{
-			setBossState(BOSS_STATE_WAIT);
-			return;
+			calculateOtherPoint();
+			if (xDes < getX())
+			{
+				vx2 = -getGlobalValue("vampire_bat_fast_momen");
+			}
+			else
+			{
+				vx2 = getGlobalValue("vampire_bat_fast_momen");
+			}
+			vy2 = (vx2 * (yDes - getY()) / (xDes - getX()));
+			setVx(vx2);
+			setVy(vy2);
 		}
 
 		if (getDx() > 0 && camera->getRight() < getRight() + getDx())
 		{
-			setBossState(BOSS_STATE_WAIT);
-			return;
+			calculateOtherPoint();
+			if (xDes < getX())
+			{
+				vx2 = -getGlobalValue("vampire_bat_fast_momen");
+			}
+			else
+			{
+				vx2 = getGlobalValue("vampire_bat_fast_momen");
+			}
+			vy2 = (vx2 * (yDes - getY()) / (xDes - getX()));
+			setVx(vx2);
+			setVy(vy2);
 		}
 
+		if (moveFastDelay.isTerminated())
+		{
+			waitDelay.start();
+			setBossState(BOSS_STATE_MOVE_SLOW);
+			DWORD moveSlowDelayTime = getRandom(getGlobalValue("boss_move_slow_time_min"), getGlobalValue("boss_move_slow_time_max"));
+			moveSlowDelay.start(moveSlowDelayTime);
+			calculateOtherPoint();
+			setVx(0);
+			setVy(0);
+			if (xDes < getX())
+			{
+				setDx(-1);
+			}
+			else
+			{
+				setDx(1);
+			}
+			setDy(-(getDx() * (yDes - getY()) / (xDes - getX())));
+			return;
+		}
 		//	calculateM2(r, xo, yo, getX(), getY(), alpha, x2, y2);
 			//setX(x2);
 			//setY(y2);
+		preventGoOutsideCamera();
+		Enemy::update(dt);
 		break;
 	}
 	case BOSS_STATE_MOVE_SLOW:
+		if (moveSlowDelay.isTerminated())
+		{
+			setBossState(BOSS_STATE_WAIT);
+			waitDelay.start();
+		}
+		preventGoOutsideCamera();
 		break;
 	default:
 		break;
@@ -85,7 +156,7 @@ void VampireBat::update(float dt)
 void VampireBat::calculateOtherPoint()
 {
 	auto camera = Camera::getInstance();
-	if (getX() > player->getX())
+	if (getMidX() > player->getMidX() && getX() - camera->getX() > 30)
 	{
 		xDes = camera->getleft();
 	}
@@ -94,106 +165,32 @@ void VampireBat::calculateOtherPoint()
 		xDes = camera->getRight();
 	}
 
-	yDes = getRandom(camera->getBottom() + camera->getHeight() / 4, camera->getTop() - camera->getHeight()/4);
+	int yMin = player->getMidY() - 60;
+
+	int yMax = player->getMidY();
+
+	yDes = getRandom(yMin, yMax);
 }
 
-void VampireBat::calculateXoYoR()
+void VampireBat::onDecreaseHealth()
+{
+	ScoreBar::getInstance()->increaseBossHealth(-1);
+}
+
+void VampireBat::preventGoOutsideCamera()
 {
 	auto camera = Camera::getInstance();
 
-	int x1, y1, x2, y2, x3, y3;
-
-	x1 = getX();
-	y1 = getY();
-
-	int x2Min, x2Max;
-
-	if (getX() > player->getX())
+	if ((getX() + getDx() < camera->getleft() && getDx() < 0) || (getRight() + getDx() > camera->getRight() && getDx() > 0))
 	{
-		x2Max = x1 - abs((camera->getX() - x1) / 3.0f);
-		x2Min = x2Max - abs((camera->getX() - x1) / 3.0f);
-	}
-	else
-	{
-		x2Min = x1 + abs((camera->getX() - x1) / 3.0f);
-		x2Max = x2Min + abs((camera->getX() - x1) / 3.0f);
+		setDx(-getDx());
 	}
 
-	x2 = getRandom(x2Min, x2Max);
-	y2 = getRandom(camera->getBottom(), getY());
-
-	if (getX() > player->getX())
+	if ((getY() + getDy() > camera->getTop() - 48 && getDy() > 0)
+		|| (getBottom() + getDy() < camera->getBottom() && getDy() < 0))
 	{
-		x3 = camera->getleft();
+		setDy(-getDy());
 	}
-	else
-	{
-		x3 = camera->getRight();
-	}
-
-	y3 = getRandom(getY(), camera->getBottom());
-
-
-	calculateCircleFunction(x1, y1, x2, y2, x3, y3, xo, yo, r);
-	calculateAlpha(xo, yo, r, getGlobalValue("vampire_bat_fast_momen"), alpha);
-}
-
-void VampireBat::calculateM2(int r, int xo, int yo, int x1, int y1, float alpha, int & x2, int & y2)
-{
-	//goc beta la goc ho boi tam o va diem M1 (x1 y1)
-	float tanBeta = abs((float)(y1 - yo)) / abs((float)x1 - xo);
-	float beta = -abs(atan(tanBeta));
-	//goc sumCorner la goc hop boi tam  va diem M2 (x2,y2)
-	float sumCorner = alpha + beta;
-	// deltaY khoang cach y tu M toi truc hoanh duong trong
-	float deltaY = r * sin(sumCorner);
-	y2 = deltaY + yo;
-	// deltaX khoang cach x tu M toi truc tung duong trong
-	float deltaX = r * cos(sumCorner);
-	x2 = deltaX + xo;
-}
-
-void VampireBat::calculateAlpha(int xo, int yo, int r, int momen, float& alpha)
-{
-	alpha = -abs(2.0f * asin((float)momen / (2 * r)));
-}
-
-void VampireBat::calculateCircleFunction(int x1, int y1, int x2, int y2, int x3, int y3, int & xo, int & yo, int & r)
-{
-	int a3, b3, c3, d3, a1, b1, c1, d1, a2, b2, c2, d2;
-
-	a1 = -2 * x1;
-	b1 = -2 * y1;
-	c1 = 1;
-	d1 = x1 * x1 + y1 * y1;
-
-	a2 = -2 * x2;
-	b2 = -2 * y2;
-	c2 = 1;
-	d2 = x2 * x2 + y2 * y2;
-
-	a3 = -2 * x3;
-	b3 = -2 * y3;
-	c3 = 1;
-	d3 = x3 * x3 + y3 * y3;
-
-	D3DXMATRIX matrixInp(a1, a2, a3, 0, b1, b2, b3, 0, c1, c2, c3, 0, 0, 0, 0, 1);
-	D3DXMATRIX matrixOut;
-	D3DXMatrixInverse(&matrixOut, NULL, &matrixInp);
-
-	D3DXMATRIX pOut;
-	D3DXMatrixMultiply(&pOut, &matrixInp, &matrixOut);
-
-	D3DXVECTOR4 MatrixResult;
-	D3DXVec3Transform(&MatrixResult, &D3DXVECTOR3(d1, d2, d3), &matrixOut);
-
-
-
-	xo = MatrixResult.x;
-	yo = MatrixResult.y;
-	int c = MatrixResult.z;
-
-	r = sqrt(xo*xo + yo * yo - c);
 
 }
 
@@ -201,6 +198,8 @@ VampireBat::VampireBat()
 {
 	player = Player::getInstance();
 	waitDelay.init(getGlobalValue("boss_wait_time"));
+	setAy(getGlobalValue("boss_ay"));
+	setHealth(16);
 }
 
 

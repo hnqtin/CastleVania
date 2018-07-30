@@ -1,5 +1,5 @@
 AreasCount
-5
+6
 
 
 AreaIndex
@@ -50,3 +50,13 @@ CameraX     CameraY
 2816        3152 
 SimonX      SimonY
 2832        3232
+
+
+AreaIndex
+5
+AreaX       AreaY       AreaWidth       AreaHeight
+3325        3152        258             224
+CameraX     CameraY
+3325        3152 
+SimonX      SimonY
+3354        3232

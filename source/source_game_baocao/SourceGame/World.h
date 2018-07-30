@@ -60,6 +60,7 @@ public:
 	void initArea(const char* areaPath);
 	void resetCameraAndPlayerLocation() override;
 	void changeArea(int areaIndex) override;
+	int getCurrentAreaIndex() override;
 
 	void setPlayer(MovableObject* player);
 

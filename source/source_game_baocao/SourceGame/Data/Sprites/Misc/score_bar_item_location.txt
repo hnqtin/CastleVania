@@ -12,3 +12,5 @@ Health
 56      17      16
 SubWeapon
 136     22
+BossHealth
+56      25      16

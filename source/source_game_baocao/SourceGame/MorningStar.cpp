@@ -18,6 +18,10 @@ void MorningStar::resetType()
 {
 	setType(MORNINGSTAR_TYPE_1);
 }
+MORNINGSTAR_TYPE MorningStar::getType()
+{
+	return morningStarType;
+}
 MorningStar * MorningStar::getInstance()
 {
 	if (instance == 0)

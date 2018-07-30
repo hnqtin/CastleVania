@@ -16,6 +16,7 @@ class ScoreBar
 	Texture* scoreBar;
 	void renderNumber(int num, int x, int y, int maxLength);
 	void renderHealth();
+	void renderBossHealth();
 	void renderSubWeapon();
 	static ScoreBar* instance;
 	SCORE_LOCATION lifeLocation;
@@ -25,8 +26,10 @@ class ScoreBar
 	SCORE_LOCATION timeLocation;
 	SCORE_LOCATION healthLocation;
 	SCORE_LOCATION subWeaponLocation;
+	SCORE_LOCATION bossHealthLocation;
 
 	int health;
+	int bossHealth;
 	int maxHealth;
 	int playerLife;
 	int heartCount;
@@ -40,6 +43,9 @@ public:
 	~ScoreBar();
 	void render();
 	void update();
+
+	void restoreHealth();
+	void restoreBossHealth();
 
 	int getPlayerLife();
 	void setPlayerLife(int playerLife);
@@ -60,6 +66,10 @@ public:
 	int getHealth();
 	void setHealth(int health);
 	void increaseHealth(int health);
+
+	int getBossHealth();
+	void setBossHealth(int health);
+	void increaseBossHealth(int health);
 
 	void setCurrentStageNumber(int currentStageNumber);
 };

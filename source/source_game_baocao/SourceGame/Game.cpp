@@ -53,7 +53,7 @@ void Game::init()
 	);
 
 	stages[0]->setPlayer(Player::getInstance());
-	stages[0]->changeArea(4);
+	stages[0]->changeArea(5);
 	stages[0]->resetCameraAndPlayerLocation();
 
 	

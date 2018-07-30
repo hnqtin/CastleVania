@@ -2,6 +2,7 @@
 #include "Enemy.h"
 #include"Player.h"
 #include"DelayTime.h"
+#include"IChangeArea.h"
 
 enum BOSS_STATE
 {
@@ -24,21 +25,21 @@ class VampireBat :
 	BOSS_STATE bossState;
 	Player* player;
 	DelayTime waitDelay;
-
-	int xo, yo, r;
-	float alpha;
-
-	int xDes, yDes;
-
+	DelayTime moveFastDelay;
+	DelayTime moveSlowDelay;
+	float xDes, yDes;
+	IChangeArea* changeArea;
 public:
+	void setChangeArea(IChangeArea* changeArea);
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 	void setBossState(BOSS_STATE bossState);
 	void update(float dt) override;
 	void calculateOtherPoint();
-	void calculateXoYoR();
-	void calculateM2(int r, int ox, int oy, int x1, int y1, float alpha, int& x2,int& y2);
-	void calculateAlpha(int xo, int yo, int r, int momen,float& alpha);
-	void calculateCircleFunction(int x1, int y1, int x2, int y2, int x3, int y3, int&xo, int&yo, int&r);
+
+	void onDecreaseHealth();
+
+	void preventGoOutsideCamera();
+
 	VampireBat();
 	~VampireBat();
 };

@@ -1,6 +1,8 @@
 #include "Item.h"
 #include"Player.h"
-
+#include"MorningStar.h"
+#include"MoringStarAdditional.h"
+extern int getRandom(int start, int end);
 
 void Item::setState(ITEM_STATE itemState)
 {
@@ -13,6 +15,19 @@ void Item::onIntersect(MovableBox * other)
 	{
 		if (itemState == ITEM_STATE::ITEM_STATE_INVISIBLE)
 		{
+			if (Player::getInstance()->needRestoreMorningStar == true && MorningStar::getInstance()->getType() < MORNINGSTAR_TYPE_3)
+			{
+				int sx = getRandom(1, 10);
+
+				if (sx < 8)
+				{
+					MoringStarAdditional* morningStarItem = new MoringStarAdditional();
+					morningStarItem->setX(getX());
+					morningStarItem->setY(getY());
+					return;
+				}
+			}
+
 			setState(ITEM_STATE::ITEM_STATE_VISIBLE);
 			setWidth(getCurrentFrameWidth());
 			setHeight(getCurrentFrameHeight());

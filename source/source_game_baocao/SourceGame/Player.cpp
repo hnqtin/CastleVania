@@ -42,7 +42,10 @@ Player::Player()
 
 	blinkTime.setDeltaTime(getGlobalValue("player_blink_time"));
 	blinkDelay.init(getGlobalValue("player_blink_delay"));
+	deadDelay.init(getGlobalValue("player_dead_delay"));
 	simonStairActionBefore = -1;
+	isDead = false;
+	needRestoreMorningStar = false;
 }
 
 
@@ -64,6 +67,31 @@ bool Player::onGoTo()
 void Player::update(float dt)
 {
 	//end update blink and injure
+
+	if (isDead)
+	{
+		deadDelay.update();
+		setAction(SIMON_PLAYER_ACTION_SIMON_DIE);
+		setVx(0);
+		setHeight(getCurrentFrameHeight());
+		MovableObject::update(dt);
+		if (deadDelay.isTerminated())
+		{
+			int currentArea = changeArea->getCurrentAreaIndex();
+			if (currentArea == 5)
+				currentArea = 4;
+			changeArea->changeArea(currentArea);
+			changeArea->resetCameraAndPlayerLocation(); 
+			ScoreBar::getInstance()->restoreHealth();
+			ScoreBar::getInstance()->restoreBossHealth();
+			MorningStar::getInstance()->setType(MORNINGSTAR_TYPE_1);
+			needRestoreMorningStar = true;
+			isDead = false;
+		}
+
+		return;
+	}
+
 
 	SIMON_PLAYER_ACTION action;
 

@@ -279,6 +279,9 @@
     <ClCompile Include="VampireBat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MoringStarAdditional.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -489,6 +492,9 @@
       <Filter>Objects\Item</Filter>
     </ClInclude>
     <ClInclude Include="VampireBat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MoringStarAdditional.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

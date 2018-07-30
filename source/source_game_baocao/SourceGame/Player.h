@@ -5,6 +5,7 @@
 #include"GameTime.h"
 #include"DelayTime.h"
 #include"GoToAction.h"
+#include"IChangeArea.h"
 
 enum SIMON_PLAYER_ACTION
 {
@@ -36,8 +37,15 @@ class Player :
 	bool isUpRightStair;
 	bool isLastGoToStair;
 
+
 	int simonStairActionBefore;
 public:
+
+	DelayTime deadDelay;
+	bool needRestoreMorningStar;
+	IChangeArea * changeArea;
+
+	bool isDead;
 	bool isGoUpStair();
 	GoToAction goToAction;
 	void setIsOnStair(bool isOnStair);

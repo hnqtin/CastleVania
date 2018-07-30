@@ -12,6 +12,7 @@ public:
 	void onInit(fstream& fs, int worldHeight) override{}
 	void setDirectionFollowPlayer();
 	virtual void onDeath();
+	virtual void onDecreaseHealth();
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 	void onIntersect(MovableBox* other) override;
 	void restoreLocation() override;

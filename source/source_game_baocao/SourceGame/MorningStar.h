@@ -26,6 +26,7 @@ public:
 	void setType(MORNINGSTAR_TYPE morningStarType);
 	void increaseType();
 	void resetType();
+	MORNINGSTAR_TYPE getType();
 	static MorningStar* getInstance();
 	RopeLocation locations[3];
 	void update(float dt) override;

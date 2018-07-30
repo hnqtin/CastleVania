@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include"Player.h"
 #include"ScoreBar.h"
+#include"MorningStarAttack.h"
 
 void Enemy::setHealth(int health)
 {
@@ -29,6 +30,10 @@ void Enemy::onDeath()
 	//restoreLocation();
 }
 
+void Enemy::onDecreaseHealth()
+{
+}
+
 void Enemy::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 {
 	MovableObject::onCollision(other, nx, ny, collisionTime);
@@ -39,14 +44,21 @@ void Enemy::onIntersect(MovableBox * other)
 	
 	//xu ly khi enemy cham vao player
 	auto player = Player::getInstance();
-	if (other == player && !player->blinkDelay.isOnTime() && canAttackPlayer())
+	if (other == player && !player->blinkDelay.isOnTime() && canAttackPlayer() && !player->isDead)
 	{
 		onContactPlayer();
-		ScoreBar::getInstance()->increaseHealth(-1);
+		ScoreBar::getInstance()->increaseHealth(-16);
+		if (ScoreBar::getInstance()->getHealth() <= 0)
+		{
+			player->isDead = true;
+			player->deadDelay.start();
+		}
 	}
 	if (other->getCollisionType() == CT_WEAPON)
 	{
+		((MorningStarAttack*)other)->setNeedDelete(true);
 		setHealth(getHealth() - 1);
+		onDecreaseHealth();
 		if (getHealth() == 0)
 		{
 			this->setAlive(false);

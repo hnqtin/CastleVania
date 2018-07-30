@@ -6,11 +6,17 @@
 #include"Gate1.h"
 #include"Gate3.h"
 #include"Player.h"
+#include"VampireBat.h"
 
 void Stage::changeArea(int areaIndex)
 {
 	currentAreaIndex = areaIndex;
 	Camera::getInstance()->setCameraLimit(&areas[currentAreaIndex]);
+}
+
+int Stage::getCurrentAreaIndex()
+{
+	return currentAreaIndex;
 }
 
 void Stage::init(const char* tilesheetPath,
@@ -25,7 +31,6 @@ void Stage::init(const char* tilesheetPath,
 	initObjects(objectsPath);
 	initQuadtree(quadtreePath);
 	initArea(cameraLocationPath);
-
 }
 
 void Stage::initObjects(const char * objectsPath)
@@ -69,6 +74,13 @@ void Stage::initObjects(const char * objectsPath)
 		{
 			((Gate3*)gameObject)->setChangeArea(this);
 		}
+
+		if (spriteId == SI_VAMPIRE_BAT)
+		{
+			((VampireBat*)gameObject)->setChangeArea(this);
+		}
+
+		Player::getInstance()->changeArea = this;
 
 		gameObject->set(x, getWorldHeight() - y, width, height);
 		Rect* initBox = new Rect();
