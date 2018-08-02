@@ -133,9 +133,7 @@ void VampireBat::update(float dt)
 			setDy(-(getDx() * (yDes - getY()) / (xDes - getX())));
 			return;
 		}
-		//	calculateM2(r, xo, yo, getX(), getY(), alpha, x2, y2);
-			//setX(x2);
-			//setY(y2);
+	
 		preventGoOutsideCamera();
 		Enemy::update(dt);
 		break;
@@ -175,6 +173,16 @@ void VampireBat::calculateOtherPoint()
 void VampireBat::onDecreaseHealth()
 {
 	ScoreBar::getInstance()->increaseBossHealth(-1);
+}
+
+void VampireBat::restore()
+{
+	setAction(BOSS_ACTION_WAIT);
+	setBossState(BOSS_STATE_INVISIBLE);
+	setVx(0);
+	setDx(0);
+	setVy(0);
+	setDy(0);
 }
 
 void VampireBat::preventGoOutsideCamera()

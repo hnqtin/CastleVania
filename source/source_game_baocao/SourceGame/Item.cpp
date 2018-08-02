@@ -15,10 +15,9 @@ void Item::onIntersect(MovableBox * other)
 	{
 		if (itemState == ITEM_STATE::ITEM_STATE_INVISIBLE)
 		{
-			if (Player::getInstance()->needRestoreMorningStar == true && MorningStar::getInstance()->getType() < MORNINGSTAR_TYPE_3)
+			if (MorningStar::getInstance()->getType() < MORNINGSTAR_TYPE_3)
 			{
 				int sx = getRandom(1, 10);
-
 				if (sx < 8)
 				{
 					MoringStarAdditional* morningStarItem = new MoringStarAdditional();
@@ -42,7 +41,6 @@ void Item::onIntersect(MovableBox * other)
 		}
 	}
 }
-
 void Item::onPlayerContact()
 {
 }

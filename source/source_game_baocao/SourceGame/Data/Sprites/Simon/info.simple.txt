@@ -1,7 +1,7 @@
 R		G		B
-0		0		0
+123		234		165
 Count
-13
+14
 Sprite Info
 
 Index		Name
@@ -159,5 +159,17 @@ Index		Name
 			104				557				50				35
 			56				557				50				35
 			6				557				50				35
-							
 
+
+Index		Name
+13			StairAttackDown
+
+			FramesCount
+			4
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			25				606				16				30
+			48				606				16				30
+			70				606				16				30
+			94				606				16				30

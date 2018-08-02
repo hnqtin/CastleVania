@@ -12,6 +12,7 @@
 #include"IChangeArea.h"
 #include"IChangeArea2.h"
 #include"Gate2.h"
+#include"IGate4Interface.h"
 
 
 enum CHANGE_AREA2_STATE
@@ -27,8 +28,8 @@ enum CHANGE_AREA2_STATE
 class Stage :
 	public TileMap,
 	public ICameraLimit,
-	public IChangeArea,
-	public IChangeArea2
+	public IChangeArea,// IPlayerWorld
+	public IChangeArea2 // IDoorWorld
 {
 	BaseObject** gameObjects;
 	int nObjects;
@@ -48,6 +49,7 @@ class Stage :
 	Gate2* gate2;
 
 public:
+	IGate4Interface * gate4Inf;
 	void init(const char* tilesheetPath,
 		const char* matrixPath,
 		const char* objectsPath,

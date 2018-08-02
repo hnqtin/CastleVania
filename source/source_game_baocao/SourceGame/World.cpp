@@ -7,7 +7,7 @@
 #include"Gate3.h"
 #include"Player.h"
 #include"VampireBat.h"
-
+#include"Gate4.h"
 void Stage::changeArea(int areaIndex)
 {
 	currentAreaIndex = areaIndex;
@@ -75,9 +75,15 @@ void Stage::initObjects(const char * objectsPath)
 			((Gate3*)gameObject)->setChangeArea(this);
 		}
 
+		if (spriteId == SI_GATE_4)
+		{
+			((Gate4*)gameObject)->intf = gate4Inf;
+		}
+
 		if (spriteId == SI_VAMPIRE_BAT)
 		{
 			((VampireBat*)gameObject)->setChangeArea(this);
+			Player::getInstance()->boss = dynamic_cast<IBoss*>(gameObject);
 		}
 
 		Player::getInstance()->changeArea = this;

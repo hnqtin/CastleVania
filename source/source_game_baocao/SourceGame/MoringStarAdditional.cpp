@@ -18,6 +18,7 @@ void MoringStarAdditional::onIntersect(MovableBox * other)
 	if (other == Player::getInstance() && this->isAlive())
 	{
 		MorningStar::getInstance()->increaseType();
+		Player::getInstance()->obtainMorningStarDelay.start();
 		this->setNeedDelete(true);
 		this->setAlive(false);
 	}

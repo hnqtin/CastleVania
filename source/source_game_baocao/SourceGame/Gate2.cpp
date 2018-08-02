@@ -24,7 +24,8 @@ void Gate2::onInit(fstream & fs, int worldHeight)
 
 void Gate2::onIntersect(MovableBox * other)
 {
-	changeArea->setGate2(this);
+	if (other->getleft()<getleft())
+		changeArea->setGate2(this);
 }
 
 void Gate2::update(float dt)

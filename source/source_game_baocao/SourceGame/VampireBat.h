@@ -3,6 +3,7 @@
 #include"Player.h"
 #include"DelayTime.h"
 #include"IChangeArea.h"
+#include"IBoss.h"
 
 enum BOSS_STATE
 {
@@ -20,7 +21,8 @@ enum BOSS_ACTION
 
 
 class VampireBat :
-	public Enemy
+	public Enemy,
+	public IBoss
 {
 	BOSS_STATE bossState;
 	Player* player;
@@ -37,6 +39,8 @@ public:
 	void calculateOtherPoint();
 
 	void onDecreaseHealth();
+
+	void restore();
 
 	void preventGoOutsideCamera();
 

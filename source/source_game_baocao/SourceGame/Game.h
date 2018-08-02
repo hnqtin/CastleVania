@@ -4,7 +4,8 @@
 #include"BaseObject.h"
 #include"World.h"
 #include"Camera.h"
-class Game
+#include"IGate4Interface.h"
+class Game : public IGate4Interface
 {
 	static Game* instance;
 	Stage** stages;
@@ -14,6 +15,8 @@ class Game
 public:
 	static Game* getInstance();
 	Stage* currentStage();
+
+	void changeLevel(int levelIndex, int areaIndex) override;
 
 	void nextStage();
 

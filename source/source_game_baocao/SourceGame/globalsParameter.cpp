@@ -35,6 +35,7 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("player_blink_delay", 1000));
 		globals->insert(pair<const char*, double>("player_goto_stair_time", 200));
 		globals->insert(pair<const char*, double>("player_dead_delay", 2000));
+		globals->insert(pair<const char*, double>("player_obtain_moning_star_delay", 500));
 
 		globals->insert(pair<const char*, double>("camera_x", 0));
 		globals->insert(pair<const char*, double>("camera_y", 430));

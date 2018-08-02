@@ -6,7 +6,7 @@
 #include"DelayTime.h"
 #include"GoToAction.h"
 #include"IChangeArea.h"
-
+#include"IBoss.h"
 enum SIMON_PLAYER_ACTION
 {
 	SIMON_PLAYER_ACTION_SIMON_GO_INTO_NEXTSTATE,
@@ -21,7 +21,8 @@ enum SIMON_PLAYER_ACTION
 	SIMON_PLAYER_ACTION_SIMON_GO_UP_STAIR,
 	SIMON_PLAYER_ACTION_SIMON_GO_DOWN_STAIR,
 	SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_UP,
-	SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_DOWN
+	SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_DOWN,
+	SIMON_PLAYER_ACTION_SIMON_OBTAIN_MORNING_STAR
 };
 
 
@@ -40,8 +41,11 @@ class Player :
 
 	int simonStairActionBefore;
 public:
-
+	IBoss * boss;
 	DelayTime deadDelay;
+
+	DelayTime obtainMorningStarDelay;
+
 	bool needRestoreMorningStar;
 	IChangeArea * changeArea;
 

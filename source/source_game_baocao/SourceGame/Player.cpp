@@ -46,6 +46,8 @@ Player::Player()
 	simonStairActionBefore = -1;
 	isDead = false;
 	needRestoreMorningStar = false;
+
+	obtainMorningStarDelay.init(getGlobalValue("player_obtain_moning_star_delay"));
 }
 
 
@@ -67,6 +69,17 @@ bool Player::onGoTo()
 void Player::update(float dt)
 {
 	//end update blink and injure
+	obtainMorningStarDelay.update();
+	if (obtainMorningStarDelay.isOnTime())
+	{
+		setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_OBTAIN_MORNING_STAR);
+		setDx(0);
+		setVx(0);
+		setDy(0);
+		setVy(0);
+		return;
+
+	}
 
 	if (isDead)
 	{
@@ -80,6 +93,7 @@ void Player::update(float dt)
 			int currentArea = changeArea->getCurrentAreaIndex();
 			if (currentArea == 5)
 				currentArea = 4;
+			boss->restore();
 			changeArea->changeArea(currentArea);
 			changeArea->resetCameraAndPlayerLocation(); 
 			ScoreBar::getInstance()->restoreHealth();

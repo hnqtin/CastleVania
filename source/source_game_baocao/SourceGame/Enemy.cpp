@@ -47,7 +47,7 @@ void Enemy::onIntersect(MovableBox * other)
 	if (other == player && !player->blinkDelay.isOnTime() && canAttackPlayer() && !player->isDead)
 	{
 		onContactPlayer();
-		ScoreBar::getInstance()->increaseHealth(-16);
+		ScoreBar::getInstance()->increaseHealth(-1);
 		if (ScoreBar::getInstance()->getHealth() <= 0)
 		{
 			player->isDead = true;

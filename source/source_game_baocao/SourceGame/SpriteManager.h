@@ -3,6 +3,7 @@
 enum SPRITE_INFO
 {
 	//cua chuyen area khi di cau thang
+	SI_GATE_4 = -24,
 	SI_BREAK_WALL1 = -21,
 	SI_BREAK_WALL = -20,
 	SI_IWATEROBJ = -19,
@@ -15,8 +16,8 @@ enum SPRITE_INFO
 	SI_IBIGHEART = -12,
 	SI_GATE_3 = -11,
 	SI_ISMALLHEART = -10,
-	SI_IMORNING_STAR = -9 ,
-	SI_EXIT_STAIR = -8 ,
+	SI_IMORNING_STAR = -9,
+	SI_EXIT_STAIR = -8,
 	SI_MERMAN_BULLET = -7,
 	SI_CANDLE = -6,
 	SI_TORCH = -5,
