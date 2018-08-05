@@ -27,6 +27,8 @@ void Game::changeLevel(int levelIndex, int areaIndex)
 	stages[currentStageIndex]->changeArea(areaIndex);
 	stages[levelIndex]->resetCameraAndPlayerLocation();
 	Camera::getInstance()->setCameraLimit(currentStage());
+	Player::getInstance()->changeArea = dynamic_cast<IChangeArea*>(stages[levelIndex]);
+
 }
 
 void Game::nextStage()
@@ -51,7 +53,7 @@ void Game::init()
 	stages = new Stage*[2];
 	stages[0] = new Stage();
 	stages[0]->gate4Inf = dynamic_cast<IGate4Interface*>(this);
-
+	stages[0]->index = 0;
 	stages[0]->init
 	(
 		"Data/Worlds/Level1/tilesheet.png",
@@ -73,7 +75,7 @@ void Game::init()
 		"Data/Worlds/Level5/collision_type_collides.dat",
 		"Data/Worlds/Level5/areas.dat"
 	);
-
+	stages[1]->index = 1;
 	changeLevel(0, 5);
 }
 

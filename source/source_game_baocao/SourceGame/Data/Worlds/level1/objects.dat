@@ -147,7 +147,7 @@
 0	1	3007	3264	16	32	Direction	-1
 0	1	3033	3328	16	32	Direction	-1
 0	1	3062	3328	16	32	Direction	-1
-0	1	3339	3328	16	32	Direction	-1
+0	1	3305	3328	16	32	Direction	-1
 -8	5	2391	3432	18	8	isMoveUp	1	isUpRightStair	0
 -11	5	2375	3360	8	16	playerX	2368	playerY	3385	nextArea	3
 -11	5	2344	3392	16	16	playerX	2352	playerY	3338	nextArea	2

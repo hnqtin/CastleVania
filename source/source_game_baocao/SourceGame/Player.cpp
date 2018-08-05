@@ -95,7 +95,7 @@ void Player::update(float dt)
 				currentArea = 4;
 			boss->restore();
 			changeArea->changeArea(currentArea);
-			changeArea->resetCameraAndPlayerLocation(); 
+			changeArea->resetLocation(); 
 			ScoreBar::getInstance()->restoreHealth();
 			ScoreBar::getInstance()->restoreBossHealth();
 			MorningStar::getInstance()->setType(MORNINGSTAR_TYPE_1);

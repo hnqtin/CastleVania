@@ -10,7 +10,7 @@ void Gate1::setChangeArea(IChangeArea * changeArea)
 void Gate1::onIntersect(MovableBox * other)
 {
 	changeArea->changeArea(1);
-	changeArea->resetCameraAndPlayerLocation();
+	changeArea->resetLocation();
 }
 
 Gate1::Gate1()

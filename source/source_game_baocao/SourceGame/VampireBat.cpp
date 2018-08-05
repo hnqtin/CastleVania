@@ -195,7 +195,7 @@ void VampireBat::preventGoOutsideCamera()
 	}
 
 	if ((getY() + getDy() > camera->getTop() - 48 && getDy() > 0)
-		|| (getBottom() + getDy() < camera->getBottom() && getDy() < 0))
+		|| (getBottom() + getDy() < camera->getBottom() + 32  && getDy() < 0))
 	{
 		setDy(-getDy());
 	}

@@ -62,17 +62,17 @@ void Stage::initObjects(const char * objectsPath)
 
 		if (spriteId == SI_GATE_1)
 		{
-			((Gate1*)gameObject)->setChangeArea(this);
+			((Gate1*)gameObject)->setChangeArea(dynamic_cast<IChangeArea*>(this));
 		}
 
 		if (spriteId == SI_GATE2)
 		{
-			((Gate2*)gameObject)->setChangeArea(this);
+			((Gate2*)gameObject)->setChangeArea(dynamic_cast<IChangeArea2*>(this));
 		}
 
 		if (spriteId == SI_GATE_3)
 		{
-			((Gate3*)gameObject)->setChangeArea(this);
+			((Gate3*)gameObject)->setChangeArea(dynamic_cast<IChangeArea*>(this));
 		}
 
 		if (spriteId == SI_GATE_4)
@@ -86,7 +86,6 @@ void Stage::initObjects(const char * objectsPath)
 			Player::getInstance()->boss = dynamic_cast<IBoss*>(gameObject);
 		}
 
-		Player::getInstance()->changeArea = this;
 
 		gameObject->set(x, getWorldHeight() - y, width, height);
 		Rect* initBox = new Rect();
@@ -101,6 +100,8 @@ void Stage::initObjects(const char * objectsPath)
 		gameObjects[i] = gameObject;
 		//collisionObjectCollection.getCollection((COLLISION_TYPE)collisionType)->_Add(gameObject);
 	}
+
+
 }
 
 void Stage::initQuadtree(const char * quadtreePath)
@@ -145,9 +146,11 @@ void Stage::initArea(const char * areaPath)
 
 void Stage::resetCameraAndPlayerLocation()
 {
-	camera->setLocation(areas[currentAreaIndex].getCameraX(),
+	Camera::getInstance()->setLocation(areas[currentAreaIndex].getCameraX(),
 		areas[currentAreaIndex].getCameraY());
-	player->setLocation(areas[currentAreaIndex].getSimonX(),
+	
+	//camera->setCameraLimit(&areas[currentAreaIndex]);
+	Player::getInstance()->setLocation(areas[currentAreaIndex].getSimonX(),
 		areas[currentAreaIndex].getSimonY());
 }
 

@@ -60,10 +60,14 @@ public:
 	void initQuadtree(const char* quadtreePath);
 	void initCollisionTypeCollides(const char* collisionTypeCollidesPath);
 	void initArea(const char* areaPath);
-	void resetCameraAndPlayerLocation() override;
+	void resetCameraAndPlayerLocation() ;
+	void resetLocation()
+	{
+		gate4Inf->changeLevel(index, currentAreaIndex);
+	}
 	void changeArea(int areaIndex) override;
 	int getCurrentAreaIndex() override;
-
+	int index;
 	void setPlayer(MovableObject* player);
 
 	void setGate2(BaseObject* gate2) override;
