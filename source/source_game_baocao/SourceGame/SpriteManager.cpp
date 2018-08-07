@@ -68,6 +68,12 @@ SpriteManager::SpriteManager()
 	sprites[SI_SKELETON_WEAPON]->readInfo("Data/Sprites/Enemies/skeleton_weapon.txt");
 	sprites[SI_SKELETON_WEAPON]->img = enemiesImage;
 
+	sprites[SI_RED_SKELETON] = new Sprite();
+	sprites[SI_RED_SKELETON]->readInfo("Data/Sprites/Enemies/red_skeleton.info.txt");
+	sprites[SI_RED_SKELETON]->img = enemiesImage;
+
+	
+
 #pragma endregion
 
 

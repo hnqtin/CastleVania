@@ -294,6 +294,18 @@
     <ClCompile Include="SkeletonWeapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RedSkeleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item400pts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item700pts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item1000pts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -525,6 +537,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SkeletonWeapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RedSkeleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item400pts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item700pts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item1000pts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

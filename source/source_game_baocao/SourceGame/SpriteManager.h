@@ -2,7 +2,10 @@
 #include"Sprite.h"
 enum SPRITE_INFO
 {
-	//cua chuyen area khi di cau thang
+	// gate 4 cua chuyen area boss bat - than chet
+	SI_I1000PTS= -27,
+	SI_I700PTS = -26,
+	SI_I400PTS = -25,
 	SI_GATE_4 = -24,
 	SI_BREAK_WALL1 = -21,
 	SI_BREAK_WALL = -20,
@@ -14,6 +17,7 @@ enum SPRITE_INFO
 	SI_IHOLYWATER = -14,
 	SI_IDAGGER = -13,
 	SI_IBIGHEART = -12,
+	// gate 3 cua chuyen area 2 -3
 	SI_GATE_3 = -11,
 	SI_ISMALLHEART = -10,
 	SI_IMORNING_STAR = -9,
@@ -22,23 +26,24 @@ enum SPRITE_INFO
 	SI_CANDLE = -6,
 	SI_TORCH = -5,
 	SI_STAIR = -4,
-	//cua chuyen area o area 0
+	//gate 1 cua chuyen area o - area 1
 	SI_GATE_1 = -3,
 	SI_DOOR = -2,
 	SI_GROUND = -1,
 	SI_ZOMBIE, //0
 	SI_PANTHER,//1
 	SI_SIMON = 2,//2
-	//cua area1 sang area 2
+	//cua chuyen area 1 - area 2
 	SI_GATE2,//3
 	SI_MERMAN,//4
 	SI_BAT,//5
 	SI_EXPLOSION_EFFECT = 7,//7
 	SI_WEAPON = 15,//15
-	SI_VAMPIRE_BAT = 16,//15
-	SI_FLEAMAN = 17,//15
-	SI_SKELETON = 18,//15
-	SI_SKELETON_WEAPON = 19,//15
+	SI_VAMPIRE_BAT = 16,
+	SI_FLEAMAN = 17,
+	SI_SKELETON = 18,
+	SI_SKELETON_WEAPON = 19,
+	SI_RED_SKELETON= 20,
 	SI_MISC,//16
 	SI_COUNT
 };
@@ -65,6 +70,9 @@ enum MISC_SPRITE_ID
 	MISC_SPRITE_ID_ITEM_STOPWATCH,
 	MISC_SPRITE_ID_ITEM_BREAK_WALL1,
 	MISC_SPRITE_ID_ITEM_BREAK_WALL,
+	MISC_SPRITE_ID_ITEM_400PTS,
+	MISC_SPRITE_ID_ITEM_700PTS,
+	MISC_SPRITE_ID_ITEM_1000PTS,
 };
 
 class SpriteManager

@@ -163,6 +163,9 @@
     <ClCompile Include="Gate4.cpp" />
     <ClCompile Include="GoToAction.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Item1000pts.cpp" />
+    <ClCompile Include="Item400pts.cpp" />
+    <ClCompile Include="Item700pts.cpp" />
     <ClCompile Include="ItemAxe.cpp" />
     <ClCompile Include="ItemBigHeart.cpp" />
     <ClCompile Include="ItemDagger.cpp" />
@@ -177,6 +180,7 @@
     <ClCompile Include="MoringStarAdditional.cpp" />
     <ClCompile Include="MorningStarAttack.cpp" />
     <ClCompile Include="Panther.cpp" />
+    <ClCompile Include="RedSkeleton.cpp" />
     <ClCompile Include="ScoreBar.cpp" />
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="SkeletonWeapon.cpp" />
@@ -240,6 +244,9 @@
     <ClInclude Include="IChangeArea2.h" />
     <ClInclude Include="IGate4Interface.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Item1000pts.h" />
+    <ClInclude Include="Item400pts.h" />
+    <ClInclude Include="Item700pts.h" />
     <ClInclude Include="ItemAxe.h" />
     <ClInclude Include="ItemBigHeart.h" />
     <ClInclude Include="ItemDagger.h" />
@@ -253,6 +260,7 @@
     <ClInclude Include="MermanBullet.h" />
     <ClInclude Include="MoringStarAdditional.h" />
     <ClInclude Include="Panther.h" />
+    <ClInclude Include="RedSkeleton.h" />
     <ClInclude Include="ScoreBar.h" />
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="SkeletonWeapon.h" />

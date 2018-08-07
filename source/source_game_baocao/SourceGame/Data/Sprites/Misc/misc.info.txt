@@ -1,7 +1,7 @@
 R		G		B
 0		10		0
 Count
-20
+23
 Sprite Info
 
 Index		Name
@@ -161,7 +161,7 @@ Index		Name
 
 
 Index		Name
-13			ItemDagger
+13			HOLYWATER
 
 			FramesCount
 			1
@@ -172,7 +172,7 @@ Index		Name
 
 
 Index		Name
-14			ItemDagger
+14			HOLYCROSS
 
 			FramesCount
 			1
@@ -183,7 +183,7 @@ Index		Name
 
 
 Index		Name
-15			ItemDagger
+15			AXE
 
 			FramesCount
 			1
@@ -194,7 +194,7 @@ Index		Name
 
 
 Index		Name
-16			ItemDagger
+16			GOLDPOTION
 
 			FramesCount
 			1
@@ -205,7 +205,7 @@ Index		Name
 
 
 Index		Name
-17			ItemDagger
+17			STOPWATCH
 
 			FramesCount
 			1
@@ -235,3 +235,36 @@ Index		Name
 			Animation Info
 			LocationX		LocationY		FrameWidth		FrameHeight
 			0			    0				16			    16
+
+
+Index		Name
+20			400pts
+
+			FramesCount
+			1
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			83			    84				15			    15
+
+
+Index		Name
+21			700pts
+
+			FramesCount
+			1
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			64			    84				15			    15
+
+
+Index		Name
+22			1000pts
+
+			FramesCount
+			1
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			46			    84			    15			    15
