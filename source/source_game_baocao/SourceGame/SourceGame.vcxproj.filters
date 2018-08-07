@@ -306,6 +306,9 @@
     <ClCompile Include="Item1000pts.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MedusaHead.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -549,6 +552,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Item1000pts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MedusaHead.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -18,9 +18,13 @@ class Skeleton :
 	DelayTime attackDelay;
 	GameTime attackTime;
 
+	DelayTime runDelay;
+
 	int attackCount;
 public:
+	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
 	void update(float dt) override;
+	int getRunDirection();
 	Skeleton();
 	~Skeleton();
 };

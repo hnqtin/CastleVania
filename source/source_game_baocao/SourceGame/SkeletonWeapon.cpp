@@ -1,17 +1,54 @@
 #include "SkeletonWeapon.h"
-
+#include<math.h>
+#include"Player.h"
+#include"ScoreBar.h"
 void SkeletonWeapon::update(float dt)
 {
 	if (timeRotation.atTime())
 	{
-		alpha += 3.14/6;
+		alpha += 3.14/4;
 		if (alpha >= 2 * 3.14)
 		{
 			alpha = 0;
 		}
 	}
-//	MovableObject::update(dt);
+	MovableObject::update(dt);
 	
+}
+
+void SkeletonWeapon::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
+{
+}
+
+void SkeletonWeapon::onIntersect(MovableBox * other)
+{
+	////xu ly khi enemy cham vao player
+	//auto player = Player::getInstance();
+	//if (other == player && !player->blinkDelay.isOnTime() && !player->isDead)
+	//{
+	//	ScoreBar::getInstance()->increaseHealth(-1);
+	//	if (ScoreBar::getInstance()->getHealth() <= 0)
+	//	{
+	//		player->isDead = true;
+	//		player->deadDelay.start();
+	//	}
+	//	player->blinkDelay.start();
+	//	player->setVy(getGlobalValue("player_hit_vy"));
+	//	if (!player->getIsOnStair())
+	//	{
+	//		player->setAction(SIMON_PLAYER_ACTION_SIMON_INJURED);
+	//		player->setIsOnGround(false);
+	//		player->setDy(0);
+	//		if (player->getX() > this->getX())
+	//		{
+	//			player->setVx(getGlobalValue("player_hit_vx"));
+	//		}
+	//		else
+	//		{
+	//			player->setVx(-getGlobalValue("player_hit_vx"));
+	//		}
+	//	}
+	//}
 }
 
 void SkeletonWeapon::render()
@@ -61,6 +98,7 @@ SkeletonWeapon::SkeletonWeapon()
 	setWidth(getCurrentFrameWidth());
 	setHeight(getCurrentFrameHeight());
 	timeRotation.setTimeDelay(20);
+	setCollisionType(CT_ENEMY);
 }
 
 

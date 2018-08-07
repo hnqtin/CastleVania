@@ -175,6 +175,7 @@
     <ClCompile Include="ItemMorningStar.cpp" />
     <ClCompile Include="ItemSmallHeart.cpp" />
     <ClCompile Include="ItemStopWatch.cpp" />
+    <ClCompile Include="MedusaHead.cpp" />
     <ClCompile Include="Merman.cpp" />
     <ClCompile Include="MermanBullet.cpp" />
     <ClCompile Include="MoringStarAdditional.cpp" />
@@ -256,6 +257,7 @@
     <ClInclude Include="ItemMorningStar.h" />
     <ClInclude Include="ItemSmallHeart.h" />
     <ClInclude Include="ItemStopWatch.h" />
+    <ClInclude Include="MedusaHead.h" />
     <ClInclude Include="Merman.h" />
     <ClInclude Include="MermanBullet.h" />
     <ClInclude Include="MoringStarAdditional.h" />

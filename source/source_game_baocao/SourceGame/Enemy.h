@@ -17,6 +17,7 @@ public:
 	void onIntersect(MovableBox* other) override;
 	void restoreLocation() override;
 	virtual void onContactPlayer();
+	virtual void onContactWeapon();
 	virtual bool canAttackPlayer();
 	Enemy();
 	~Enemy();

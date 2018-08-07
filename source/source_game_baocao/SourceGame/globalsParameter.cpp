@@ -98,12 +98,22 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("fleaman_vx_jump", 100));
 		globals->insert(pair<const char*, double>("fleaman_vy_jump", 280));
 
-		globals->insert(pair<const char*, double>("skeleton_player_distance", 100));
-		globals->insert(pair<const char*, double>("skeleton_activity_distance", 60));
-
-		globals->insert(pair<const char*, double>("skeleton_attack_time", 50));
+		globals->insert(pair<const char*, double>("skeleton_player_distance", 50));
+		globals->insert(pair<const char*, double>("skeleton_activity_distance", 50));
 		globals->insert(pair<const char*, double>("skeleton_attack_delay_min", 1000));
 		globals->insert(pair<const char*, double>("skeleton_attack_delay_max", 3000));
+		globals->insert(pair<const char*, double>("skeleton_attack_time", 200));
+		globals->insert(pair<const char*, double>("skeleton_run_delay", 200));
+		globals->insert(pair<const char*, double>("skeleton_vx", 60));
+		globals->insert(pair<const char*, double>("skeleton_vy_jump", 280));
+		globals->insert(pair<const char*, double>("skeleton_vx_jump", 60));
+
+		globals->insert(pair<const char*, double>("redskeleton_distance", 30));
+		globals->insert(pair<const char*, double>("redskeleton_vx", 60));
+		globals->insert(pair<const char*, double>("redskeleton_die_delay", 2000));
+
+		globals->insert(pair<const char*, double>("skeletonweapon_vx", 60));
+		globals->insert(pair<const char*, double>("skeletonweapon_vy", 200));
 	}
 	return globals->at(key);
 }

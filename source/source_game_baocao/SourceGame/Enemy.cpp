@@ -57,13 +57,7 @@ void Enemy::onIntersect(MovableBox * other)
 	if (other->getCollisionType() == CT_WEAPON)
 	{
 		((MorningStarAttack*)other)->setNeedDelete(true);
-		setHealth(getHealth() - 16);
-		onDecreaseHealth();
-		if (getHealth() <= 0)
-		{
-			this->setAlive(false);
-			onDeath();
-		}
+		onContactWeapon();
 	}
 }
 
@@ -92,6 +86,17 @@ void Enemy::onContactPlayer()
 		{
 			player->setVx(-getGlobalValue("player_hit_vx"));
 		}
+	}
+}
+
+void Enemy::onContactWeapon()
+{
+	setHealth(getHealth() - 16);
+	onDecreaseHealth();
+	if (getHealth() <= 0)
+	{
+		this->setAlive(false);
+		onDeath();
 	}
 }
 

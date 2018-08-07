@@ -72,6 +72,10 @@ SpriteManager::SpriteManager()
 	sprites[SI_RED_SKELETON]->readInfo("Data/Sprites/Enemies/red_skeleton.info.txt");
 	sprites[SI_RED_SKELETON]->img = enemiesImage;
 
+	sprites[SI_MEDUSA_HEAD] = new Sprite();
+	sprites[SI_MEDUSA_HEAD]->readInfo("Data/Sprites/Enemies/medusa_head.info.txt");
+	sprites[SI_MEDUSA_HEAD]->img = enemiesImage;
+
 	
 
 #pragma endregion

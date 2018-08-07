@@ -1,7 +1,7 @@
 R		G		B
 168		40		88
 Count
-1
+4
 Sprite Info
 
 Index		Name
@@ -13,5 +13,42 @@ Index		Name
 			Animation Info
 			LocationX		LocationY		FrameWidth		FrameHeight
 			49				175				16				32
+			75				175				16				32
+
+
+Index		Name
+1			RedSkeletonDying
+
+			FramesCount
+			3
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			75				175				16				32
+			99				172				16				32
+			127				171				16				32
+
+
+Index		Name
+2			RedSkeletonDie
+
+			FramesCount
+			1
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			127				171				16				32
+
+
+Index		Name
+3			RedSkeletonRestore
+
+			FramesCount
+			3
+
+			Animation Info
+			LocationX		LocationY		FrameWidth		FrameHeight
+			127				171				16				32
+			99				172				16				32
 			75				175				16				32
 
