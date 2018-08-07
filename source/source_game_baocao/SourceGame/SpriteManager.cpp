@@ -56,9 +56,19 @@ SpriteManager::SpriteManager()
 	sprites[SI_VAMPIRE_BAT]->ReadFromFile("Data/Sprites/vampire_bat/info.simple.txt", "Data/Sprites/vampire_bat/bosses.png");
 	sprites[SI_VAMPIRE_BAT]->img->direction = Right;
 
+	sprites[SI_FLEAMAN] = new Sprite();
+	sprites[SI_FLEAMAN]->readInfo("Data/Sprites/Enemies/fleaman.info.txt");
+	sprites[SI_FLEAMAN]->img = enemiesImage;
+
+	sprites[SI_SKELETON] = new Sprite();
+	sprites[SI_SKELETON]->readInfo("Data/Sprites/Enemies/skeleton.info.txt");
+	sprites[SI_SKELETON]->img = enemiesImage;
+
+	sprites[SI_SKELETON_WEAPON] = new Sprite();
+	sprites[SI_SKELETON_WEAPON]->readInfo("Data/Sprites/Enemies/skeleton_weapon.txt");
+	sprites[SI_SKELETON_WEAPON]->img = enemiesImage;
+
 #pragma endregion
-
-
 
 
 	sprites[SI_EXPLOSION_EFFECT] = new Sprite();

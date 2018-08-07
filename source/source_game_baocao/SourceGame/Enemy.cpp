@@ -57,9 +57,9 @@ void Enemy::onIntersect(MovableBox * other)
 	if (other->getCollisionType() == CT_WEAPON)
 	{
 		((MorningStarAttack*)other)->setNeedDelete(true);
-		setHealth(getHealth() - 1);
+		setHealth(getHealth() - 16);
 		onDecreaseHealth();
-		if (getHealth() == 0)
+		if (getHealth() <= 0)
 		{
 			this->setAlive(false);
 			onDeath();

@@ -270,19 +270,28 @@
     <ClCompile Include="Water.cpp">
       <Filter>Objects\MiscObject</Filter>
     </ClCompile>
-    <ClCompile Include="WaterObj.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BreakWall1.cpp">
       <Filter>Objects\Item</Filter>
     </ClCompile>
-    <ClCompile Include="VampireBat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MoringStarAdditional.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="WaterObj.cpp">
+      <Filter>Objects\MiscObject</Filter>
     </ClCompile>
     <ClCompile Include="Gate4.cpp">
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
+    <ClCompile Include="MoringStarAdditional.cpp">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="VampireBat.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Fleaman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonWeapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -488,25 +497,34 @@
     <ClInclude Include="Water.h">
       <Filter>Objects\MiscObject</Filter>
     </ClInclude>
-    <ClInclude Include="WaterObj.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BreakWall1.h">
       <Filter>Objects\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="VampireBat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MoringStarAdditional.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IBoss.h">
       <Filter>Objects\MovableObject\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="Gate4.h">
+    <ClInclude Include="IGate4Interface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IGate4Interface.h">
+    <ClInclude Include="WaterObj.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate4.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="MoringStarAdditional.h">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="VampireBat.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Fleaman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonWeapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

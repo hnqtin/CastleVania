@@ -5,8 +5,8 @@ AreasCount
 AreaIndex
 0
 AreaX       AreaY       AreaWidth       AreaHeight
-768         2112        512             192
+768         2072        512             192
 CameraX     CameraY
-768         2112
+768         2072
 SimonX      SimonY
 815         2193

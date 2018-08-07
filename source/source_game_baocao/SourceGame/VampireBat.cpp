@@ -172,7 +172,7 @@ void VampireBat::calculateOtherPoint()
 
 void VampireBat::onDecreaseHealth()
 {
-	ScoreBar::getInstance()->increaseBossHealth(-1);
+	ScoreBar::getInstance()->increaseBossHealth(-16);
 }
 
 void VampireBat::restore()

@@ -76,7 +76,7 @@ void Game::init()
 		"Data/Worlds/Level5/areas.dat"
 	);
 	stages[1]->index = 1;
-	changeLevel(0, 5);
+	changeLevel(1, 0);
 }
 
 void Game::update(float dt)

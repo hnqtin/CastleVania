@@ -20,6 +20,7 @@ void Player::setIsOnStair(bool isOnStair)
 	if (isOnStair)
 	{
 		setIsLastGoToStair(false);
+		setHeight(getGlobalValue("player_height"));
 	}
 }
 
@@ -134,6 +135,7 @@ void Player::update(float dt)
 	if (isLastGoToStair)
 	{
 		setIsOnStair(false);
+		isLastGoToStair = false;
 	}
 
 	// update blink and injure

@@ -89,11 +89,21 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("boss_move_slow_time_max", 2000));
 		globals->insert(pair<const char*, double>("boss_ay", 100));
 
-		globals->insert(pair<const char*, double>("vampire_bat_fast_momen", 180));
+		globals->insert(pair<const char*, double>("vampire_bat_fast_momen", 150));
 		globals->insert(pair<const char*, double>("vampire_bat_slow_momen", 90));
 
-		
-		
+		globals->insert(pair<const char*, double>("fleaman_wait_delay", 2000));
+		globals->insert(pair<const char*, double>("fleaman_vx_run", 140));
+		globals->insert(pair<const char*, double>("fleaman_vy_run", 120));
+		globals->insert(pair<const char*, double>("fleaman_vx_jump", 100));
+		globals->insert(pair<const char*, double>("fleaman_vy_jump", 280));
+
+		globals->insert(pair<const char*, double>("skeleton_player_distance", 100));
+		globals->insert(pair<const char*, double>("skeleton_activity_distance", 60));
+
+		globals->insert(pair<const char*, double>("skeleton_attack_time", 50));
+		globals->insert(pair<const char*, double>("skeleton_attack_delay_min", 1000));
+		globals->insert(pair<const char*, double>("skeleton_attack_delay_max", 3000));
 	}
 	return globals->at(key);
 }
