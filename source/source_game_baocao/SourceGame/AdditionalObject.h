@@ -11,7 +11,7 @@ private:
 public:
 	static List<AdditionalObject*>* getObjects();
 	static void objectsUpdate();
-	void setNeedDelete(bool needDelete);
+ 	virtual void setNeedDelete(bool needDelete);
 	void update(float dt);
 	AdditionalObject();
 	~AdditionalObject();

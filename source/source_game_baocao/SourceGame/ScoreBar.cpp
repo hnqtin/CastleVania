@@ -49,12 +49,12 @@ void ScoreBar::renderBossHealth()
 
 void ScoreBar::renderSubWeapon()
 {
-	//if (Player::getInstance()->getSubWeapon() != 0)
-	//{
-	//	Player::getInstance()->getSubWeapon()->getSprite()->render(subWeaponLocation.X,
-	//		subWeaponLocation.Y,
-	//		Player::getInstance()->getSubWeapon()->getAction(), 0);
-	//}
+	if (this->subWeapon != 0)
+	{
+		this->subWeapon->getSprite()->render(subWeaponLocation.X,
+			subWeaponLocation.Y,
+			subWeapon->getAction(), 0);
+	}
 }
 
 ScoreBar * ScoreBar::instance = 0;
@@ -103,6 +103,8 @@ ScoreBar::ScoreBar()
 	setBossHealth(maxHealth);
 	setTime(900);
 
+	setSubWeapon(0);
+
 }
 
 
@@ -129,6 +131,11 @@ void ScoreBar::update()
 	{
 		increaseTime(-1);
 	}
+}
+
+void ScoreBar::setSubWeapon(SubWeaponItem * subWeapon)
+{
+	this->subWeapon = subWeapon;
 }
 
 void ScoreBar::restoreHealth()

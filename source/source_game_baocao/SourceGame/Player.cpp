@@ -3,15 +3,21 @@ CREATE_INSTANCE_OUTSIDE(Player);
 #include"ConsoleLogger.h"
 #include"MorningStar.h"
 #include"ScoreBar.h"
+#include"BoomerangSw.h"
 
 void Player::goToStair(int xDestination, int yDestination)
 {
 	goToAction.setGoto(this, xDestination, yDestination, getGlobalValue("player_goto_stair_time"), getDt());
 }
 
+void Player::setSubWeapon(SubWeaponItem * subWeapon)
+{
+	this->subWeapon = subWeapon;
+}
+
 bool Player::isGoUpStair()
 {
-	return (isUpRightStair && getDirection()==Right) || (!isUpRightStair && getDirection()==Left);
+	return (isUpRightStair && getDirection() == Right) || (!isUpRightStair && getDirection() == Left);
 }
 
 void Player::setIsOnStair(bool isOnStair)
@@ -47,6 +53,9 @@ Player::Player()
 	simonStairActionBefore = -1;
 	isDead = false;
 	needRestoreMorningStar = false;
+	setSubWeapon(0);
+
+	isThrowSubWeapon = false;
 
 	obtainMorningStarDelay.init(getGlobalValue("player_obtain_moning_star_delay"));
 }
@@ -60,6 +69,41 @@ void Player::onCollision(MovableBox * other, int nx, int ny, float collisionTime
 {
 	if (!getIsOnStair())
 		MovableObject::onCollision(other, nx, ny, collisionTime);
+}
+
+bool Player::createSubweapon()
+{
+	if (isThrowSubWeapon)
+	{
+		return true;
+	}
+	if (ScoreBar::getInstance()->getHeartCount() == 0)
+		return false  ;
+	switch (subWeapon->subWeaponType)
+	{
+	case SUB_WEAPON_ITEM_TYPE_BOOMERANG:
+	{
+		if (!BoomerangSw::isExists)
+		{
+			isThrowSubWeapon = true;
+			auto boomerang = new BoomerangSw();
+			boomerang->xInit = getX();
+			boomerang->setX(getX());
+			boomerang->setY(getY()-5);
+			boomerang->setDirection(getDirection());
+			ScoreBar::getInstance()->increaseHeartCount(-1);
+			return true;
+		}
+		return false;
+	}
+	case SUB_WEAPON_ITEM_TYPE_KNIFE:
+		isThrowSubWeapon = true;
+		return true;
+	default:
+		break;
+	}
+
+	return false;
 }
 
 bool Player::onGoTo()
@@ -96,7 +140,7 @@ void Player::update(float dt)
 				currentArea = 4;
 			boss->restore();
 			changeArea->changeArea(currentArea);
-			changeArea->resetLocation(); 
+			changeArea->resetLocation();
 			ScoreBar::getInstance()->restoreHealth();
 			ScoreBar::getInstance()->restoreBossHealth();
 			MorningStar::getInstance()->setType(MORNINGSTAR_TYPE_1);
@@ -121,9 +165,14 @@ void Player::update(float dt)
 
 	if (key->isAttackPress)
 	{
+
 		setIsOnAttack(true);
 	}
 
+	if (isOnAttack && isThrowSubWeapon && getIsLastFrame())
+	{
+		isThrowSubWeapon = false;
+	}
 
 	if (goToAction.isOnGoTo())
 	{
@@ -160,7 +209,7 @@ void Player::update(float dt)
 	{
 		if (isOnAttack)
 		{
-			if (isPauseAnimation() == false && getAction()<SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_UP)
+			if (isPauseAnimation() == false && getAction() < SIMON_PLAYER_ACTION_SIMON_STAIR_ATTACK_UP)
 			{
 				isOnAttack = false;
 			}
@@ -180,7 +229,7 @@ void Player::update(float dt)
 				setPauseAnimation(false);
 				MorningStar::getInstance()->setAlive(true);
 			}
-			
+
 		}
 		else
 		{
@@ -260,7 +309,17 @@ void Player::update(float dt)
 			if (isOnAttack)
 			{
 				action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK;
-				MorningStar::getInstance()->setAlive(true);
+				if (key->isUpDown && subWeapon != 0)
+				{
+					if (!createSubweapon())
+					{
+						MorningStar::getInstance()->setAlive(true);
+					}
+				}
+				else
+				{
+					MorningStar::getInstance()->setAlive(true);
+				}
 			}
 
 			if (key->isJumpPress) //is key jump press
@@ -283,7 +342,18 @@ void Player::update(float dt)
 		if (isOnAttack)
 		{
 			action = SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_ATTACK;
-			MorningStar::getInstance()->setAlive(true);
+			if (key->isUpDown && subWeapon != 0)
+			{
+				if (!createSubweapon())
+				{
+					MorningStar::getInstance()->setAlive(true);
+				}
+
+			}
+			else
+			{
+				MorningStar::getInstance()->setAlive(true);
+			}
 		}
 	}
 

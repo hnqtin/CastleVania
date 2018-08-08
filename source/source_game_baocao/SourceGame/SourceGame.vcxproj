@@ -143,6 +143,7 @@
     <ClCompile Include="Area.cpp" />
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="Bat.cpp" />
+    <ClCompile Include="BoomerangSw.cpp" />
     <ClCompile Include="BreakWall.cpp" />
     <ClCompile Include="BreakWall1.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Item700pts.cpp" />
     <ClCompile Include="ItemAxe.cpp" />
     <ClCompile Include="ItemBigHeart.cpp" />
+    <ClCompile Include="ItemBoomerang.cpp" />
     <ClCompile Include="ItemDagger.cpp" />
     <ClCompile Include="ItemGoldPotion.cpp" />
     <ClCompile Include="ItemHolyCross.cpp" />
@@ -186,6 +188,8 @@
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="SkeletonWeapon.cpp" />
     <ClCompile Include="Stair.cpp" />
+    <ClCompile Include="SubWeapon.cpp" />
+    <ClCompile Include="SubWeaponItem.cpp" />
     <ClCompile Include="Torch.cpp" />
     <ClCompile Include="VampireBat.cpp" />
     <ClCompile Include="Water.cpp" />
@@ -220,6 +224,7 @@
     <ClInclude Include="Area.h" />
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="Bat.h" />
+    <ClInclude Include="BoomerangSw.h" />
     <ClInclude Include="BreakWall.h" />
     <ClInclude Include="BreakWall1.h" />
     <ClInclude Include="Camera.h" />
@@ -250,6 +255,7 @@
     <ClInclude Include="Item700pts.h" />
     <ClInclude Include="ItemAxe.h" />
     <ClInclude Include="ItemBigHeart.h" />
+    <ClInclude Include="ItemBoomerang.h" />
     <ClInclude Include="ItemDagger.h" />
     <ClInclude Include="ItemGoldPotion.h" />
     <ClInclude Include="ItemHolyCross.h" />
@@ -266,6 +272,8 @@
     <ClInclude Include="ScoreBar.h" />
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="SkeletonWeapon.h" />
+    <ClInclude Include="SubWeapon.h" />
+    <ClInclude Include="SubWeaponItem.h" />
     <ClInclude Include="VampireBat.h" />
     <ClInclude Include="Water.h" />
     <ClInclude Include="WaterObj.h" />

@@ -7,6 +7,7 @@ class Gate3 :
 	int playerX, playerY, nextArea;
 	IChangeArea * changeArea;
 public:
+	void setValue(const char* propertyName,int value);
 	void setChangeArea(IChangeArea * changeArea);
 	void onInit(fstream& fs, int worldHeight) override;
 	void onIntersect(MovableBox* other) override;

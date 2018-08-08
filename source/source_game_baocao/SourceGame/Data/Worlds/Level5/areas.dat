@@ -1,5 +1,5 @@
 AreasCount
-1
+4
 
 
 AreaIndex
@@ -10,3 +10,33 @@ CameraX     CameraY
 768         2072
 SimonX      SimonY
 815         2193
+
+
+AreaIndex
+1
+AreaX       AreaY       AreaWidth       AreaHeight
+768         1880        1535            192
+CameraX     CameraY
+768         1880
+SimonX      SimonY
+815         2000
+
+
+AreaIndex
+2
+AreaX       AreaY       AreaWidth       AreaHeight
+512         1688        1792            192
+CameraX     CameraY
+512         1688
+SimonX      SimonY
+595         1820
+
+
+AreaIndex
+3
+AreaX       AreaY       AreaWidth       AreaHeight
+0           1496        1022            192
+CameraX     CameraY
+0           1496
+SimonX      SimonY
+10          1630

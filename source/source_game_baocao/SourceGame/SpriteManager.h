@@ -3,6 +3,7 @@
 enum SPRITE_INFO
 {
 	// gate 4 cua chuyen area boss bat - than chet
+	SI_IBOOMERANG = -28 ,
 	SI_I1000PTS= -27,
 	SI_I700PTS = -26,
 	SI_I400PTS = -25,
@@ -17,7 +18,7 @@ enum SPRITE_INFO
 	SI_IHOLYWATER = -14,
 	SI_IDAGGER = -13,
 	SI_IBIGHEART = -12,
-	// gate 3 cua chuyen area 2 -3
+	// gate 3 cua chuyen area 2 -3 ( chuyen canh qua cau thang)
 	SI_GATE_3 = -11,
 	SI_ISMALLHEART = -10,
 	SI_IMORNING_STAR = -9,
@@ -74,6 +75,8 @@ enum MISC_SPRITE_ID
 	MISC_SPRITE_ID_ITEM_400PTS,
 	MISC_SPRITE_ID_ITEM_700PTS,
 	MISC_SPRITE_ID_ITEM_1000PTS,
+	MISC_SPRITE_ID_ITEM_BOOMERANG,
+	MISC_SPRITE_ID_BOOMERANG,
 };
 
 class SpriteManager

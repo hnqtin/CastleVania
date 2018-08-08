@@ -2,6 +2,7 @@
 
 #include"SpriteManager.h"
 #include"GameTime.h"
+#include"SubWeaponItem.h"
 
 struct SCORE_LOCATION
 {
@@ -12,6 +13,7 @@ struct SCORE_LOCATION
 
 class ScoreBar
 {
+	SubWeaponItem* subWeapon;
 	Sprite* miscSprite;
 	Texture* scoreBar;
 	void renderNumber(int num, int x, int y, int maxLength);
@@ -43,6 +45,8 @@ public:
 	~ScoreBar();
 	void render();
 	void update();
+
+	void setSubWeapon(SubWeaponItem* subWeapon);
 
 	void restoreHealth();
 	void restoreBossHealth();

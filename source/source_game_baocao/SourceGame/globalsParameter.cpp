@@ -114,6 +114,12 @@ double getGlobalValue(const char* key)
 
 		globals->insert(pair<const char*, double>("skeletonweapon_vx", 60));
 		globals->insert(pair<const char*, double>("skeletonweapon_vy", 200));
+
+		globals->insert(pair<const char*, double>("boomerang_vx", 2));
+		globals->insert(pair<const char*, double>("boomerang_distance", 100));
+
+		globals->insert(pair<const char*, double>("medusahead_r", 40));
+		globals->insert(pair<const char*, double>("medusahead_dx", 1));
 	}
 	return globals->at(key);
 }

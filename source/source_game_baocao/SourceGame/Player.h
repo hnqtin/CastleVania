@@ -7,6 +7,7 @@
 #include"GoToAction.h"
 #include"IChangeArea.h"
 #include"IBoss.h"
+#include"SubWeaponItem.h"
 enum SIMON_PLAYER_ACTION
 {
 	SIMON_PLAYER_ACTION_SIMON_GO_INTO_NEXTSTATE,
@@ -37,12 +38,15 @@ class Player :
 
 	bool isUpRightStair;
 	bool isLastGoToStair;
-
+	SubWeaponItem* subWeapon;
 
 	int simonStairActionBefore;
 public:
+	void setSubWeapon(SubWeaponItem* subWeapon);
 	IBoss * boss;
 	DelayTime deadDelay;
+
+	bool isThrowSubWeapon;
 
 	DelayTime obtainMorningStarDelay;
 
@@ -59,6 +63,7 @@ public:
 	Player();
 	~Player();
 	void onCollision(MovableBox* other, int nx, int ny, float collisionTime);
+	bool createSubweapon();
 	bool onGoTo();
 	void update(float dt);
 	DelayTime blinkDelay;

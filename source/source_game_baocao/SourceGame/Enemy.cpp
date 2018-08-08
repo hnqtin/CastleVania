@@ -91,7 +91,7 @@ void Enemy::onContactPlayer()
 
 void Enemy::onContactWeapon()
 {
-	setHealth(getHealth() - 16);
+	setHealth(getHealth() - 1);
 	onDecreaseHealth();
 	if (getHealth() <= 0)
 	{

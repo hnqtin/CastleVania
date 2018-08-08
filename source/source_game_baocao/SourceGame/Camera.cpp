@@ -1,5 +1,6 @@
 #include "Camera.h"
 #include"MovableObject.h"
+#include"Player.h"
 
 CREATE_INSTANCE_OUTSIDE(Camera);
 
@@ -72,6 +73,12 @@ void Camera::update()
 	{
 		player->setX(cameraLimit->getRight() - player->getWidth());
 		player->setDx(0);
+	}
+	// Khi simon rot xuong duoi camera
+	if (player->getBottom() < this->getBottom() && player->getDy() < 0 && Player::getInstance()->isDead==false)
+	{
+		Player::getInstance()->isDead = true;
+		Player::getInstance()->deadDelay.start();
 	}
 
 }
