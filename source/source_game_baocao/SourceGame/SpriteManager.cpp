@@ -76,6 +76,11 @@ SpriteManager::SpriteManager()
 	sprites[SI_MEDUSA_HEAD]->readInfo("Data/Sprites/Enemies/medusa_head.info.txt");
 	sprites[SI_MEDUSA_HEAD]->img = enemiesImage;
 
+
+	//sprites[SI_DEATH] = new Sprite();
+	//sprites[SI_DEATH]->readInfo("Data/Sprites/death/death.info.txt", "Data/Sprites/death/death.png");
+	//sprites[SI_DEATH]->img = enemiesImage;
+
 	
 
 #pragma endregion

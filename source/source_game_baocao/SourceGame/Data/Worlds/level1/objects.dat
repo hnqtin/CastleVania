@@ -1,4 +1,4 @@
-228
+231
 -1	0	0	3344	768	16
 -1	0	2784	3200	32	16
 -1	0	1520	3264	160	16
@@ -100,7 +100,7 @@
 3	5	2800	3248	16	16
 5	1	2556	3228	16	16	bat_discover_space_x	2352	bat_discover_space_y	3248	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	1
 5	1	2557	3297	16	16	bat_discover_space_x	2432	bat_discover_space_y	3280	bat_discover_space_width	48	bat_discover_space_height	16	bat_discover_space_direction	1
-5	1	2585	3337	17	15	bat_discover_space_x	2368	bat_discover_space_y	3344	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	1
+5	1	2555	3334	17	15	bat_discover_space_x	2368	bat_discover_space_y	3344	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	1
 5	1	2310	3223	16	16	bat_discover_space_x	2352	bat_discover_space_y	3248	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	-1
 5	1	2296	3296	16	16	bat_discover_space_x	2432	bat_discover_space_y	3280	bat_discover_space_width	48	bat_discover_space_height	16	bat_discover_space_direction	-1
 5	1	2297	3345	14	13	bat_discover_space_x	2368	bat_discover_space_y	3344	bat_discover_space_width	80	bat_discover_space_height	16	bat_discover_space_direction	-1
@@ -115,7 +115,7 @@
 -8	5	1704	3289	16	8	isMoveUp	1	isUpRightStair	0
 -8	5	2053	3352	19	8	isMoveUp	1	isUpRightStair	1
 -8	5	2160	3248	16	16	isMoveUp	0	isUpRightStair	1
--8	5	2464	3280	16	16	isMoveUp	0	isUpRightStair	0
+-8	5	2464	3285	16	11	isMoveUp	0	isUpRightStair	0
 -8	5	2535	3352	18	8	isMoveUp	1	isUpRightStair	0
 -8	5	2912	3248	16	16	isMoveUp	0	isUpRightStair	0
 -8	5	2951	3288	19	8	isMoveUp	1	isUpRightStair	0
@@ -227,3 +227,6 @@
 -26	4	2335	3409	8	16
 -26	4	25426	3405	15	15
 -26	4	2527	3406	8	16
+-1	0	2560	3360	16	16
+-1	0	2576	3344	16	16
+-1	0	2576	3360	16	16
