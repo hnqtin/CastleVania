@@ -75,6 +75,8 @@ public:
 	void setBossHealth(int health);
 	void increaseBossHealth(int health);
 
+	int getMaxHealth();
+
 	void setCurrentStageNumber(int currentStageNumber);
 };
 

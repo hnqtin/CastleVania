@@ -38,7 +38,10 @@ void Camera::getWorldToViewLocation(int xw, int yw, int & xv, int & yv)
 
 void Camera::update()
 {
-	updateLocation();
+	if (!preventMoving)
+	{
+		updateLocation();
+	}
 	if (player == 0)
 	{
 		return;
@@ -86,6 +89,7 @@ void Camera::update()
 Camera::Camera()
 {
 	setPlayer(0);
+	preventMoving = false;
 }
 
 

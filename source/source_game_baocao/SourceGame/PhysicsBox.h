@@ -5,7 +5,7 @@ class PhysicsBox : public MovableBox
 	float vx, vy, ax, ay;
 	bool physicsEnable;
 public:
-	void setVx(float vx);
+	virtual void setVx(float vx);
 	void setVy(float vy);
 	void setAx(float ax);
 	void setAy(float ay);

@@ -39,6 +39,10 @@ void ScoreBar::renderHealth()
 void ScoreBar::renderBossHealth()
 {
 	int healthLost = maxHealth - bossHealth;
+	if (healthLost > maxHealth)
+	{
+		healthLost = maxHealth;
+	}
 	int lastLocationXHealth = bossHealthLocation.X + HEALTH_WIDTH * maxHealth - HEALTH_WIDTH;
 	for (size_t i = 0; i < healthLost; i++)
 	{
@@ -236,4 +240,9 @@ void ScoreBar::setBossHealth(int health)
 void ScoreBar::increaseBossHealth(int health)
 {
 	setBossHealth(bossHealth + health);
+}
+
+int ScoreBar::getMaxHealth()
+{
+	return maxHealth;
 }

@@ -120,6 +120,16 @@ double getGlobalValue(const char* key)
 
 		globals->insert(pair<const char*, double>("medusahead_r", 40));
 		globals->insert(pair<const char*, double>("medusahead_dx", 1));
+
+		globals->insert(pair<const char*, double>("death_wait_delay", 2000));
+		globals->insert(pair<const char*, double>("death_vy", 40));
+		globals->insert(pair<const char*, double>("death_vx", 40));
+		globals->insert(pair<const char*, double>("death_ay", 0));
+		globals->insert(pair<const char*, double>("death_create_weapon_time", 3000));
+
+		globals->insert(pair<const char*, double>("deathweapon_wait_delay", 500));
+		globals->insert(pair<const char*, double>("dead_weapon_dx", 1));
+		globals->insert(pair<const char*, double>("deathweapon_continue_run_delay", 300));
 	}
 	return globals->at(key);
 }

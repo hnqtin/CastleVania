@@ -23,6 +23,7 @@ void Item::onIntersect(MovableBox * other)
 					MoringStarAdditional* morningStarItem = new MoringStarAdditional();
 					morningStarItem->setX(getX());
 					morningStarItem->setY(getY());
+					this->setAlive(false);
 					return;
 				}
 			}

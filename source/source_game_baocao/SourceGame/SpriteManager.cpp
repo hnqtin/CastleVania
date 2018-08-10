@@ -77,11 +77,8 @@ SpriteManager::SpriteManager()
 	sprites[SI_MEDUSA_HEAD]->img = enemiesImage;
 
 
-	//sprites[SI_DEATH] = new Sprite();
-	//sprites[SI_DEATH]->readInfo("Data/Sprites/death/death.info.txt", "Data/Sprites/death/death.png");
-	//sprites[SI_DEATH]->img = enemiesImage;
-
-	
+	sprites[SI_DEATH] = new Sprite();
+	sprites[SI_DEATH]->initFromSingleFrame("Data/Sprites/death/death.png");
 
 #pragma endregion
 
@@ -101,6 +98,10 @@ SpriteManager::SpriteManager()
 	sprites[SI_MISC] = new Sprite();
 	sprites[SI_MISC]->ReadFromFile("Data/Sprites/Misc/misc.info.txt", "Data/Sprites/Misc/misc.png");
 	sprites[SI_MISC]->img->direction = Right;
+
+	sprites[SI_DEATH_WEAPON] = new Sprite();
+	sprites[SI_DEATH_WEAPON]->ReadFromFile("Data/Sprites/DeathWeapon/info.txt", "Data/Sprites/DeathWeapon/image.png");
+	sprites[SI_DEATH_WEAPON]->img->direction = Right;
 }
 
 

@@ -321,6 +321,21 @@
     <ClCompile Include="BoomerangSw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Death.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeathWeapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FollowPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Attacker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerWeaponVictim.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -579,6 +594,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BoomerangSw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Death.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeathWeapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Attacker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerWeaponVictim.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

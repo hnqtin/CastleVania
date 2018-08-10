@@ -26,7 +26,7 @@ void Game::changeLevel(int levelIndex, int areaIndex)
 	stages[levelIndex]->setPlayer(Player::getInstance());
 	stages[currentStageIndex]->changeArea(areaIndex);
 	stages[levelIndex]->resetCameraAndPlayerLocation();
-//	Camera::getInstance()->setCameraLimit(currentStage());
+	//	Camera::getInstance()->setCameraLimit(currentStage());
 	Player::getInstance()->changeArea = dynamic_cast<IChangeArea*>(stages[levelIndex]);
 
 }
@@ -45,9 +45,9 @@ void Game::init()
 		getGlobalValue("player_height")
 	);
 
-	Camera::getInstance()->set(getGlobalValue("camera_x"), 
-		getGlobalValue("camera_y"), 
-		getGlobalValue("backbuffer_width"), 
+	Camera::getInstance()->set(getGlobalValue("camera_x"),
+		getGlobalValue("camera_y"),
+		getGlobalValue("backbuffer_width"),
 		getGlobalValue("backbuffer_height"));
 	Camera::getInstance()->setPlayer(Player::getInstance());
 	stages = new Stage*[2];
@@ -61,7 +61,7 @@ void Game::init()
 		"Data/Worlds/Level1/objects.dat",
 		"Data/Worlds/Level1/quadtree.dat",
 		"Data/Worlds/Level1/collision_type_collides.dat",
-		"Data/Worlds/Level1/areas.dat"		
+		"Data/Worlds/Level1/areas.dat"
 	);
 
 	stages[1] = new Stage();
@@ -76,7 +76,7 @@ void Game::init()
 		"Data/Worlds/Level5/areas.dat"
 	);
 	stages[1]->index = 1;
-	changeLevel(0, 2);
+	changeLevel(1,3);
 }
 
 void Game::update(float dt)

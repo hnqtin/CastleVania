@@ -25,6 +25,6 @@ public:
 	float getMidY();
 
 	Rect();
-	~Rect();
+	virtual ~Rect();
 };
 

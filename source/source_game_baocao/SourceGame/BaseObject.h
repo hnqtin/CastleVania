@@ -70,7 +70,7 @@ public:
 	void setIsLastFrame(bool isLastFrame);
 
 	bool isAlive();
-	void setAlive(bool alive);
+	virtual void setAlive(bool alive);
 
 	bool canCollision();
 

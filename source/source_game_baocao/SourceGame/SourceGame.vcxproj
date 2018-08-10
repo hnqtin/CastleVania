@@ -141,6 +141,7 @@
     <ClCompile Include="AdditionalObject.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Area.cpp" />
+    <ClCompile Include="Attacker.cpp" />
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="Bat.cpp" />
     <ClCompile Include="BoomerangSw.cpp" />
@@ -152,12 +153,15 @@
     <ClCompile Include="CollisionsObjectCollection.cpp" />
     <ClCompile Include="CollisionTypeCollide.cpp" />
     <ClCompile Include="ConsoleLogger.cpp" />
+    <ClCompile Include="Death.cpp" />
+    <ClCompile Include="DeathWeapon.cpp" />
     <ClCompile Include="DelayTime.cpp" />
     <ClCompile Include="DirectXTool.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="ExitStair.cpp" />
     <ClCompile Include="ExplosionEffect.cpp" />
     <ClCompile Include="Fleaman.cpp" />
+    <ClCompile Include="FollowPlayer.cpp" />
     <ClCompile Include="Gate1.cpp" />
     <ClCompile Include="Gate2.cpp" />
     <ClCompile Include="Gate3.cpp" />
@@ -183,6 +187,7 @@
     <ClCompile Include="MoringStarAdditional.cpp" />
     <ClCompile Include="MorningStarAttack.cpp" />
     <ClCompile Include="Panther.cpp" />
+    <ClCompile Include="PlayerWeaponVictim.cpp" />
     <ClCompile Include="RedSkeleton.cpp" />
     <ClCompile Include="ScoreBar.cpp" />
     <ClCompile Include="Skeleton.cpp" />
@@ -222,6 +227,7 @@
     <ClInclude Include="AdditionalObject.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Area.h" />
+    <ClInclude Include="Attacker.h" />
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="Bat.h" />
     <ClInclude Include="BoomerangSw.h" />
@@ -235,12 +241,15 @@
     <ClInclude Include="CollisionTypeCollide.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="ConsoleLogger.h" />
+    <ClInclude Include="Death.h" />
+    <ClInclude Include="DeathWeapon.h" />
     <ClInclude Include="DelayTime.h" />
     <ClInclude Include="DirectXTool.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="ExitStair.h" />
     <ClInclude Include="ExplosionEffect.h" />
     <ClInclude Include="Fleaman.h" />
+    <ClInclude Include="FollowPlayer.h" />
     <ClInclude Include="Gate1.h" />
     <ClInclude Include="Gate2.h" />
     <ClInclude Include="Gate3.h" />
@@ -268,6 +277,7 @@
     <ClInclude Include="MermanBullet.h" />
     <ClInclude Include="MoringStarAdditional.h" />
     <ClInclude Include="Panther.h" />
+    <ClInclude Include="PlayerWeaponVictim.h" />
     <ClInclude Include="RedSkeleton.h" />
     <ClInclude Include="ScoreBar.h" />
     <ClInclude Include="Skeleton.h" />

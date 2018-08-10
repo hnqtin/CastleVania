@@ -98,7 +98,7 @@ void Sprite::readInfo(const char * infoPath)
 void Sprite::initFromSingleFrame(const char * imagePath)
 {
 	img = new Texture();
-	img->Init(imagePath, D3DCOLOR_XRGB(0, 0, 0));
+	img->Init(imagePath, D3DCOLOR_ARGB(0, 0, 0, 0));
 	animCount = 1;
 	anims = new Animation[animCount];
 	anims[0].frameCount = 1;

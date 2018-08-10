@@ -12,6 +12,7 @@ private:
 	MovableObject* player;
 	ICameraLimit* cameraLimit;
 public:
+	bool preventMoving;
 	void setCameraLimit(ICameraLimit* cameraLimit);
 	void setPlayer(MovableObject* player);
 	D3DXMATRIX getWorldToViewMatrix();
