@@ -1,5 +1,5 @@
 AreasCount
-4
+6
 
 
 AreaIndex
@@ -15,7 +15,7 @@ SimonX      SimonY
 AreaIndex
 1
 AreaX       AreaY       AreaWidth       AreaHeight
-768         1880        1535            192
+768         1880        1280            192
 CameraX     CameraY
 768         1880
 SimonX      SimonY
@@ -25,7 +25,27 @@ SimonX      SimonY
 AreaIndex
 2
 AreaX       AreaY       AreaWidth       AreaHeight
-512         1688        1792            192
+2048        1880        255             192
+CameraX     CameraY
+2048        1880
+SimonX      SimonY
+2060        2000
+
+
+AreaIndex
+3
+AreaX       AreaY       AreaWidth       AreaHeight
+1025        1688        1279            192
+CameraX     CameraY
+1025        1688
+SimonX      SimonY
+1040        1820
+
+
+AreaIndex
+4
+AreaX       AreaY       AreaWidth       AreaHeight
+512         1688        513            192
 CameraX     CameraY
 512         1688
 SimonX      SimonY
@@ -33,10 +53,10 @@ SimonX      SimonY
 
 
 AreaIndex
-3
+5
 AreaX       AreaY       AreaWidth       AreaHeight
 0           1496        1022            192
 CameraX     CameraY
-768         1472
+0           1496
 SimonX      SimonY
-894         1630
+10          1630

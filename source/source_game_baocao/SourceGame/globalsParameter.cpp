@@ -41,7 +41,7 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("camera_y", 430));
 
 		globals->insert(pair<const char*, double>("backbuffer_width", 256));
-		globals->insert(pair<const char*, double>("backbuffer_height", 224));//224-176
+		globals->insert(pair<const char*, double>("backbuffer_height", 224));//256 -184
 
 		globals->insert(pair<const char*, double>("window_width", 256*2));
 		globals->insert(pair<const char*, double>("window_height", 224*2));

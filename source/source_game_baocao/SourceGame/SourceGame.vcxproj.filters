@@ -297,15 +297,6 @@
     <ClCompile Include="RedSkeleton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Item400pts.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Item700pts.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Item1000pts.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MedusaHead.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -335,6 +326,15 @@
     </ClCompile>
     <ClCompile Include="PlayerWeaponVictim.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item700pts.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item400pts.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item1000pts.cpp">
+      <Filter>Objects\Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -572,15 +572,6 @@
     <ClInclude Include="RedSkeleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Item400pts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Item700pts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Item1000pts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MedusaHead.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -610,6 +601,15 @@
     </ClInclude>
     <ClInclude Include="PlayerWeaponVictim.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item1000pts.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Item700pts.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Item400pts.h">
+      <Filter>Objects\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
