@@ -25,9 +25,9 @@ SimonX      SimonY
 AreaIndex
 2
 AreaX       AreaY       AreaWidth       AreaHeight
-2048        1880        255             192
+2046        1880        258             192
 CameraX     CameraY
-2048        1880
+2046        1880
 SimonX      SimonY
 2060        2000
 
