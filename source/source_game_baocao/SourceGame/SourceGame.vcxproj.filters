@@ -85,6 +85,15 @@
     <Filter Include="GameSound">
       <UniqueIdentifier>{b65a8a23-c984-4ffa-b1d4-970085e422e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\MovableObject\Enemy\Boss">
+      <UniqueIdentifier>{3bc0f5f4-f66e-4cff-b15a-1b500ca8341b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Item\Done">
+      <UniqueIdentifier>{1deb7a36-be57-4bbd-b071-42a41dfe8cdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\MovableObject\Enemy\Utils">
+      <UniqueIdentifier>{6a403b2f-860b-460e-9acc-507dab300f09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -171,9 +180,6 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Objects\MovableObject\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="ExplosionEffect.cpp">
-      <Filter>Objects\MiscObject</Filter>
-    </ClCompile>
     <ClCompile Include="Gate1.cpp">
       <Filter>Objects\MiscObject</Filter>
     </ClCompile>
@@ -219,9 +225,6 @@
     <ClCompile Include="Bat.cpp">
       <Filter>Objects\MovableObject\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="MermanBullet.cpp">
-      <Filter>Objects\MiscObject</Filter>
-    </ClCompile>
     <ClCompile Include="Gate2.cpp">
       <Filter>Objects\MiscObject</Filter>
     </ClCompile>
@@ -243,9 +246,6 @@
     <ClCompile Include="ItemAxe.cpp">
       <Filter>Objects\Item</Filter>
     </ClCompile>
-    <ClCompile Include="ItemBigHeart.cpp">
-      <Filter>Objects\Item</Filter>
-    </ClCompile>
     <ClCompile Include="ItemDagger.cpp">
       <Filter>Objects\Item</Filter>
     </ClCompile>
@@ -258,16 +258,7 @@
     <ClCompile Include="ItemHolyWater.cpp">
       <Filter>Objects\Item</Filter>
     </ClCompile>
-    <ClCompile Include="ItemMorningStar.cpp">
-      <Filter>Objects\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemSmallHeart.cpp">
-      <Filter>Objects\Item</Filter>
-    </ClCompile>
     <ClCompile Include="ItemStopWatch.cpp">
-      <Filter>Objects\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="BreakWall.cpp">
       <Filter>Objects\Item</Filter>
     </ClCompile>
     <ClCompile Include="Water.cpp">
@@ -285,63 +276,6 @@
     <ClCompile Include="MoringStarAdditional.cpp">
       <Filter>Objects\AdditionalObject</Filter>
     </ClCompile>
-    <ClCompile Include="VampireBat.cpp">
-      <Filter>Objects\MovableObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Fleaman.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Skeleton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SkeletonWeapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RedSkeleton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MedusaHead.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemBoomerang.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SubWeaponItem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SubWeapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BoomerangSw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Death.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DeathWeapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FollowPlayer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Attacker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerWeaponVictim.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Item700pts.cpp">
-      <Filter>Objects\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Item400pts.cpp">
-      <Filter>Objects\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Item1000pts.cpp">
-      <Filter>Objects\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Gate5.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CWaveFile.cpp">
       <Filter>GameSound</Filter>
     </ClCompile>
@@ -350,6 +284,81 @@
     </ClCompile>
     <ClCompile Include="Sound.cpp">
       <Filter>GameSound</Filter>
+    </ClCompile>
+    <ClCompile Include="VampireBat.cpp">
+      <Filter>Objects\MovableObject\Enemy\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Death.cpp">
+      <Filter>Objects\MovableObject\Enemy\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="RedSkeleton.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Fleaman.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="MedusaHead.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Item400pts.cpp">
+      <Filter>Objects\Item\Done</Filter>
+    </ClCompile>
+    <ClCompile Include="Item700pts.cpp">
+      <Filter>Objects\Item\Done</Filter>
+    </ClCompile>
+    <ClCompile Include="Item1000pts.cpp">
+      <Filter>Objects\Item\Done</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBigHeart.cpp">
+      <Filter>Objects\Item\Done</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemSmallHeart.cpp">
+      <Filter>Objects\Item\Done</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemMorningStar.cpp">
+      <Filter>Objects\Item\Done</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBoomerang.cpp">
+      <Filter>Objects\Item\Done</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate5.cpp">
+      <Filter>Objects\MiscObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonWeapon.cpp">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="BoomerangSw.cpp">
+      <Filter>Objects\PlayerWeapon</Filter>
+    </ClCompile>
+    <ClCompile Include="SubWeapon.cpp">
+      <Filter>Objects\PlayerWeapon</Filter>
+    </ClCompile>
+    <ClCompile Include="DeathWeapon.cpp">
+      <Filter>Objects\MovableObject\Enemy\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="SubWeaponItem.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="BreakWall.cpp">
+      <Filter>Objects\Item\Done</Filter>
+    </ClCompile>
+    <ClCompile Include="MermanBullet.cpp">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionEffect.cpp">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Attacker.cpp">
+      <Filter>Objects\MovableObject\Enemy\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="FollowPlayer.cpp">
+      <Filter>Objects\MovableObject\Enemy\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerWeaponVictim.cpp">
+      <Filter>Objects\MovableObject\Enemy\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -449,9 +458,6 @@
     <ClInclude Include="Enemy.h">
       <Filter>Objects\MovableObject\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="ExplosionEffect.h">
-      <Filter>Objects\MiscObject</Filter>
-    </ClInclude>
     <ClInclude Include="Gate1.h">
       <Filter>Objects\MiscObject</Filter>
     </ClInclude>
@@ -500,9 +506,6 @@
     <ClInclude Include="Bat.h">
       <Filter>Objects\MovableObject\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="MermanBullet.h">
-      <Filter>Objects\MiscObject</Filter>
-    </ClInclude>
     <ClInclude Include="Gate2.h">
       <Filter>Objects\MiscObject</Filter>
     </ClInclude>
@@ -524,12 +527,6 @@
     <ClInclude Include="ItemAxe.h">
       <Filter>Objects\Item</Filter>
     </ClInclude>
-    <ClInclude Include="BreakWall.h">
-      <Filter>Objects\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemBigHeart.h">
-      <Filter>Objects\Item</Filter>
-    </ClInclude>
     <ClInclude Include="ItemDagger.h">
       <Filter>Objects\Item</Filter>
     </ClInclude>
@@ -540,12 +537,6 @@
       <Filter>Objects\Item</Filter>
     </ClInclude>
     <ClInclude Include="ItemHolyWater.h">
-      <Filter>Objects\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemMorningStar.h">
-      <Filter>Objects\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemSmallHeart.h">
       <Filter>Objects\Item</Filter>
     </ClInclude>
     <ClInclude Include="ItemStopWatch.h">
@@ -560,9 +551,6 @@
     <ClInclude Include="IBoss.h">
       <Filter>Objects\MovableObject\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="IGate4Interface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="WaterObj.h">
       <Filter>Objects\MiscObject</Filter>
     </ClInclude>
@@ -572,63 +560,6 @@
     <ClInclude Include="MoringStarAdditional.h">
       <Filter>Objects\AdditionalObject</Filter>
     </ClInclude>
-    <ClInclude Include="VampireBat.h">
-      <Filter>Objects\MovableObject\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Fleaman.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Skeleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SkeletonWeapon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RedSkeleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MedusaHead.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemBoomerang.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SubWeaponItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SubWeapon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BoomerangSw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Death.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DeathWeapon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FollowPlayer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Attacker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerWeaponVictim.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Item1000pts.h">
-      <Filter>Objects\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Item700pts.h">
-      <Filter>Objects\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Item400pts.h">
-      <Filter>Objects\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Gate5.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CWaveFile.h">
       <Filter>GameSound</Filter>
     </ClInclude>
@@ -637,6 +568,84 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>GameSound</Filter>
+    </ClInclude>
+    <ClInclude Include="VampireBat.h">
+      <Filter>Objects\MovableObject\Enemy\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Death.h">
+      <Filter>Objects\MovableObject\Enemy\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="RedSkeleton.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="MedusaHead.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Fleaman.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Item400pts.h">
+      <Filter>Objects\Item\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="Item700pts.h">
+      <Filter>Objects\Item\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="Item1000pts.h">
+      <Filter>Objects\Item\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBigHeart.h">
+      <Filter>Objects\Item\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemSmallHeart.h">
+      <Filter>Objects\Item\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemMorningStar.h">
+      <Filter>Objects\Item\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBoomerang.h">
+      <Filter>Objects\Item\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate5.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="IGate4Interface.h">
+      <Filter>Objects\MiscObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonWeapon.h">
+      <Filter>Objects\MovableObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BoomerangSw.h">
+      <Filter>Objects\PlayerWeapon</Filter>
+    </ClInclude>
+    <ClInclude Include="DeathWeapon.h">
+      <Filter>Objects\MovableObject\Enemy\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="SubWeapon.h">
+      <Filter>Objects\PlayerWeapon</Filter>
+    </ClInclude>
+    <ClInclude Include="SubWeaponItem.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="BreakWall.h">
+      <Filter>Objects\Item\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="MermanBullet.h">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionEffect.h">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Attacker.h">
+      <Filter>Objects\MovableObject\Enemy\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowPlayer.h">
+      <Filter>Objects\MovableObject\Enemy\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerWeaponVictim.h">
+      <Filter>Objects\MovableObject\Enemy\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
