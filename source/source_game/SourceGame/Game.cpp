@@ -38,8 +38,8 @@ void Game::init()
 
 	Camera::getInstance()->set(getGlobalValue("camera_x"), 
 		getGlobalValue("camera_y"), 
-		BACKBUFFER_WIDTH, 
-		BACKBUFFER_HEIGHT);
+		getGlobalValue("backbuffer_width"), 
+		getGlobalValue("backbuffer_height"));
 	Camera::getInstance()->setPlayer(Player::getInstance());
 	stages = new Stage*[2];
 	stages[0] = new Stage();
@@ -51,12 +51,12 @@ void Game::init()
 	//	"data/worlds/stage10/collision_type_collides.dat"
 	//	);
 	stages[0]->init(
-		"Data/Worlds/Stage01/tilesheet.png",
-		"Data/Worlds/Stage01/matrix.dat",
-		"Data/Worlds/Stage01/objects.dat",
-		"Data/Worlds/Stage01/quadtree.dat",
-		"Data/Worlds/Stage01/collision_type_collides.dat",
-		"Data/Worlds/Stage01/camera_location.dat"
+		"Data/Worlds/Level1/tilesheet.png",
+		"Data/Worlds/Level1/matrix.dat",
+		"Data/Worlds/Level1/objects.dat",
+		"Data/Worlds/Level1/quadtree.dat",
+		"Data/Worlds/Level1/collision_type_collides.dat",
+		"Data/Worlds/Level1/areas.dat"
 
 		//"Data/Worlds/Stage02/tilesheet.png",
 		//"Data/Worlds/Stage02/matrix.dat",
@@ -66,6 +66,8 @@ void Game::init()
 		//"Data/Worlds/Stage02/camera_location.dat"
 	);
 	stages[0]->setPlayer(Player::getInstance());
+	stages[0]->changeArea(0);
+	stages[0]->resetCameraAndPlayerLocation();
 
 	//stages[1] = new World();
 	//stages[1]->init(
@@ -77,8 +79,8 @@ void Game::init()
 	//);
 
 
-	Camera::getInstance()->setCameraLimit(currentStage());
-	currentStage()->resetCameraAndPlayerLocation();
+	//Camera::getInstance()->setCameraLimit(currentStage());
+	//currentStage()->resetCameraAndPlayerLocation();
 }
 
 void Game::update(float dt)

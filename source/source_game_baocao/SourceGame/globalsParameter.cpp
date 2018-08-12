@@ -25,7 +25,7 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("player_y", 400));
 		globals->insert(pair<const char*, double>("player_width", 16));
 		globals->insert(pair<const char*, double>("player_height", 30));
-		globals->insert(pair<const char*, double>("player_vx", 120));
+		globals->insert(pair<const char*, double>("player_vx", 80));
 		globals->insert(pair<const char*, double>("player_vy_jump", 250));
 		globals->insert(pair<const char*, double>("player_jump_height", 23));
 		globals->insert(pair<const char*, double>("player_vy_fall_stand", -70));
@@ -125,11 +125,12 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("death_vy", 40));
 		globals->insert(pair<const char*, double>("death_vx", 40));
 		globals->insert(pair<const char*, double>("death_ay", 0));
-		globals->insert(pair<const char*, double>("death_create_weapon_time", 3000));
+		globals->insert(pair<const char*, double>("death_create_weapon_time", 2000));
 
-		globals->insert(pair<const char*, double>("deathweapon_wait_delay", 500));
+		globals->insert(pair<const char*, double>("deathweapon_wait_delay", 200));
 		globals->insert(pair<const char*, double>("dead_weapon_dx", 1));
-		globals->insert(pair<const char*, double>("deathweapon_continue_run_delay", 300));
+		globals->insert(pair<const char*, double>("dead_weapon_moment", 2));
+		globals->insert(pair<const char*, double>("deathweapon_continue_run_delay", 100));
 	}
 	return globals->at(key);
 }

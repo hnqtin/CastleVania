@@ -2,6 +2,7 @@
 #include"Player.h"
 #include"ScoreBar.h"
 #include"MorningStarAttack.h"
+#include"GameSound.h"
 
 void Enemy::setHealth(int health)
 {
@@ -41,10 +42,10 @@ void Enemy::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 
 void Enemy::onIntersect(MovableBox * other)
 {
-	
+	timeHit.update();
 	//xu ly khi enemy cham vao player
 	auto player = Player::getInstance();
-	if (other == player && !player->blinkDelay.isOnTime() && canAttackPlayer() && !player->isDead)
+	if (other == player && !player->blinkDelay.isOnTime() && canAttackPlayer() && !player->isDead  )
 	{
 		onContactPlayer();
 		ScoreBar::getInstance()->increaseHealth(-1);
@@ -54,9 +55,15 @@ void Enemy::onIntersect(MovableBox * other)
 			player->deadDelay.start();
 		}
 	}
-	if (other->getCollisionType() == CT_WEAPON)
+	if ( (other->getCollisionType() == CT_WEAPON || other->getCollisionType() == CT_SUB_WEAPON) && !timeHit.isOnTime())
 	{
-		((MorningStarAttack*)other)->setNeedDelete(true);
+		timeHit.start();
+		if (other->getCollisionType() == CT_WEAPON)
+		{
+			((MorningStarAttack*)other)->setNeedDelete(true);
+		}
+		GameSound::getInstance()->play(SOUND_ATTACK_ENEMY);
+		ScoreBar::getInstance()->increaseScore(100);
 		onContactWeapon();
 	}
 }
@@ -108,6 +115,7 @@ bool Enemy::canAttackPlayer()
 Enemy::Enemy()
 {
 	setHealth(1);
+	timeHit.init(400);
 }
 
 

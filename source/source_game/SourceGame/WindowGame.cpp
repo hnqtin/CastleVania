@@ -35,7 +35,7 @@ void WindowGame::initHandleWindows(HINSTANCE hInstance, int nCmdShow)
 	wcex.lpszClassName = CVFORM_CLASS_NAME;
 	RegisterClassExA(&wcex);
 	HWND hWnd = CreateWindowA(CVFORM_CLASS_NAME, TITLE_STR, WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, 0, FORM_WIDTH, FORM_HEIGHT, 0, 0, hInstance, NULL);
+		CW_USEDEFAULT, 0, getGlobalValue("window_width"), getGlobalValue("window_height"), 0, 0, hInstance, NULL);
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);

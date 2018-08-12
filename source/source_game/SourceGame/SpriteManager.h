@@ -2,11 +2,14 @@
 #include"Sprite.h"
 enum SPRITE_INFO
 {
+	SI_TORCH = -5,
+	SI_STAIR = -4,
+	SI_GATE_1 = -3,
 	SI_DOOR = -2,
 	SI_GROUND = -1,
 	SI_ZOMBIE, //0
 	//SI_PANTHER,//1
-	SI_SIMON=2,//2
+	SI_SIMON = 2,//2
 	SI_BAT,//3
 	SI_CANDLE,//4
 	SI_BONE_DRAGON,//5
@@ -23,7 +26,7 @@ enum SPRITE_INFO
 	SI_MISC,//16
 	SI_LINH,//17
 	SI_PANTHER,//18
-    SI_GHOST,//19
+	//SI_ZOMBIE,//19
 	SI_COUNT
 };
 class SpriteManager
@@ -34,7 +37,7 @@ class SpriteManager
 public:
 	static SpriteManager* getInstance();
 	Sprite** getSprites();
- 	static Sprite* getSprite(SPRITE_INFO si);
+	static Sprite* getSprite(SPRITE_INFO si);
 	SpriteManager();
 	~SpriteManager();
 };

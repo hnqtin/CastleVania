@@ -1,6 +1,7 @@
 #include "Death.h"
 #include"Camera.h"
 #include"DeathWeapon.h"
+#include"ScoreBar.h"
 #include"Collision.h"
 REGISTER_OBJECT_GAME(Death, SI_DEATH)
 extern int getRandom(int start, int end);
@@ -105,6 +106,13 @@ void Death::restoreLocation()
 		DeathWeapon::weapons[i]->setNeedDelete(true);
 	}
 	Enemy::restoreLocation();
+	setHealth(16);
+}
+
+void Death::setHealth(int health)
+{
+	Enemy::setHealth(health);
+	ScoreBar::getInstance()->setBossHealth(this->getHealth());
 }
 
 
@@ -113,6 +121,7 @@ Death::Death()
 	waitDelay.init(getGlobalValue("death_wait_delay"));
 	createWeaponTime.setTimeDelay(getGlobalValue("death_create_weapon_time"));
 	setAy(getGlobalValue("death_ay"));
+	setHealth(16);
 	deathState = DEATH_STATE::DEATH_STATE_INACTIVE;
 }
 

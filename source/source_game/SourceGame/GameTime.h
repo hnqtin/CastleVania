@@ -4,15 +4,15 @@ class GameTime
 {
 
 	DWORD startTime;
-	DWORD timeDelay;
-	DWORD deltaTime;
+	double timeDelay;
+	double deltaTime;
 public:
 
 	DWORD getStartTime();
 	void setStartTime(DWORD startTime);
-	DWORD getTimeDelay();
-	void setTimeDelay(DWORD tickPerFrame);
-	DWORD getDeltaTime();
+	double getTimeDelay();
+	void setTimeDelay(double tickPerFrame);
+	double getDeltaTime();
 	void setDeltaTime(DWORD deltaTime);
 
 	GameTime(void);

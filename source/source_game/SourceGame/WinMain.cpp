@@ -3,6 +3,7 @@
 #include"DirectXTool.h"
 #include"Texture.h"
 #include"Game.h"
+#include"ConsoleLogger.h"
 #include"KEY.h"
 #include<iostream>
 #include<stdlib.h>
@@ -38,7 +39,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				DispatchMessage(&msg);
 			}
 			KEY::getInstance()->update();
-			Game::getInstance()->update(timeRenderFrame.getDeltaTime()/1000.0f);
+			float time = timeRenderFrame.getDeltaTime() / 1000.0f;
+			Game::getInstance()->update(time);
+			//Game::getInstance()->update(1/60.0f);
 			DirectXTool::getInstance()->BeginGraphics();//bat dau ve len backbuffer
 			Game::getInstance()->render();
 			DirectXTool::getInstance()->EndGraphics();// ket thuc ve len backbuffer

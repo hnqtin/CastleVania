@@ -6,8 +6,8 @@ class Enemy :
 {
 	int health;
 public:
-
-	void setHealth(int health);
+	DelayTime timeHit;
+	virtual void setHealth(int health);
 	int getHealth();
 	void onInit(fstream& fs, int worldHeight) override{}
 	void setDirectionFollowPlayer();

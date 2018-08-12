@@ -2,6 +2,7 @@
 #include"Player.h"
 #include"MorningStar.h"
 #include"MoringStarAdditional.h"
+#include"GameSound.h"
 extern int getRandom(int start, int end);
 
 void Item::setState(ITEM_STATE itemState)
@@ -38,6 +39,7 @@ void Item::onIntersect(MovableBox * other)
 		if (itemState == ITEM_STATE::ITEM_STATE_VISIBLE)
 		{
 			onPlayerContact();
+			GameSound::getInstance()->play(SOUND_OBTAIN_ITEM);
 			this->setAlive(false);
 		}
 	}

@@ -4,7 +4,7 @@
 //#define R 5
 
 
-REGISTER_OBJECT_GAME (ItemSmallHeart, SI_ISMALLHEART )
+REGISTER_OBJECT_GAME(ItemSmallHeart, SI_ISMALLHEART)
 
 //void ItemSmallHeart::setX(float x)
 //{
@@ -24,10 +24,11 @@ void ItemSmallHeart::onPlayerContact()
 ItemSmallHeart::ItemSmallHeart()
 {
 	setAction(MISC_SPRITE_ID_ITEM_SMALLHEART);
-//	setDy(-0.5);
-//	alpha = 0;
-//	axisX = -1;
-//	setPhysicsEnable(false);
+	setPhysicsEnable(false);
+	//	setDy(-0.5);
+	//	alpha = 0;
+	//	axisX = -1;
+	//	setPhysicsEnable(false);
 }
 
 
@@ -35,15 +36,25 @@ ItemSmallHeart::~ItemSmallHeart()
 {
 }
 
-//void ItemSmallHeart::update(float dt)
-//{
-//	if (getDy() != 0)
-//	{
-//		alpha = (alpha + 5) % 360;
-//		moveY(getDy());
-//		axisX = -1;
-//		setX( axisX + R * sin(alpha * 0.017444));
-//	}
+void ItemSmallHeart::update(float dt)
+{
+	if(isOnGround())
+	{
+		Item::update(dt);
+		return;
+	}
+	Item::update(dt);
+	if (itemState == ITEM_STATE_VISIBLE )
+	{
+		setX(getInitBox()->getX() + 10 * cos(alpha));
+		setDy(-1);
+		alpha += 0.1;
+		if (alpha > 2 * 3.14)
+		{
+			alpha = 0;
+		}
+	}
+}
 //Item::update();
 //}
 //

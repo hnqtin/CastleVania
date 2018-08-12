@@ -12,6 +12,7 @@ List<DeathWeapon*> DeathWeapon::weapons;
 
 void DeathWeapon::update(float dt)
 {
+	auto camera = Camera::getInstance();
 	waitDelay.update();
 	continueRunDelay.update();
 	switch (state)
@@ -24,21 +25,33 @@ void DeathWeapon::update(float dt)
 			auto player = Player::getInstance();
 			targetX = player->getX();
 			targetY = player->getY();
-			if (abs(targetX - getX()) < 10)
+			if (abs(targetX - getX()) < 2)
 			{
+				setDx(0);
+				setDy(0);
 				waitDelay.start();
 				return;
 			}
 			state = DEATH_WEAPON_STATE_RUN;
 			followPlayer.setDirectionFollowPlayer();
-			float dx = getGlobalValue("dead_weapon_dx")*getDirection();
-			float dy = (targetY - getY())*dx / (targetX - getX());
+			float moment = getGlobalValue("dead_weapon_moment");
+			float v = (targetY - getY()) / (targetX - getX());
+			float dx = sqrt(moment*moment / (v*v + 1))* getDirection();
+			float dy = abs(v*dx);
+			if (getMidY() > player->getMidY())
+			{
+				dy = -dy;
+			}
 			setDx(dx);
 			setDy(dy);
 		}
 		break;
 	case DEATH_WEAPON_STATE_RUN:
-
+		if (getleft() < camera->getleft() || getRight() > camera->getRight() || getTop() > camera->getTop() || getBottom() < camera->getBottom())
+		{
+			waitDelay.start();
+			state = DEATH_WEAPON_STATE_WAIT;
+		}
 		if ((getDx() > 0 && (getX() + getDx() > targetX)) ||
 			(getDx() < 0 && (getX() + getDx() < targetX)))
 		{
@@ -47,6 +60,11 @@ void DeathWeapon::update(float dt)
 		}
 		break;
 	case DEATH_WEAPON_STATE_CONTINUE_RUN:
+		if (getleft() < camera->getleft() || getRight() > camera->getRight() || getTop() > camera->getTop() - 32 || getBottom() < camera->getBottom())
+		{
+			waitDelay.start();
+			state = DEATH_WEAPON_STATE_WAIT;
+		}
 		if (continueRunDelay.isTerminated())
 		{
 			waitDelay.start();
@@ -65,7 +83,7 @@ void DeathWeapon::onIntersect(MovableBox * other)
 	{
 		attacker.attackPlayer();
 	}
-	if (other->getCollisionType() == CT_WEAPON)
+	if (other->getCollisionType() == CT_WEAPON || other->getCollisionType() == CT_SUB_WEAPON)
 	{
 		playerWeaponVictim.onWeaponAttack();
 	}
@@ -96,7 +114,7 @@ void DeathWeapon::setAlive(bool alive)
 
 DeathWeapon::DeathWeapon() :
 	followPlayer(this),
-	attacker(this), 
+	attacker(this),
 	playerWeaponVictim(dynamic_cast<IPlayerWeaponVictim*>(this))
 {
 	auto camera = Camera::getInstance();
@@ -106,8 +124,8 @@ DeathWeapon::DeathWeapon() :
 	continueRunDelay.init(getGlobalValue("deathweapon_continue_run_delay"));
 	waitDelay.start();
 	state = DEATH_WEAPON_STATE_WAIT;
-	int x = getRandom(camera->getleft(), camera->getRight());
-	int y = getRandom(camera->getTop() - 32, camera->getBottom());
+	int x = getRandom(camera->getleft(), camera->getRight()- getWidth());
+	int y = getRandom(camera->getTop() - 32, camera->getBottom()+getHeight());
 	setX(x);
 	setY(y);
 	setCollisionType(CT_ENEMY);

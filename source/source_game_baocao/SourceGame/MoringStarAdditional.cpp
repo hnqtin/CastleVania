@@ -17,8 +17,11 @@ void MoringStarAdditional::onIntersect(MovableBox * other)
 {
 	if (other == Player::getInstance() && this->isAlive())
 	{
+		GameSound::getInstance()->play(SOUND_OBTAIN_ITEM);
 		MorningStar::getInstance()->increaseType();
-		Player::getInstance()->obtainMorningStarDelay.start();
+		if (!Player::getInstance()->getIsOnStair()) {
+			Player::getInstance()->obtainMorningStarDelay.start();
+		}
 		this->setNeedDelete(true);
 		this->setAlive(false);
 	}

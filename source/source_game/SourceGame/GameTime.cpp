@@ -1,5 +1,5 @@
 #include "GameTime.h"
-
+#include"ConsoleLogger.h"
 
 GameTime::GameTime(void)
 {
@@ -21,10 +21,14 @@ bool GameTime::atTime()
 
 	DWORD now = GetTickCount();
 	deltaTime = now - startTime;
-
-	if(deltaTime>=timeDelay)
+	if (deltaTime >= timeDelay)
 	{
-		startTime = GetTickCount();
+		//consoleLogger->LogLine("Time " + std::to_string(deltaTime));
+		if (deltaTime > 2 * timeDelay)
+		{
+			deltaTime = timeDelay;
+		}
+		startTime = now;
 		return true;
 	}
 
@@ -43,15 +47,15 @@ void GameTime::setStartTime(DWORD startTime)
 {
 	this->startTime = startTime;
 }
-DWORD GameTime::getTimeDelay()
+double GameTime::getTimeDelay()
 {
 	return timeDelay;
 }
-void GameTime::setTimeDelay(DWORD tickPerFrame)
+void GameTime::setTimeDelay(double tickPerFrame)
 {
 	this->timeDelay = tickPerFrame;
 }
-DWORD GameTime::getDeltaTime()
+double GameTime::getDeltaTime()
 {
 	return deltaTime;
 }

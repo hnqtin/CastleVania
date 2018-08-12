@@ -153,6 +153,7 @@
     <ClCompile Include="CollisionsObjectCollection.cpp" />
     <ClCompile Include="CollisionTypeCollide.cpp" />
     <ClCompile Include="ConsoleLogger.cpp" />
+    <ClCompile Include="CWaveFile.cpp" />
     <ClCompile Include="Death.cpp" />
     <ClCompile Include="DeathWeapon.cpp" />
     <ClCompile Include="DelayTime.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="ExplosionEffect.cpp" />
     <ClCompile Include="Fleaman.cpp" />
     <ClCompile Include="FollowPlayer.cpp" />
+    <ClCompile Include="GameSound.cpp" />
     <ClCompile Include="Gate1.cpp" />
     <ClCompile Include="Gate2.cpp" />
     <ClCompile Include="Gate3.cpp" />
@@ -193,6 +195,7 @@
     <ClCompile Include="ScoreBar.cpp" />
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="SkeletonWeapon.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Stair.cpp" />
     <ClCompile Include="SubWeapon.cpp" />
     <ClCompile Include="SubWeaponItem.cpp" />
@@ -242,6 +245,7 @@
     <ClInclude Include="CollisionTypeCollide.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="ConsoleLogger.h" />
+    <ClInclude Include="CWaveFile.h" />
     <ClInclude Include="Death.h" />
     <ClInclude Include="DeathWeapon.h" />
     <ClInclude Include="DelayTime.h" />
@@ -251,6 +255,7 @@
     <ClInclude Include="ExplosionEffect.h" />
     <ClInclude Include="Fleaman.h" />
     <ClInclude Include="FollowPlayer.h" />
+    <ClInclude Include="GameSound.h" />
     <ClInclude Include="Gate1.h" />
     <ClInclude Include="Gate2.h" />
     <ClInclude Include="Gate3.h" />
@@ -284,6 +289,7 @@
     <ClInclude Include="ScoreBar.h" />
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="SkeletonWeapon.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="SubWeapon.h" />
     <ClInclude Include="SubWeaponItem.h" />
     <ClInclude Include="VampireBat.h" />

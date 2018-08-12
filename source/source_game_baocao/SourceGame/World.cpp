@@ -6,12 +6,14 @@
 #include"Gate1.h"
 #include"Gate3.h"
 #include"Player.h"
+#include"ScoreBar.h"
 #include"VampireBat.h"
 #include"Gate4.h"
 void Stage::changeArea(int areaIndex)
 {
 	currentAreaIndex = areaIndex;
 	Camera::getInstance()->setCameraLimit(&areas[currentAreaIndex]);
+	ScoreBar::getInstance()->setCurrentStageNumber(areaIndex);
 }
 
 int Stage::getCurrentAreaIndex()

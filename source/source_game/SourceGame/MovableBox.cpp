@@ -16,7 +16,11 @@ void MovableBox::updateLocation()
 		else
 			setDx(0);
 	}
-	move(getDx(), getDy());
+
+	setX((int)(getX() + getDx() + 0.5));
+	setY((int)(getY() + getDy() + 0.5));
+
+	//move(getDx(), getDy());
 }
 
 bool MovableBox::canCollision()

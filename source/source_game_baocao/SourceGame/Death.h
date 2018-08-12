@@ -20,6 +20,7 @@ public:
 	void setVx(float vx) override;
 	void setAlive(bool alive) override;
 	void restoreLocation() override;
+	void setHealth(int health) override;
 	Death();
 	~Death();
 };

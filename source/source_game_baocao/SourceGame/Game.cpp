@@ -3,6 +3,8 @@
 #include"Player.h"
 #include"ScoreBar.h"
 
+extern DWORD getKeyChar(char keyChar);
+
 Game::Game(void)
 {
 }
@@ -26,6 +28,7 @@ void Game::changeLevel(int levelIndex, int areaIndex)
 	stages[levelIndex]->setPlayer(Player::getInstance());
 	stages[currentStageIndex]->changeArea(areaIndex);
 	stages[levelIndex]->resetCameraAndPlayerLocation();
+	ScoreBar::getInstance()->setCurrentStageNumber(areaIndex);
 	//	Camera::getInstance()->setCameraLimit(currentStage());
 	Player::getInstance()->changeArea = dynamic_cast<IChangeArea*>(stages[levelIndex]);
 
@@ -76,11 +79,35 @@ void Game::init()
 		"Data/Worlds/Level5/areas.dat"
 	);
 	stages[1]->index = 1;
-	changeLevel(1,5);
+	changeLevel(0, 3);
 }
 
 void Game::update(float dt)
 {
+	if (GetAsyncKeyState(getKeyChar('q')))
+		changeLevel(0, 0);
+	if (GetAsyncKeyState(getKeyChar('w')))
+		changeLevel(0, 1);
+	if (GetAsyncKeyState(getKeyChar('e')))
+		changeLevel(0, 2);
+	if (GetAsyncKeyState(getKeyChar('r')))
+		changeLevel(0, 3);
+	if (GetAsyncKeyState(getKeyChar('t')))
+		changeLevel(0, 4);
+
+	if (GetAsyncKeyState(getKeyChar('a')))
+		changeLevel(1, 0);
+	if (GetAsyncKeyState(getKeyChar('s')))
+		changeLevel(1, 1);
+	if (GetAsyncKeyState(getKeyChar('d')))
+		changeLevel(1, 2);
+	if (GetAsyncKeyState(getKeyChar('f')))
+		changeLevel(1, 3);
+	if (GetAsyncKeyState(getKeyChar('g')))
+		changeLevel(1, 4);
+	if (GetAsyncKeyState(getKeyChar('h')))
+		changeLevel(1, 5);
+
 	currentStage()->update(dt);
 	ScoreBar::getInstance()->update();
 }

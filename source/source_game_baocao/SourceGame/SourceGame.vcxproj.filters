@@ -82,6 +82,9 @@
     <Filter Include="Objects\Item">
       <UniqueIdentifier>{359750e7-4833-4907-9878-60e8e5ead3ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameSound">
+      <UniqueIdentifier>{b65a8a23-c984-4ffa-b1d4-970085e422e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -338,6 +341,15 @@
     </ClCompile>
     <ClCompile Include="Gate5.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWaveFile.cpp">
+      <Filter>GameSound</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSound.cpp">
+      <Filter>GameSound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>GameSound</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -616,6 +628,15 @@
     </ClInclude>
     <ClInclude Include="Gate5.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWaveFile.h">
+      <Filter>GameSound</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSound.h">
+      <Filter>GameSound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>GameSound</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

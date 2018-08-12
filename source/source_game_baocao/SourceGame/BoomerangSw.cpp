@@ -9,6 +9,7 @@ void BoomerangSw::onIntersect(MovableBox * other)
 	{
 		this->setNeedDelete(true);
 	}
+	
 }
 
 void BoomerangSw::setNeedDelete(bool needDelete)
@@ -47,7 +48,7 @@ BoomerangSw::BoomerangSw()
 	isExists = true;
 	setPhysicsEnable(false);
 	boomerangState = BOOMERANG_STATE_UP;
-	setCollisionType(CT_WEAPON);
+	setCollisionType(CT_SUB_WEAPON);
 }
 
 

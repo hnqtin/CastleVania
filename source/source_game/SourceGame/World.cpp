@@ -3,6 +3,13 @@
 #include"ConsoleLogger.h"
 #include"AdditionalObject.h"
 #include"SimonRope.h"
+#include"Gate1.h"
+
+void Stage::changeArea(int areaIndex)
+{
+	currentAreaIndex = areaIndex;
+	Camera::getInstance()->setCameraLimit(&areas[currentAreaIndex]);
+}
 
 void Stage::init(const char* tilesheetPath,
 	const char* matrixPath,
@@ -15,7 +22,7 @@ void Stage::init(const char* tilesheetPath,
 	initCollisionTypeCollides(collisionTypeCollidesPath);
 	initObjects(objectsPath);
 	initQuadtree(quadtreePath);
-	initCameraLocation(cameraLocationPath);
+	initArea(cameraLocationPath);
 
 }
 
@@ -39,6 +46,11 @@ void Stage::initObjects(const char * objectsPath)
 		if (gameObject == 0)
 		{
 			gameObject = new BaseObject();
+		}
+
+		if (spriteId == SI_GATE_1)
+		{
+			((Gate1*)gameObject)->setChangeArea(this);
 		}
 
 
@@ -67,26 +79,40 @@ void Stage::initCollisionTypeCollides(const char * collisionTypeCollidesPath)
 	int c1;
 	int c2;
 	collisionTypeCollides = new CollisionTypeCollide*[nCollisionTypeCollides];
-	for (int i = 0;i < nCollisionTypeCollides;i++)
+	for (int i = 0; i < nCollisionTypeCollides; i++)
 	{
 		fs >> c1 >> c2;
 		collisionTypeCollides[i] = new CollisionTypeCollide((COLLISION_TYPE)c1, (COLLISION_TYPE)c2);
 	}
 }
 
-void Stage::initCameraLocation(const char * cameraLocationPath)
+void Stage::initArea(const char * areaPath)
 {
-	ifstream fs(cameraLocationPath);
+	ifstream fs(areaPath);
 	ignoreLineIfstream(fs, 1);
-	fs >> cameraStartX >> cameraStartY;
-	ignoreLineIfstream(fs, 2);
-	fs >> simonStartX >> simonStartY;
+	fs >> areasCount;
+
+	areas = new Area[areasCount];
+	int x, y, width, height, cx, cy, sx, sy;
+	for (size_t i = 0; i < areasCount; i++)
+	{
+		ignoreLineIfstream(fs, 6);
+		fs >> x >> y >> width >> height;
+		areas[i].set(x, getWorldHeight() - y, width, height);
+		ignoreLineIfstream(fs, 2);
+		fs >> cx >> cy;
+		ignoreLineIfstream(fs, 2);
+		fs >> sx >> sy;
+		areas[i].initCameraSimonLocation(cx, getWorldHeight() - cy, sx, getWorldHeight() - sy);
+	}
 }
 
 void Stage::resetCameraAndPlayerLocation()
 {
-	camera->setLocation(cameraStartX, cameraStartY);
-	player->setLocation(simonStartX, simonStartY);
+	camera->setLocation(areas[currentAreaIndex].getCameraX(),
+		areas[currentAreaIndex].getCameraY());
+	player->setLocation(areas[currentAreaIndex].getSimonX(),
+		areas[currentAreaIndex].getSimonY());
 }
 
 void Stage::setPlayer(MovableObject * player)
@@ -128,13 +154,13 @@ void Stage::update(float dt)
 			Collision::CheckCollision(player, obj);
 	}
 	auto collisionObjectCollection = *getCollisionsObjectCollection();
-	for (int i = 0;i < nCollisionTypeCollides;i++)
+	for (int i = 0; i < nCollisionTypeCollides; i++)
 	{
 		auto collection1 = collisionObjectCollection.getCollection(collisionTypeCollides[i]->getCollisionType1());
 		auto collection2 = collisionObjectCollection.getCollection(collisionTypeCollides[i]->getCollisionType2());
-		for (int iC1 = 0;iC1 < collection1->size();iC1++)
+		for (int iC1 = 0; iC1 < collection1->size(); iC1++)
 		{
-			for (int iC2 = 0;iC2 < collection2->size();iC2++)
+			for (int iC2 = 0; iC2 < collection2->size(); iC2++)
 			{
 				Collision::CheckCollision(collection1->at(iC1), collection2->at(iC2));
 			}

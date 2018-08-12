@@ -4,6 +4,7 @@ CREATE_INSTANCE_OUTSIDE(Player);
 #include"MorningStar.h"
 #include"ScoreBar.h"
 #include"BoomerangSw.h"
+#include"GameSound.h"
 
 void Player::goToStair(int xDestination, int yDestination)
 {
@@ -166,7 +167,6 @@ void Player::update(float dt)
 
 	if (key->isAttackPress)
 	{
-
 		setIsOnAttack(true);
 	}
 
@@ -326,6 +326,7 @@ void Player::update(float dt)
 			if (key->isJumpPress) //is key jump press
 			{
 				setVy(getGlobalValue("player_vy_jump"));
+				
 			}
 		}
 	}

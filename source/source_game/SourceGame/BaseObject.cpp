@@ -238,13 +238,8 @@ void BaseObject::onInit(fstream & fs, int worldHeight)
 void BaseObject::setSpriteId(int spriteId)
 {
 	this->spriteId = spriteId;
-	if (spriteId < 0)
-	{
-		sprite = 0;
-	}
-	else
+	if (spriteId >= 0)
 	{
 		sprite = SpriteManager::getInstance()->getSprites()[spriteId];
 	}
-
 }

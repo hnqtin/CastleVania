@@ -10,8 +10,8 @@ enum ITEM_STATE
 class Item :
 	public MovableObject
 {
-	ITEM_STATE itemState;
 public:
+	ITEM_STATE itemState;
 	void setState(ITEM_STATE itemState);
 	void onIntersect(MovableBox* other) override;
 	virtual void onPlayerContact();

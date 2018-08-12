@@ -36,8 +36,8 @@ bool DirectXTool::initDirectX()
 	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
 	d3dpp.BackBufferFormat = D3DFMT_X8R8G8B8;
 	d3dpp.BackBufferCount = 1;
-	d3dpp.BackBufferWidth = BACKBUFFER_WIDTH;
-	d3dpp.BackBufferHeight = BACKBUFFER_HEIGHT;
+	d3dpp.BackBufferWidth = getGlobalValue("backbuffer_width");
+	d3dpp.BackBufferHeight = getGlobalValue("backbuffer_height");
 
 	if (FAILED(d3d->CreateDevice(
 		D3DADAPTER_DEFAULT,

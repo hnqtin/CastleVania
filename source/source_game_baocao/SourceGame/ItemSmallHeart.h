@@ -7,9 +7,10 @@ class ItemSmallHeart :
 //private:
 //	int alpha;
 //	int axisX;
+	float alpha;
 public:
 	//void setX(float x);
-	//void update(float dt) override;
+	void update(float dt) override;
 	void onPlayerContact() override;
 	ItemSmallHeart();
 	~ItemSmallHeart();

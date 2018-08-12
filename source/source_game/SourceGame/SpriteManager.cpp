@@ -38,7 +38,7 @@ SpriteManager::SpriteManager()
 	sprites[SI_SIMON]->img->direction = Right;
 
 	sprites[SI_ZOMBIE] = new Sprite();
-	sprites[SI_ZOMBIE]->readInfo("Data/Sprites/Enemies/zoombie.info.txt");
+	sprites[SI_ZOMBIE]->readInfo("Data/Sprites/Enemies/zombie.info.txt");
 	sprites[SI_ZOMBIE]->img = enemiesImage;
 
 	sprites[SI_EAGLE] = new Sprite();
@@ -46,7 +46,7 @@ SpriteManager::SpriteManager()
 	sprites[SI_EAGLE]->img = enemiesImage;
 
 	sprites[SI_PANTHER] = new Sprite();
-	sprites[SI_PANTHER]->readInfo("Data/Sprites/Enemies/meo.info.txt");
+	sprites[SI_PANTHER]->readInfo("Data/Sprites/Enemies/panther.info.txt");
 	sprites[SI_PANTHER]->img = enemiesImage;
 
 	sprites[SI_BAT] = new Sprite();
@@ -72,10 +72,6 @@ SpriteManager::SpriteManager()
 	sprites[SI_EXPLOSION_EFFECT] = new Sprite();
 	sprites[SI_EXPLOSION_EFFECT]->readInfo("Data/Sprites/Enemies/explosion.info.txt");
 	sprites[SI_EXPLOSION_EFFECT]->img = enemiesImage;
-
-	sprites[SI_GHOST] = new Sprite();
-	sprites[SI_GHOST]->readInfo("Data/Sprites/Enemies/ghost.info.txt");
-	sprites[SI_GHOST]->img = enemiesImage;
 
 
 	//sprites[SI_PANTHER] = new Sprite();
@@ -111,7 +107,7 @@ SpriteManager::SpriteManager()
 	sprites[SI_WEAPON]->img->direction = Right;
 
 	sprites[SI_MISC] = new Sprite();
-	sprites[SI_MISC]->ReadFromFile("Data/Sprites/Mist/misc.info.txt", "Data/Sprites/Mist/misc.png");
+	sprites[SI_MISC]->ReadFromFile("Data/Sprites/Misc/misc.info.txt", "Data/Sprites/Misc/misc.png");
 	sprites[SI_MISC]->img->direction = Right;
 }
 

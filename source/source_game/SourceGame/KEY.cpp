@@ -27,7 +27,7 @@ void KEY::update()
 	isLeftDown = GetAsyncKeyState(VK_LEFT);
 	isRightDown = GetAsyncKeyState(VK_RIGHT); 
 
-	isJumpDown = GetAsyncKeyState(VK_SPACE);
+	isJumpDown = GetAsyncKeyState(VK_SPACE) || GetAsyncKeyState(getKeyChar('x'));
 	isJumpPress = isJumpDown && !isPreviousJumpDown;
 	isPreviousJumpDown = isJumpDown;
 

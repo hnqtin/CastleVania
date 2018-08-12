@@ -14,17 +14,6 @@ extern void ignoreLineIfstream(ifstream& fs, int lineCount);
 
 #pragma endregion
 
-
-#pragma region Size
-
-#define FORM_WIDTH 700
-#define FORM_HEIGHT 500
-
-#define BACKBUFFER_WIDTH 256
-#define BACKBUFFER_HEIGHT 224
-
-#pragma endregion
-
 #define CREATE_INSTANCE_INSIDE(ClassName) \
 private:	\
 static ClassName* instance; \

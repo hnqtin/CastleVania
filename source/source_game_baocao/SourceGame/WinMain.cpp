@@ -4,6 +4,7 @@
 #include"Texture.h"
 #include"Game.h"
 #include"ConsoleLogger.h"
+#include"GameSound.h"
 #include"KEY.h"
 #include<iostream>
 #include<stdlib.h>
@@ -26,7 +27,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	MSG msg;
 	ZeroMemory(&msg, sizeof(msg));
-
+	GameSound::getInstance()->initialize(WindowGame::getInstance()->getHandleWindow());
+	GameSound::getInstance()->play(SOUND_BACKGROUND, true, true);
 	Game::getInstance()->init();
 
 	while (msg.message != WM_QUIT)

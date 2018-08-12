@@ -1,10 +1,12 @@
 #include "WaterObj.h"
 #include"Water.h"
+#include"GameSound.h"
 REGISTER_OBJECT_GAME(WaterObj, SI_IWATEROBJ)
 
 void WaterObj::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
 {
 	//if (other->getCollisionType() == CT_ENEMY)
+	GameSound::getInstance()->play(SOUND_MERMAN_JUMP);
 	Water* water = new Water();
 	water->setX(other->getX());
 	water->setY(other->getY());

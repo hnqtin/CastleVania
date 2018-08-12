@@ -1,6 +1,6 @@
 #include "SimonRope.h"
 #include"Player.h"
-
+#include"MorningStarAttack.h"
 
 SimonRope * SimonRope::instance = 0;
 SimonRope * SimonRope::getInstance()
@@ -63,6 +63,9 @@ void SimonRope::render()
 	setWidth(getCurrentFrameWidth());
 	setHeight(getCurrentFrameHeight());
 	setDirection(Player::getInstance()->getDirection());
+
+
+
 	if (getDirection() == Right)
 	{
 		switch (playerFrameIndex)
@@ -120,6 +123,21 @@ void SimonRope::render()
 		}
 	}
 
+	if (playerFrameIndex == 1)
+	{
+		canCreateMorningStarAttack = true;
+	}
+	if (playerFrameIndex == 2)
+	{
+		if (canCreateMorningStarAttack)
+		{
+			MorningStarAttack* morningStarAttack = new MorningStarAttack();
+
+			morningStarAttack->set(getX(), getY(), getWidth(), getHeight());
+			canCreateMorningStarAttack = false;
+		}
+	}
+
 	BaseObject::render();
 }
 
@@ -130,6 +148,7 @@ SimonRope::SimonRope()
 	setSprite(SpriteManager::getSprite(SI_WEAPON));
 	simonRopeType = SIMON_ROPE_TYPE_3;
 	changeColorTime.setTimeDelay(getGlobalValue("weapon_change_color_time"));
+	canCreateMorningStarAttack = true;
 }
 
 

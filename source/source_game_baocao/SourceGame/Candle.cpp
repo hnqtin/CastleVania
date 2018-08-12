@@ -12,6 +12,7 @@ void Candle::onIntersect(MovableBox * other)
 {
 	if (other->getCollisionType() == CT_WEAPON)
 	{
+		GameSound::getInstance()->play(SOUND_ATTACK_ENEMY);
 		this->setAlive(false);
 	}
 }

@@ -26,8 +26,6 @@ void GoToAction::update(float dt)
 		//objectGoto->setY(yDestination);
 		objectGoto->setLocation(xDestination, yDestination);
 		auto player = Player::getInstance();
-		consoleLogger->LogLine(((string)"di toi dich :" + std::to_string(player->getX()) + "," + std::to_string(player->getY()) + ")"));
-
 		onGoTo = false;
 
 	}

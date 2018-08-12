@@ -6,12 +6,14 @@
 #include"CollisionsObjectCollection.h"
 #include"CollisionTypeCollide.h"
 #include"ICameraLimit.h"
-#include"PlayerWeapon.h"
 #include"QuadTree.h"
 #include"Config.h"
+#include"Area.h"
+#include"IChangeArea.h"
 class Stage :
 	public TileMap,
-	public ICameraLimit
+	public ICameraLimit,
+	public IChangeArea
 {
 	BaseObject** gameObjects;
 	int nObjects;
@@ -22,10 +24,10 @@ class Stage :
 	MovableObject* player;
 	QuadTree quadTree;
 
-	int cameraStartX;
-	int cameraStartY;
-	int simonStartX;
-	int simonStartY;
+	Area* areas;
+	int currentAreaIndex;
+	int areasCount;
+
 
 public:
 	void init(const char* tilesheetPath,
@@ -33,12 +35,13 @@ public:
 		const char* objectsPath,
 		const char* quadtreePath,
 		const char* collisionTypeCollidesPath,
-		const char* cameraLocationPath);
+		const char* areaPath);
 	void initObjects(const char* objectsPath);
 	void initQuadtree(const char* quadtreePath);
 	void initCollisionTypeCollides(const char* collisionTypeCollidesPath);
-	void initCameraLocation(const char* cameraLocationPath);
-	void resetCameraAndPlayerLocation();
+	void initArea(const char* areaPath);
+	void resetCameraAndPlayerLocation() override;
+	void changeArea(int areaIndex) override;
 
 	void setPlayer(MovableObject* player);
 

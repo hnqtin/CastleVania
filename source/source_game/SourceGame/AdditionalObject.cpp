@@ -50,6 +50,7 @@ void AdditionalObject::update(float dt)
 AdditionalObject::AdditionalObject()
 {
 	getObjects()->_Add(this);
+	setNeedDelete(false);
 }
 
 

@@ -6,7 +6,7 @@ extern double getGlobalValue(const char* key);
 
 extern void ignoreLineIfstream(ifstream& fs, int lineCount);
 #include"List.h"
-
+#include"GameSound.h"
 #pragma region String
 
 #define TITLE_STR "Castle Vania"

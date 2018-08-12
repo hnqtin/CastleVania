@@ -1,6 +1,7 @@
 #include "ItemMorningStar.h"
 #include"MorningStar.h"
 #include"Player.h"
+#include"GameSound.h"
 
 REGISTER_OBJECT_GAME(ItemMorningStar, SI_IMORNING_STAR);
 

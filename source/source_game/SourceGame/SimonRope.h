@@ -20,6 +20,7 @@ private:
 	static SimonRope* instance;
 	SIMON_ROPE_TYPE simonRopeType;
 	GameTime changeColorTime;
+	bool canCreateMorningStarAttack;
 public:
 	static SimonRope* getInstance();
 	RopeLocation locations[3];
