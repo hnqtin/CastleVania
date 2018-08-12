@@ -93,6 +93,20 @@ void Death::setAlive(bool alive)
 	Enemy::setAlive(alive);
 }
 
+void Death::restoreLocation()
+{
+	deathState = DEATH_STATE_INACTIVE;
+	setVx(0);
+	setVy(0);
+	setDx(0);
+	setDy(0);
+	for (int i = 0; i < DeathWeapon::weapons.Count; i++)
+	{
+		DeathWeapon::weapons[i]->setNeedDelete(true);
+	}
+	Enemy::restoreLocation();
+}
+
 
 Death::Death()
 {

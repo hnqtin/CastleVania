@@ -19,6 +19,7 @@ public:
 	void update(float dt) override;
 	void setVx(float vx) override;
 	void setAlive(bool alive) override;
+	void restoreLocation() override;
 	Death();
 	~Death();
 };

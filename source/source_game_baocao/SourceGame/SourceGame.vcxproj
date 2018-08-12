@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{EB872FDB-4090-4B3F-88A1-C2A48BFACFCE}</ProjectGuid>
     <RootNamespace>SourceGame</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -166,6 +166,7 @@
     <ClCompile Include="Gate2.cpp" />
     <ClCompile Include="Gate3.cpp" />
     <ClCompile Include="Gate4.cpp" />
+    <ClCompile Include="Gate5.cpp" />
     <ClCompile Include="GoToAction.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Item1000pts.cpp" />
@@ -254,6 +255,7 @@
     <ClInclude Include="Gate2.h" />
     <ClInclude Include="Gate3.h" />
     <ClInclude Include="Gate4.h" />
+    <ClInclude Include="Gate5.h" />
     <ClInclude Include="GoToAction.h" />
     <ClInclude Include="IBoss.h" />
     <ClInclude Include="IChangeArea2.h" />

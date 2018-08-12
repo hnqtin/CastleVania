@@ -29,6 +29,7 @@ public:
 	void onIntersect(MovableBox* other) override;
 	void setHealth(int health) override;
 	int getHealth() override;
+	void onCollision(MovableBox* other, int nx, int ny, float collisionTime) override;
 	void setAlive(bool alive)  override;
 	DeathWeapon();
 	~DeathWeapon();

@@ -12,6 +12,7 @@
 #include"IChangeArea.h"
 #include"IChangeArea2.h"
 #include"Gate2.h"
+#include"Gate5.h"
 #include"IGate4Interface.h"
 
 
@@ -47,6 +48,7 @@ class Stage :
 	CHANGE_AREA2_STATE changeAreaState;
 
 	Gate2* gate2;
+	Gate5* gate5;
 
 public:
 	IGate4Interface * gate4Inf;
@@ -71,6 +73,7 @@ public:
 	void setPlayer(MovableObject* player);
 
 	void setGate2(BaseObject* gate2) override;
+	void setGate5(BaseObject* gate5) override;
 	Area* getCurrentArea() override;
 
 	CollisionsObjectCollection* getCollisionsObjectCollection();

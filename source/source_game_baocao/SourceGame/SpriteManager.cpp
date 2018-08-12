@@ -102,6 +102,8 @@ SpriteManager::SpriteManager()
 	sprites[SI_DEATH_WEAPON] = new Sprite();
 	sprites[SI_DEATH_WEAPON]->ReadFromFile("Data/Sprites/DeathWeapon/info.txt", "Data/Sprites/DeathWeapon/image.png");
 	sprites[SI_DEATH_WEAPON]->img->direction = Right;
+
+	sprites[SI_GATE_5] = sprites[SI_GATE2];
 }
 
 

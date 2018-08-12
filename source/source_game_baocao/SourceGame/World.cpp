@@ -70,6 +70,11 @@ void Stage::initObjects(const char * objectsPath)
 			((Gate2*)gameObject)->setChangeArea(dynamic_cast<IChangeArea2*>(this));
 		}
 
+		if (spriteId == SI_GATE_5)
+		{
+			((Gate5*)gameObject)->setChangeArea(dynamic_cast<IChangeArea2*>(this));
+		}
+
 		if (spriteId == SI_GATE_3)
 		{
 			((Gate3*)gameObject)->setChangeArea(dynamic_cast<IChangeArea*>(this));
@@ -164,6 +169,11 @@ void Stage::setGate2(BaseObject * gate2)
 	this->gate2 = (Gate2*)gate2;
 }
 
+void Stage::setGate5(BaseObject * gate5)
+{
+	this->gate5 = (Gate5*)gate5;
+}
+
 Area * Stage::getCurrentArea()
 {
 	return &areas[currentAreaIndex];
@@ -188,6 +198,82 @@ Stage::~Stage()
 
 void Stage::update(float dt)
 {
+
+	if (gate5 != 0)
+	{
+		switch (changeAreaState)
+		{
+		case CHANGE_AREA2_STATE_CAMERA_MOVE_TEMP:
+			player->setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAND);
+			player->setHeight(getGlobalValue("player_height"));
+			player->setDy(0);
+			player->setVy(0);
+			player->setY(gate5->getBottom() + player->getHeight());
+			camera->moveX(-getGlobalValue("change_state_camera_move"));
+			if (areas[currentAreaIndex].getleft() - camera->getleft() > camera->getWidth() / 2)
+			{
+				changeAreaState = CHANGE_AREA2_STATE_GATE2_OPENING;
+				gate5->setState(GATE5_STATE::GATE5_STATE_OPENING);
+			}
+			break;
+		case CHANGE_AREA2_STATE_GATE2_OPENING:
+			gate5->performUpdate(dt);
+			camera->moveX(0);
+			if (gate5->getActionFrameIndex() == 1)
+			{
+				gate5->setState(GATE5_STATE::GATE5_STATE_OPENED);
+				changeAreaState = CHANGE_AREA2_STATE_SIMON_MOVE;
+				gate5->performUpdate(dt);
+			}
+			break;
+		case CHANGE_AREA2_STATE_SIMON_MOVE:
+			player->setVx(0);
+			player->moveX(-getGlobalValue("change_state_simon_move"));
+			player->setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_WALK);
+			player->updateAnimation();
+			if (player->getRight() + 50 < gate5->getleft())
+			{
+				gate5->setState(GATE5_STATE::GATE5_STATE_CLOSING);
+				changeAreaState = CHANGE_AREA2_STATE_GATE2_CLOSING;
+				player->setAction(SIMON_PLAYER_ACTION::SIMON_PLAYER_ACTION_SIMON_STAND);
+				gate5->setActionFrameIndex(0);
+			}
+			break;
+		case CHANGE_AREA2_STATE_GATE2_CLOSING:
+			gate5->performUpdate(dt);
+			if (gate5->getActionFrameIndex() == 1)
+			{
+				gate5->setState(GATE5_STATE::GATE5_STATE_INVISIBLE);
+				gate5->performUpdate(dt);
+				changeAreaState = CHANGE_AREA2_STATE_CAMERA_MOVE_OFFICAL;
+
+				for (size_t i = 0; i < areasCount; i++)
+				{
+					if (areas[i].Rect::getRight() == areas[currentAreaIndex].Rect::getleft())
+					{
+						changeArea(i);
+						break;
+					}
+				}
+			}
+			break;
+		case CHANGE_AREA2_STATE_CAMERA_MOVE_OFFICAL:
+		{
+			camera->moveX(-getGlobalValue("change_state_camera_move"));
+			if (camera->getRight() < areas[currentAreaIndex].getRight())
+			{
+				gate5->setWidth(0);
+				gate5 = 0;
+				changeAreaState = CHANGE_AREA2_STATE::CHANGE_AREA2_STATE_CAMERA_MOVE_TEMP;
+			}
+			break;
+		}
+		default:
+			break;
+		}
+		return;
+	}
+
 
 	if (gate2 != 0)
 	{

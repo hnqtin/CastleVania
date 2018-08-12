@@ -82,6 +82,10 @@ int DeathWeapon::getHealth()
 	return health;
 }
 
+void DeathWeapon::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
+{
+}
+
 void DeathWeapon::setAlive(bool alive)
 {
 	if (!alive)

@@ -141,6 +141,7 @@ void Player::update(float dt)
 			boss->restore();
 			changeArea->changeArea(currentArea);
 			changeArea->resetLocation();
+			Camera::getInstance()->preventMoving = false;
 			ScoreBar::getInstance()->restoreHealth();
 			ScoreBar::getInstance()->restoreBossHealth();
 			MorningStar::getInstance()->setType(MORNINGSTAR_TYPE_1);

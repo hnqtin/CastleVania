@@ -336,6 +336,9 @@
     <ClCompile Include="Item1000pts.cpp">
       <Filter>Objects\Item</Filter>
     </ClCompile>
+    <ClCompile Include="Gate5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -610,6 +613,9 @@
     </ClInclude>
     <ClInclude Include="Item400pts.h">
       <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate5.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
