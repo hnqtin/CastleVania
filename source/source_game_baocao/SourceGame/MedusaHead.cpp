@@ -9,14 +9,14 @@ void MedusaHead::update(float dt)
 	{
 		alpha = 2*3.14;
 	}
-
+	
 	setY(getGlobalValue("medusahead_r")* sin(alpha) + getInitBox()->getY());
 	setDx(getDirection()*getGlobalValue("medusahead_dx"));
 }
 
 void MedusaHead::onInit(fstream & fs, int worldHeight)
 {
-	setDirectionFollowPlayer();
+	setDirection(Right);
 }
 
 MedusaHead::MedusaHead()

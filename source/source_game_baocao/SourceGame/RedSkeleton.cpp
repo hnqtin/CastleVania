@@ -84,11 +84,14 @@ void RedSkeleton::onIntersect(MovableBox * other)
 			}
 		}
 	}
-	if (other->getCollisionType() == CT_WEAPON)
+	if (other->getCollisionType() == CT_WEAPON || other->getCollisionType() == CT_SUB_WEAPON)
 	{
-		((MorningStarAttack*)other)->setNeedDelete(true);
+		if (other->getCollisionType() == CT_WEAPON)
+			((MorningStarAttack*)other)->setNeedDelete(true);
 		onContactWeapon();
 	}
+
+
 }
 
 

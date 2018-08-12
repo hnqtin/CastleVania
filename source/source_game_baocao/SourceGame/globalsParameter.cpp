@@ -25,7 +25,7 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("player_y", 400));
 		globals->insert(pair<const char*, double>("player_width", 16));
 		globals->insert(pair<const char*, double>("player_height", 30));
-		globals->insert(pair<const char*, double>("player_vx", 80));
+		globals->insert(pair<const char*, double>("player_vx", 100));
 		globals->insert(pair<const char*, double>("player_vy_jump", 250));
 		globals->insert(pair<const char*, double>("player_jump_height", 23));
 		globals->insert(pair<const char*, double>("player_vy_fall_stand", -70));
@@ -118,7 +118,7 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("boomerang_vx", 2));
 		globals->insert(pair<const char*, double>("boomerang_distance", 100));
 
-		globals->insert(pair<const char*, double>("medusahead_r", 40));
+		globals->insert(pair<const char*, double>("medusahead_r", 30));
 		globals->insert(pair<const char*, double>("medusahead_dx", 1));
 
 		globals->insert(pair<const char*, double>("death_wait_delay", 2000));
