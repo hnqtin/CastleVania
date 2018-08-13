@@ -360,6 +360,12 @@
     <ClCompile Include="PlayerWeaponVictim.cpp">
       <Filter>Objects\MovableObject\Enemy\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="AxeKnight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BonePillar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -548,9 +554,6 @@
     <ClInclude Include="BreakWall1.h">
       <Filter>Objects\Item</Filter>
     </ClInclude>
-    <ClInclude Include="IBoss.h">
-      <Filter>Objects\MovableObject\Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="WaterObj.h">
       <Filter>Objects\MiscObject</Filter>
     </ClInclude>
@@ -646,6 +649,15 @@
     </ClInclude>
     <ClInclude Include="PlayerWeaponVictim.h">
       <Filter>Objects\MovableObject\Enemy\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="IBoss.h">
+      <Filter>Objects\MovableObject\Enemy\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AxeKnight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BonePillar.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

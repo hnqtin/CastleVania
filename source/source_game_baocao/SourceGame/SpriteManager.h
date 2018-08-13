@@ -48,7 +48,10 @@ enum SPRITE_INFO
 	SI_MEDUSA_HEAD = 21,
 	SI_DEATH = 22,
 	SI_DEATH_WEAPON = 23,
+	//cua map than chet
 	SI_GATE_5 = 24,
+	SI_AXE_KNIGHT = 25,
+	SI_BONE_PILLAR = 26, 
 	SI_MISC,//16
 	SI_COUNT
 };

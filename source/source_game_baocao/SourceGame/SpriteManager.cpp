@@ -76,6 +76,14 @@ SpriteManager::SpriteManager()
 	sprites[SI_MEDUSA_HEAD]->readInfo("Data/Sprites/Enemies/medusa_head.info.txt");
 	sprites[SI_MEDUSA_HEAD]->img = enemiesImage;
 
+	sprites[SI_AXE_KNIGHT] = new Sprite();
+	sprites[SI_AXE_KNIGHT]->readInfo("Data/Sprites/Enemies/axe_knight.info.txt");
+	sprites[SI_AXE_KNIGHT]->img = enemiesImage;
+
+	sprites[SI_BONE_PILLAR] = new Sprite();
+	sprites[SI_BONE_PILLAR]->readInfo("Data/Sprites/Enemies/bone_pillar.info.txt");
+	sprites[SI_BONE_PILLAR]->img = enemiesImage;
+
 
 	sprites[SI_DEATH] = new Sprite();
 	sprites[SI_DEATH]->initFromSingleFrame("Data/Sprites/death/death.png");

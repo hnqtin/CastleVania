@@ -65,8 +65,7 @@ void ExitStair::onIntersect(MovableBox * other)
 		{
 			player->setX(getRight() + 8 - player->getWidth());
 		}
-	//	player->moveY(4);
-		//player->setY(getBottom() + player->getHeight() );
+
 		player->setisUpRightStair(isUpRightStair);
 		player->moveDownStair(player->getDt());
 	}
