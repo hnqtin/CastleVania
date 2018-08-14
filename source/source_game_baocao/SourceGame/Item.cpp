@@ -12,7 +12,7 @@ void Item::setState(ITEM_STATE itemState)
 
 void Item::onIntersect(MovableBox * other)
 {
-	if (other->getCollisionType() == CT_WEAPON)
+	if (other->getCollisionType() == CT_WEAPON || other->getCollisionType() == CT_SUB_WEAPON)
 	{
 		if (itemState == ITEM_STATE::ITEM_STATE_INVISIBLE)
 		{

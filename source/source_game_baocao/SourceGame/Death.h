@@ -21,6 +21,7 @@ public:
 	void setAlive(bool alive) override;
 	void restoreLocation() override;
 	void setHealth(int health) override;
+	void onDecreaseHealth() override;
 	Death();
 	~Death();
 };

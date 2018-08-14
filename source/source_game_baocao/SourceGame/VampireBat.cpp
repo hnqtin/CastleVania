@@ -170,10 +170,15 @@ void VampireBat::calculateOtherPoint()
 	yDes = getRandom(yMin, yMax);
 }
 
+void VampireBat::setHealth(int health)
+{
+	Enemy::setHealth(health);
+}
+
 void VampireBat::onDecreaseHealth()
 {
-	ScoreBar::getInstance()->increaseBossHealth(-16);
-	setHealth(getHealth() - 1);
+	ScoreBar::getInstance()->increaseBossHealth(-2);
+	setHealth(getHealth() - 2);
 }
 
 void VampireBat::restore()

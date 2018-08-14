@@ -6,6 +6,10 @@
 
 void Enemy::setHealth(int health)
 {
+	if (baseHealth == -1)
+	{
+		this->baseHealth = health;
+	}
 	this->health = health;
 }
 
@@ -33,6 +37,7 @@ void Enemy::onDeath()
 
 void Enemy::onDecreaseHealth()
 {
+	setHealth(getHealth() - 1);
 }
 
 void Enemy::onCollision(MovableBox * other, int nx, int ny, float collisionTime)
@@ -45,7 +50,7 @@ void Enemy::onIntersect(MovableBox * other)
 	timeHit.update();
 	//xu ly khi enemy cham vao player
 	auto player = Player::getInstance();
-	if (other == player && !player->blinkDelay.isOnTime() && canAttackPlayer() && !player->isDead  )
+	if (other == player && !player->blinkDelay.isOnTime() && canAttackPlayer() && !player->isDead)
 	{
 		onContactPlayer();
 		ScoreBar::getInstance()->increaseHealth(-1);
@@ -55,10 +60,10 @@ void Enemy::onIntersect(MovableBox * other)
 			player->deadDelay.start();
 		}
 	}
-	if ( (other->getCollisionType() == CT_WEAPON || other->getCollisionType() == CT_SUB_WEAPON) && !timeHit.isOnTime())
+	if ((other->getCollisionType() == CT_WEAPON || other->getCollisionType() == CT_SUB_WEAPON) && !timeHit.isOnTime())
 	{
 		timeHit.start();
-		if (other->getCollisionType() == CT_WEAPON)
+		if (((BaseObject*)other)->spriteId != SI_IBOOMERANG)
 		{
 			((MorningStarAttack*)other)->setNeedDelete(true);
 		}
@@ -70,7 +75,7 @@ void Enemy::onIntersect(MovableBox * other)
 
 void Enemy::restoreLocation()
 {
-	setHealth(1);
+	setHealth(baseHealth);
 	BaseObject::restoreLocation();
 }
 
@@ -98,7 +103,7 @@ void Enemy::onContactPlayer()
 
 void Enemy::onContactWeapon()
 {
-	setHealth(getHealth() - 1);
+	//setHealth(getHealth() - 1);
 	onDecreaseHealth();
 	if (getHealth() <= 0)
 	{
@@ -115,7 +120,9 @@ bool Enemy::canAttackPlayer()
 Enemy::Enemy()
 {
 	setHealth(1);
+	baseHealth = -1;
 	timeHit.init(400);
+
 }
 
 

@@ -4,6 +4,7 @@ CREATE_INSTANCE_OUTSIDE(Player);
 #include"MorningStar.h"
 #include"ScoreBar.h"
 #include"BoomerangSw.h"
+#include"DaggerSw.h"
 #include"GameSound.h"
 
 void Player::goToStair(int xDestination, int yDestination)
@@ -97,9 +98,19 @@ bool Player::createSubweapon()
 		}
 		return false;
 	}
-	case SUB_WEAPON_ITEM_TYPE_KNIFE:
-		isThrowSubWeapon = true;
-		return true;
+	case SUB_WEAPON_ITEM_TYPE_DAGGER:
+
+		if (!DaggerSw::isExists)
+		{
+			isThrowSubWeapon = true;
+			auto dagger = new DaggerSw();
+			dagger->setX(getX());
+			dagger->setY(getY() - 5);
+			dagger->setDirection(getDirection());
+			ScoreBar::getInstance()->increaseHeartCount(-1);
+			return true;
+		}
+		return false;
 	default:
 		break;
 	}

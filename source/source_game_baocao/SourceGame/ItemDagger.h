@@ -1,7 +1,7 @@
 #pragma once
-#include "Item.h"
+#include "SubWeaponItem.h"
 class ItemDagger :
-	public Item
+	public SubWeaponItem
 {
 public:
 	void onPlayerContact() override;

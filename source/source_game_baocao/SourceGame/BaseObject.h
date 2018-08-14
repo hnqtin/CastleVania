@@ -16,7 +16,6 @@ private:
 	// delay animation
 	int interval;
 	// id
-	int spriteId;
 	// delay animation
 	GameTime* animationDelay;
 	// huong mat cua doi
@@ -35,6 +34,7 @@ private:
 protected:
 	virtual	void update(float dt);
 public:
+	int spriteId;
 	Sprite * getSprite();
 	void setSprite(Sprite* sprite);
 	// hanh dong hien tai

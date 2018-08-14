@@ -115,6 +115,11 @@ void Death::setHealth(int health)
 	ScoreBar::getInstance()->setBossHealth(this->getHealth());
 }
 
+void Death::onDecreaseHealth()
+{
+	setHealth(getHealth() - 2);
+}
+
 
 Death::Death()
 {

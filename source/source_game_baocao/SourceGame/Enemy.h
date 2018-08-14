@@ -5,6 +5,7 @@ class Enemy :
 	public MovableObject
 {
 	int health;
+	int baseHealth;
 public:
 	DelayTime timeHit;
 	virtual void setHealth(int health);

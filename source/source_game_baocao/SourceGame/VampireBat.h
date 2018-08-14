@@ -37,7 +37,7 @@ public:
 	void setBossState(BOSS_STATE bossState);
 	void update(float dt) override;
 	void calculateOtherPoint();
-
+	void setHealth(int health) override;
 	void onDecreaseHealth();
 
 	void restore();

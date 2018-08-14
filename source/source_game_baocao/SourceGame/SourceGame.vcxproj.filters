@@ -366,6 +366,12 @@
     <ClCompile Include="BonePillar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DaggerSw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Point400.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -657,6 +663,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BonePillar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DaggerSw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SubweaponType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Point400.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -49,6 +49,7 @@ BoomerangSw::BoomerangSw()
 	setPhysicsEnable(false);
 	boomerangState = BOOMERANG_STATE_UP;
 	setCollisionType(CT_SUB_WEAPON);
+	setSpriteId(SI_IBOOMERANG);
 }
 
 

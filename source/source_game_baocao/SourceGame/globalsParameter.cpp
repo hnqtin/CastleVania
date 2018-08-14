@@ -131,6 +131,11 @@ double getGlobalValue(const char* key)
 		globals->insert(pair<const char*, double>("dead_weapon_dx", 1));
 		globals->insert(pair<const char*, double>("dead_weapon_moment", 1));
 		globals->insert(pair<const char*, double>("deathweapon_continue_run_delay", 100));
+
+		globals->insert(pair<const char*, double>("dagger_dx", 3));
+
+		globals->insert(pair<const char*, double>("bonepillar_delay", 2000));
+		globals->insert(pair<const char*, double>("bonepillar_time", 500));
 	}
 	return globals->at(key);
 }

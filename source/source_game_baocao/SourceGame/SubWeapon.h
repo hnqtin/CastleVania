@@ -4,7 +4,7 @@ class SubWeapon :
 	public AdditionalObject
 {
 public:
-
+	void onIntersect(MovableBox* other) override;
 	SubWeapon();
 	~SubWeapon();
 };
