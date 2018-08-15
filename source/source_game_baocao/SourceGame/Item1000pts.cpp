@@ -1,11 +1,15 @@
 #include "Item1000pts.h"
 #include "ScoreBar.h"
+#include "Point1000.h"
 
 REGISTER_OBJECT_GAME(Item1000pts, SI_I1000PTS);
 
 
 void Item1000pts::onPlayerContact()
 {
+	Point1000* i = new Point1000();
+	i->setX(getX());
+	i->setY(getY());
 	ScoreBar::getInstance()->increaseScore(1000);
 
 }

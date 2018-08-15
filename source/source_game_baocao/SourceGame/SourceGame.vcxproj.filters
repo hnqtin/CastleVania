@@ -372,6 +372,12 @@
     <ClCompile Include="Point400.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Point700.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Point1000.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -672,6 +678,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Point400.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Point700.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Point1000.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

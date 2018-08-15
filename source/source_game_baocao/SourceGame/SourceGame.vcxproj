@@ -194,7 +194,9 @@
     <ClCompile Include="MorningStarAttack.cpp" />
     <ClCompile Include="Panther.cpp" />
     <ClCompile Include="PlayerWeaponVictim.cpp" />
+    <ClCompile Include="Point1000.cpp" />
     <ClCompile Include="Point400.cpp" />
+    <ClCompile Include="Point700.cpp" />
     <ClCompile Include="RedSkeleton.cpp" />
     <ClCompile Include="ScoreBar.cpp" />
     <ClCompile Include="Skeleton.cpp" />
@@ -292,7 +294,9 @@
     <ClInclude Include="MoringStarAdditional.h" />
     <ClInclude Include="Panther.h" />
     <ClInclude Include="PlayerWeaponVictim.h" />
+    <ClInclude Include="Point1000.h" />
     <ClInclude Include="Point400.h" />
+    <ClInclude Include="Point700.h" />
     <ClInclude Include="RedSkeleton.h" />
     <ClInclude Include="ScoreBar.h" />
     <ClInclude Include="Skeleton.h" />
