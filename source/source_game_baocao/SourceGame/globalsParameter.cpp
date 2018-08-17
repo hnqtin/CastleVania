@@ -136,6 +136,13 @@ double getGlobalValue(const char* key)
 
 		globals->insert(pair<const char*, double>("bonepillar_delay", 2000));
 		globals->insert(pair<const char*, double>("bonepillar_time", 500));
+
+		globals->insert(pair<const char*, double>("axeknight_distance_min", 60));
+		globals->insert(pair<const char*, double>("axeknight_distance_max", 80));
+		globals->insert(pair<const char*, double>("axeknight_dx", 0.5));
+		globals->insert(pair<const char*, double>("axeknight_throw_time", 3000));
+
+		globals->insert(pair<const char*, double>("axeknightweapon_max_distance", 100));
 	}
 	return globals->at(key);
 }

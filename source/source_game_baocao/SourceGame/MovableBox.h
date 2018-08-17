@@ -5,11 +5,11 @@
 class MovableBox : public Rect
 {
 	float dx, dy;
-	bool isCollision;
-	bool isChangeDxOrDy;
 	// loai va cham
 	COLLISION_TYPE collisionType;
 public:
+	bool isCollision;
+	bool isChangeDxOrDy;
 	COLLISION_TYPE getCollisionType();
 	void setCollisionType(int collisionType);
 	virtual void setDx(float dx);

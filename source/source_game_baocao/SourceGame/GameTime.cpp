@@ -23,7 +23,7 @@ bool GameTime::atTime()
 	deltaTime = now - startTime;
 	if (deltaTime >= timeDelay)
 	{
-		//consoleLogger->LogLine("Time " + std::to_string(deltaTime));
+		consoleLogger->LogLine("Time " + std::to_string(deltaTime));
 		if (deltaTime > 2 * timeDelay)
 		{
 			deltaTime = timeDelay;
