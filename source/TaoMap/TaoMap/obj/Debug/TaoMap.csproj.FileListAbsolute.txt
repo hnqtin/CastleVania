@@ -1,7 +1,0 @@
-c:\users\thanhdp\source\repos\TaoMap\TaoMap\bin\Debug\TaoMap.exe.config
-c:\users\thanhdp\source\repos\TaoMap\TaoMap\bin\Debug\TaoMap.exe
-c:\users\thanhdp\source\repos\TaoMap\TaoMap\bin\Debug\TaoMap.pdb
-c:\users\thanhdp\source\repos\TaoMap\TaoMap\obj\Debug\TaoMap.csprojAssemblyReference.cache
-c:\users\thanhdp\source\repos\TaoMap\TaoMap\obj\Debug\TaoMap.csproj.CoreCompileInputs.cache
-c:\users\thanhdp\source\repos\TaoMap\TaoMap\obj\Debug\TaoMap.exe
-c:\users\thanhdp\source\repos\TaoMap\TaoMap\obj\Debug\TaoMap.pdb

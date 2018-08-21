@@ -1,3 +1,0 @@
-World.h,cpp
-QuadTree.h,cpp
-Game.cpp phuong thuc init
